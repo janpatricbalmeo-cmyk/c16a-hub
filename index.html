@@ -1,95 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#00573D">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="theme-color"
+    content="#00573D"
+  >
 
   <title>DLSU C16A - Announcement Hub</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
     rel="stylesheet"
   >
 
   <script>
+
     tailwind.config = {
+
       darkMode: 'class',
+
       theme: {
+
         extend: {
+
           fontFamily: {
+
             sans: ['Inter', 'sans-serif']
+
           },
+
           colors: {
+
             dlsu: {
+
               DEFAULT: '#00573D',
+
               dark: '#00402D',
+
               light: '#E6F0EB',
+
               accent: '#10B981'
+
             }
+
           }
+
         }
+
       }
+
     }
+
   </script>
 
+
   <style>
+
     html {
       scroll-behavior: smooth;
     }
 
+
     .glass-card {
+
       background: rgba(255,255,255,.9);
+
       backdrop-filter: blur(10px);
+
     }
 
+
     .dark .glass-card {
+
       background: rgba(15,23,42,.9);
+
     }
+
 
     .hide-scrollbar::-webkit-scrollbar {
       display: none;
     }
 
+
     .hide-scrollbar {
+
       -ms-overflow-style: none;
+
       scrollbar-width: none;
+
     }
+
 
     .modal-active {
+
       opacity: 1 !important;
+
       pointer-events: auto !important;
+
     }
+
 
     .modal-active > div {
+
       transform: scale(1) !important;
+
     }
 
-    .schedule-image-modal-active {
-      opacity: 1 !important;
-      pointer-events: auto !important;
-    }
-
-    .schedule-image-modal-active > div {
-      transform: scale(1) !important;
-    }
   </style>
+
 </head>
 
-<body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-200 font-sans antialiased min-h-screen flex flex-col transition-colors">
+
+<body
+  class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-200 font-sans antialiased min-h-screen flex flex-col transition-colors"
+>
 
 
 <!-- ========================================================= -->
 <!-- HEADER -->
 <!-- ========================================================= -->
 
-<header class="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 sticky top-0 z-40 shadow-sm">
+<header
+  class="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 sticky top-0 z-40 shadow-sm"
+>
 
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+  <div
+    class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between"
+  >
 
     <div class="flex items-center gap-3">
 
@@ -99,7 +158,9 @@
         class="h-10 w-10 sm:h-12 sm:w-12 object-contain"
       >
 
-      <div class="h-8 w-px bg-slate-200 dark:bg-slate-700 hidden sm:block"></div>
+      <div
+        class="h-8 w-px bg-slate-200 dark:bg-slate-700 hidden sm:block"
+      ></div>
 
       <img
         src="rvrcob-logo.png"
@@ -107,16 +168,24 @@
         class="h-8 sm:h-10 object-contain hidden sm:block"
       >
 
-      <div class="h-8 w-px bg-slate-200 dark:bg-slate-700"></div>
+      <div
+        class="h-8 w-px bg-slate-200 dark:bg-slate-700"
+      ></div>
 
       <div>
-        <h1 class="text-sm font-bold text-slate-900 dark:text-white leading-tight">
+
+        <h1
+          class="text-sm font-bold text-slate-900 dark:text-white leading-tight"
+        >
           C16A • BS-MGT
         </h1>
 
-        <p class="text-[10px] sm:text-xs text-slate-500 dark:text-slate-400">
+        <p
+          class="text-[10px] sm:text-xs text-slate-500 dark:text-slate-400"
+        >
           RVRCOB • A.Y. 2026–2027
         </p>
+
       </div>
 
     </div>
@@ -124,7 +193,9 @@
 
     <div class="flex items-center gap-2">
 
-      <nav class="hidden lg:flex items-center gap-1 text-xs font-semibold mr-2">
+      <nav
+        class="hidden lg:flex items-center gap-1 text-xs font-semibold mr-2"
+      >
 
         <a
           href="#dashboard"
@@ -150,7 +221,7 @@
       </nav>
 
 
-      <!-- Theme Toggle -->
+      <!-- THEME TOGGLE -->
 
       <button
         onclick="toggleDarkMode()"
@@ -166,19 +237,27 @@
           stroke-width="2"
           viewBox="0 0 24 24"
         >
-          <circle cx="12" cy="12" r="4"></circle>
+
+          <circle
+            cx="12"
+            cy="12"
+            r="4"
+          ></circle>
 
           <path
             stroke-linecap="round"
-            d="M12 2v2
-               M12 20v2
-               M4.93 4.93l1.42 1.42
-               M17.65 17.65l1.42 1.42
-               M2 12h2
-               M20 12h2
-               M4.93 19.07l1.42-1.42
-               M17.65 6.35l1.42-1.42"
+            d="
+              M12 2v2
+              M12 20v2
+              M4.93 4.93l1.42 1.42
+              M17.65 17.65l1.42 1.42
+              M2 12h2
+              M20 12h2
+              M4.93 19.07l1.42-1.42
+              M17.65 6.35l1.42-1.42
+            "
           />
+
         </svg>
 
 
@@ -190,20 +269,26 @@
           stroke-width="2"
           viewBox="0 0 24 24"
         >
+
           <path
             stroke-linecap="round"
             stroke-linejoin="round"
             d="M21 12.79A9 9 0 1111.21 3
                7 7 0 0021 12.79z"
           />
+
         </svg>
 
       </button>
 
 
-      <span class="hidden sm:inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300">
+      <span
+        class="hidden sm:inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300"
+      >
 
-        <span class="w-1.5 h-1.5 bg-emerald-500 rounded-full mr-1.5 animate-pulse"></span>
+        <span
+          class="w-1.5 h-1.5 bg-emerald-500 rounded-full mr-1.5 animate-pulse"
+        ></span>
 
         Term 1
 
@@ -220,7 +305,9 @@
 <!-- MAIN -->
 <!-- ========================================================= -->
 
-<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow w-full space-y-8">
+<main
+  class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow w-full space-y-8"
+>
 
 
 <!-- ========================================================= -->
@@ -233,15 +320,21 @@
 
   <div class="max-w-2xl">
 
-    <span class="bg-white/10 text-emerald-200 text-[10px] sm:text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">
+    <span
+      class="bg-white/10 text-emerald-200 text-[10px] sm:text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider"
+    >
       De La Salle University
     </span>
 
-    <h2 class="text-2xl sm:text-3xl font-bold tracking-tight mt-3">
+    <h2
+      class="text-2xl sm:text-3xl font-bold tracking-tight mt-3"
+    >
       C16A Central Hub
     </h2>
 
-    <p class="mt-2 text-slate-200 text-sm leading-relaxed">
+    <p
+      class="mt-2 text-slate-200 text-sm leading-relaxed"
+    >
       Your centralized hub for schedules, announcements, courses,
       rooms, professors, and important block updates.
     </p>
@@ -249,7 +342,9 @@
   </div>
 
 
-  <div class="bg-white p-3 rounded-xl shadow-lg shrink-0">
+  <div
+    class="bg-white p-3 rounded-xl shadow-lg shrink-0"
+  >
 
     <img
       src="c16a-logo.jpg"
@@ -266,13 +361,20 @@
 <!-- DASHBOARD -->
 <!-- ========================================================= -->
 
-<section id="dashboard" class="scroll-mt-24">
+<section
+  id="dashboard"
+  class="scroll-mt-24"
+>
 
-  <div class="flex items-center justify-between mb-5">
+  <div
+    class="flex items-center justify-between mb-5"
+  >
 
     <div>
 
-      <h2 class="text-xl font-bold text-slate-900 dark:text-white">
+      <h2
+        class="text-xl font-bold text-slate-900 dark:text-white"
+      >
         Command Center
       </h2>
 
@@ -284,7 +386,7 @@
     </div>
 
 
-    <!-- Accurate NEW counter -->
+    <!-- ACCURATE NEW COUNTER -->
 
     <span
       id="unreadBadge"
@@ -294,18 +396,26 @@
   </div>
 
 
-  <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
+  <div
+    class="grid grid-cols-1 lg:grid-cols-2 gap-5"
+  >
 
 
     <!-- TODAY -->
 
-    <div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-5 shadow-sm">
+    <div
+      class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-5 shadow-sm"
+    >
 
-      <div class="flex items-center justify-between">
+      <div
+        class="flex items-center justify-between"
+      >
 
         <div>
 
-          <p class="text-[10px] uppercase tracking-wider font-bold text-slate-400">
+          <p
+            class="text-[10px] uppercase tracking-wider font-bold text-slate-400"
+          >
             Today
           </p>
 
@@ -316,7 +426,10 @@
 
         </div>
 
-        <div class="w-10 h-10 rounded-xl bg-dlsu-light dark:bg-emerald-950 text-dlsu flex items-center justify-center">
+
+        <div
+          class="w-10 h-10 rounded-xl bg-dlsu-light dark:bg-emerald-950 text-dlsu flex items-center justify-center"
+        >
 
           <svg
             class="w-5 h-5"
@@ -325,6 +438,7 @@
             stroke-width="1.8"
             viewBox="0 0 24 24"
           >
+
             <rect
               x="3"
               y="4"
@@ -337,6 +451,7 @@
               stroke-linecap="round"
               d="M16 2v4M8 2v4M3 10h18"
             />
+
           </svg>
 
         </div>
@@ -344,30 +459,44 @@
       </div>
 
 
-      <div id="todayClasses" class="mt-5 space-y-2"></div>
+      <div
+        id="todayClasses"
+        class="mt-5 space-y-2"
+      ></div>
 
     </div>
 
 
     <!-- NEXT CLASS -->
 
-    <div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-5 shadow-sm">
+    <div
+      class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-5 shadow-sm"
+    >
 
-      <div class="flex items-center justify-between">
+      <div
+        class="flex items-center justify-between"
+      >
 
         <div>
 
-          <p class="text-[10px] uppercase tracking-wider font-bold text-slate-400">
+          <p
+            class="text-[10px] uppercase tracking-wider font-bold text-slate-400"
+          >
             Next Class
           </p>
 
-          <h3 class="text-lg font-bold text-slate-900 dark:text-white mt-1">
+          <h3
+            class="text-lg font-bold text-slate-900 dark:text-white mt-1"
+          >
             Up Next
           </h3>
 
         </div>
 
-        <div class="w-10 h-10 rounded-xl bg-sky-50 dark:bg-sky-950 text-sky-600 flex items-center justify-center">
+
+        <div
+          class="w-10 h-10 rounded-xl bg-sky-50 dark:bg-sky-950 text-sky-600 flex items-center justify-center"
+        >
 
           <svg
             class="w-5 h-5"
@@ -376,6 +505,7 @@
             stroke-width="1.8"
             viewBox="0 0 24 24"
           >
+
             <path
               stroke-linecap="round"
               stroke-linejoin="round"
@@ -387,6 +517,7 @@
               d="M6 12.5V17c3.5 2.5 8.5 2.5 12 0v-4.5
                  M21.5 10v5"
             />
+
           </svg>
 
         </div>
@@ -394,7 +525,10 @@
       </div>
 
 
-      <div id="nextClass" class="mt-5"></div>
+      <div
+        id="nextClass"
+        class="mt-5"
+      ></div>
 
     </div>
 
@@ -409,17 +543,20 @@
 
 <section>
 
-  <div class="grid grid-cols-2 sm:grid-cols-2 gap-3">
+  <div
+    class="grid grid-cols-2 sm:grid-cols-2 gap-3"
+  >
 
-
-    <!-- Schedule -->
+    <!-- SCHEDULE -->
 
     <a
       href="#scheduleSection"
       class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-4 hover:border-dlsu transition"
     >
 
-      <div class="w-6 h-6 mb-2 text-dlsu">
+      <div
+        class="w-6 h-6 mb-2 text-dlsu"
+      >
 
         <svg
           class="w-full h-full"
@@ -428,6 +565,7 @@
           stroke-width="1.8"
           viewBox="0 0 24 24"
         >
+
           <rect
             x="3"
             y="4"
@@ -440,29 +578,37 @@
             stroke-linecap="round"
             d="M16 2v4M8 2v4M3 10h18"
           />
+
         </svg>
 
       </div>
 
-      <p class="font-bold text-sm text-slate-900 dark:text-white">
+
+      <p
+        class="font-bold text-sm text-slate-900 dark:text-white"
+      >
         Schedule
       </p>
 
-      <p class="text-[10px] text-slate-400 mt-1">
+      <p
+        class="text-[10px] text-slate-400 mt-1"
+      >
         Weekly classes
       </p>
 
     </a>
 
 
-    <!-- Announcements -->
+    <!-- ANNOUNCEMENTS -->
 
     <a
       href="#announcementsSection"
       class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-4 hover:border-dlsu transition"
     >
 
-      <div class="w-6 h-6 mb-2 text-dlsu">
+      <div
+        class="w-6 h-6 mb-2 text-dlsu"
+      >
 
         <svg
           class="w-full h-full"
@@ -471,6 +617,7 @@
           stroke-width="1.8"
           viewBox="0 0 24 24"
         >
+
           <path
             stroke-linecap="round"
             stroke-linejoin="round"
@@ -481,15 +628,21 @@
             stroke-linecap="round"
             d="M10 21h4"
           />
+
         </svg>
 
       </div>
 
-      <p class="font-bold text-sm text-slate-900 dark:text-white">
+
+      <p
+        class="font-bold text-sm text-slate-900 dark:text-white"
+      >
         Announcements
       </p>
 
-      <p class="text-[10px] text-slate-400 mt-1">
+      <p
+        class="text-[10px] text-slate-400 mt-1"
+      >
         Block updates
       </p>
 
@@ -504,28 +657,45 @@
 <!-- SCHEDULE -->
 <!-- ========================================================= -->
 
-<section id="scheduleSection" class="scroll-mt-24">
+<section
+  id="scheduleSection"
+  class="scroll-mt-24"
+>
 
-  <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-5">
+  <div
+    class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-5"
+  >
 
     <div>
 
-      <h2 class="text-xl font-bold text-slate-900 dark:text-white">
+      <h2
+        class="text-xl font-bold text-slate-900 dark:text-white"
+      >
         Class Schedule
       </h2>
 
-      <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">
+      <p
+        class="text-xs text-slate-500 dark:text-slate-400 mt-1"
+      >
         Term 1 • A.Y. 2026–2027
       </p>
 
     </div>
 
 
-    <div class="flex items-center gap-2">
+    <!-- ===================================================== -->
+    <!-- SCHEDULE CONTROLS -->
+    <!-- ===================================================== -->
 
-      <!-- Weekly Grid / Course List -->
+    <div
+      class="flex flex-wrap items-center justify-end gap-2"
+    >
 
-      <div class="bg-slate-200/70 dark:bg-slate-800 p-1 rounded-xl flex gap-1 text-xs font-medium">
+      <!-- WEEKLY GRID / COURSE LIST -->
+
+      <div
+        class="bg-slate-200/70 dark:bg-slate-800 p-1 rounded-xl flex gap-1 text-xs font-medium"
+      >
 
         <button
           id="btnGrid"
@@ -534,6 +704,7 @@
         >
           Weekly Grid
         </button>
+
 
         <button
           id="btnList"
@@ -546,41 +717,13 @@
       </div>
 
 
-      <!-- VIEW SCHEDULE BUTTON -->
+      <!-- VIEW SCHEDULE -->
 
       <button
         onclick="openScheduleImage()"
-        class="inline-flex items-center gap-2 px-3 py-2 rounded-xl bg-dlsu hover:bg-dlsu-dark text-white text-xs font-semibold shadow-sm transition whitespace-nowrap"
+        class="px-3.5 py-2 rounded-xl bg-dlsu hover:bg-dlsu-dark text-white text-xs font-semibold shadow-sm transition whitespace-nowrap"
       >
-
-        <svg
-          class="w-4 h-4"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.8"
-          viewBox="0 0 24 24"
-        >
-          <rect
-            x="3"
-            y="4"
-            width="18"
-            height="17"
-            rx="2"
-          />
-
-          <path
-            stroke-linecap="round"
-            d="M16 2v4M8 2v4M3 10h18"
-          />
-
-          <path
-            stroke-linecap="round"
-            d="M8 14h8M8 17h5"
-          />
-        </svg>
-
         View Schedule
-
       </button>
 
     </div>
@@ -588,7 +731,9 @@
   </div>
 
 
-  <!-- GRID -->
+  <!-- ===================================================== -->
+  <!-- WEEKLY GRID -->
+  <!-- ===================================================== -->
 
   <div
     id="scheduleGridView"
@@ -607,7 +752,9 @@
   </div>
 
 
-  <!-- LIST -->
+  <!-- ===================================================== -->
+  <!-- COURSE LIST -->
+  <!-- ===================================================== -->
 
   <div
     id="scheduleListView"
@@ -626,22 +773,30 @@
   class="scroll-mt-24 border-t border-slate-200 dark:border-slate-800 pt-8"
 >
 
-  <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-5">
+  <div
+    class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-5"
+  >
 
     <div>
 
-      <h2 class="text-xl font-bold text-slate-900 dark:text-white">
+      <h2
+        class="text-xl font-bold text-slate-900 dark:text-white"
+      >
         Block Announcements
       </h2>
 
-      <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">
+      <p
+        class="text-xs text-slate-500 dark:text-slate-400 mt-1"
+      >
         Official notices, statements, and updates.
       </p>
 
     </div>
 
 
-    <div class="relative max-w-sm w-full">
+    <div
+      class="relative max-w-sm w-full"
+    >
 
       <input
         id="searchInput"
@@ -649,6 +804,7 @@
         placeholder="Search announcements..."
         class="w-full bg-white dark:bg-slate-900 text-xs rounded-xl pl-9 pr-4 py-2.5 border border-slate-200 dark:border-slate-800 focus:outline-none focus:border-dlsu"
       >
+
 
       <svg
         class="w-4 h-4 text-slate-400 absolute left-3 top-3"
@@ -676,9 +832,11 @@
   </div>
 
 
-  <!-- Category Filters -->
+  <!-- CATEGORY FILTERS -->
 
-  <div class="flex gap-2 overflow-x-auto hide-scrollbar pb-2 mb-5">
+  <div
+    class="flex gap-2 overflow-x-auto hide-scrollbar pb-2 mb-5"
+  >
 
     <button
       onclick="filterCategory('All')"
@@ -687,12 +845,14 @@
       All
     </button>
 
+
     <button
       onclick="filterCategory('Important')"
       class="filter-btn px-4 py-2 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs font-medium whitespace-nowrap"
     >
       Important
     </button>
+
 
     <button
       onclick="filterCategory('Announcements')"
@@ -701,12 +861,14 @@
       Announcements
     </button>
 
+
     <button
       onclick="filterCategory('Reminders')"
       class="filter-btn px-4 py-2 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs font-medium whitespace-nowrap"
     >
       Reminders
     </button>
+
 
     <button
       onclick="filterCategory('Statements')"
@@ -724,12 +886,16 @@
   ></div>
 
 
+  <!-- EMPTY STATE -->
+
   <div
     id="emptyState"
     class="hidden text-center py-12"
   >
 
-    <div class="w-10 h-10 mx-auto mb-3 text-slate-300 dark:text-slate-600">
+    <div
+      class="w-10 h-10 mx-auto mb-3 text-slate-300 dark:text-slate-600"
+    >
 
       <svg
         class="w-full h-full"
@@ -738,6 +904,7 @@
         stroke-width="1.6"
         viewBox="0 0 24 24"
       >
+
         <circle
           cx="11"
           cy="11"
@@ -753,11 +920,15 @@
           stroke-linecap="round"
           d="M8.5 8.5l5 5M13.5 8.5l-5 5"
         />
+
       </svg>
 
     </div>
 
-    <p class="text-slate-400 text-sm">
+
+    <p
+      class="text-slate-400 text-sm"
+    >
       No announcements found.
     </p>
 
@@ -772,11 +943,17 @@
 <!-- FOOTER -->
 <!-- ========================================================= -->
 
-<footer class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 py-6 mt-12">
+<footer
+  class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 py-6 mt-12"
+>
 
-  <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+  <div
+    class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400"
+  >
 
-    <div class="flex items-center gap-2">
+    <div
+      class="flex items-center gap-2"
+    >
 
       <img
         src="dlsu-logo.jpg"
@@ -789,6 +966,7 @@
       </p>
 
     </div>
+
 
     <p>
       De La Salle University — Manila
@@ -814,16 +992,21 @@
     class="bg-white dark:bg-slate-900 rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto transform scale-95 transition-transform"
   >
 
-    <div class="p-6 border-b border-slate-100 dark:border-slate-800 flex justify-between gap-4">
+    <div
+      class="p-6 border-b border-slate-100 dark:border-slate-800 flex justify-between gap-4"
+    >
 
       <div>
 
-        <div class="flex flex-wrap gap-2 mb-2">
+        <div
+          class="flex flex-wrap gap-2 mb-2"
+        >
 
           <span
             id="modalCategory"
             class="text-[10px] uppercase font-semibold px-2.5 py-1 rounded-full border"
           ></span>
+
 
           <span
             id="modalCode"
@@ -832,10 +1015,12 @@
 
         </div>
 
+
         <h3
           id="modalTitle"
           class="text-xl font-bold text-slate-900 dark:text-white"
         ></h3>
+
 
         <p
           id="modalDate"
@@ -843,6 +1028,7 @@
         ></p>
 
       </div>
+
 
       <button
         onclick="closeAnnouncementModal()"
@@ -871,6 +1057,7 @@
 
       </div>
 
+
       <div
         id="modalBody"
         class="text-sm leading-relaxed whitespace-pre-line text-slate-700 dark:text-slate-300"
@@ -879,12 +1066,15 @@
     </div>
 
 
-    <div class="px-6 py-4 bg-slate-50 dark:bg-slate-950 border-t border-slate-100 dark:border-slate-800 flex justify-between text-xs">
+    <div
+      class="px-6 py-4 bg-slate-50 dark:bg-slate-950 border-t border-slate-100 dark:border-slate-800 flex justify-between text-xs"
+    >
 
       <span
         id="modalSource"
         class="text-slate-400 italic"
       ></span>
+
 
       <button
         onclick="closeAnnouncementModal()"
@@ -917,7 +1107,9 @@
 
     <div class="p-6">
 
-      <div class="flex justify-between gap-4">
+      <div
+        class="flex justify-between gap-4"
+      >
 
         <div>
 
@@ -926,12 +1118,14 @@
             class="font-mono text-xs px-2 py-1 rounded"
           ></span>
 
+
           <h3
             id="courseModalTitle"
             class="text-xl font-bold text-slate-900 dark:text-white mt-3"
           ></h3>
 
         </div>
+
 
         <button
           onclick="closeCourseModal()"
@@ -942,6 +1136,7 @@
         </button>
 
       </div>
+
 
       <div
         id="courseModalBody"
@@ -956,41 +1151,76 @@
 
 
 <!-- ========================================================= -->
-<!-- VIEW SCHEDULE IMAGE MODAL -->
+<!-- SCHEDULE IMAGE MODAL -->
 <!-- ========================================================= -->
 
 <div
   id="scheduleImageModal"
   onclick="closeScheduleImage()"
-  class="fixed inset-0 z-[60] bg-slate-950/90 backdrop-blur-sm flex items-center justify-center p-3 sm:p-6 opacity-0 pointer-events-none transition-opacity"
+  class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity"
 >
 
   <div
     onclick="event.stopPropagation()"
-    class="relative w-full max-w-7xl max-h-[95vh] flex items-center justify-center transform scale-95 transition-transform"
+    class="bg-white dark:bg-slate-900 rounded-2xl shadow-2xl max-w-6xl w-full max-h-[95vh] overflow-hidden transform scale-95 transition-transform"
   >
 
-    <img
-      src="C16A Term 1 - Class Schedule.png"
-      alt="C16A Term 1 Class Schedule"
-      class="max-w-full max-h-[90vh] object-contain rounded-xl shadow-2xl"
+    <div
+      class="px-5 py-4 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between"
     >
 
+      <div>
 
-    <button
-      onclick="closeScheduleImage()"
-      aria-label="Close schedule"
-      class="absolute top-2 right-2 sm:top-4 sm:right-4 w-10 h-10 rounded-full bg-slate-900/80 hover:bg-slate-800 text-white text-2xl flex items-center justify-center shadow-lg"
+        <h3
+          class="font-bold text-slate-900 dark:text-white"
+        >
+          C16A Term 1 — Class Schedule
+        </h3>
+
+
+        <p
+          class="text-xs text-slate-400 mt-1"
+        >
+          Term 1 • A.Y. 2026–2027
+        </p>
+
+      </div>
+
+
+      <button
+        onclick="closeScheduleImage()"
+        aria-label="Close schedule"
+        class="text-slate-400 hover:text-slate-700 dark:hover:text-white text-2xl"
+      >
+        ×
+      </button>
+
+    </div>
+
+
+    <div
+      class="p-4 sm:p-6 overflow-auto max-h-[calc(95vh-80px)] bg-slate-50 dark:bg-slate-950"
     >
-      ×
-    </button>
+
+      <img
+        src="C16A Term 1 - Class Schedule.png"
+        alt="C16A Term 1 Class Schedule"
+        class="w-full h-auto mx-auto rounded-xl shadow-sm"
+      >
+
+    </div>
 
   </div>
 
 </div>
 
 
+<!-- ========================================================= -->
+<!-- JAVASCRIPT -->
+<!-- ========================================================= -->
+
 <script>
+
 
 /* ============================================================
    CENTRAL DATA
@@ -1302,6 +1532,7 @@ Please note that the schedule is tentative and may still change depending on fur
 ============================================================ */
 
 let activeCategory = "All";
+
 let searchQuery = "";
 
 
@@ -1309,122 +1540,107 @@ let searchQuery = "";
    SUBJECT COLOR SYSTEM
 ============================================================ */
 
-/*
-   These colors are shared by:
-   - Weekly Grid
-   - Course List
-   - Command Center
-   - Course Modal
-*/
-
 const subjectColors = {
 
   rose: {
+
     badge:
       "bg-rose-100 text-rose-700 dark:bg-rose-950 dark:text-rose-300",
 
     border:
       "border-rose-500",
 
-    card:
-      "bg-rose-50 dark:bg-rose-950/30",
+    background:
+      "bg-rose-50 dark:bg-rose-950/30"
 
-    text:
-      "text-rose-700 dark:text-rose-300"
   },
 
   sky: {
+
     badge:
       "bg-sky-100 text-sky-700 dark:bg-sky-950 dark:text-sky-300",
 
     border:
       "border-sky-500",
 
-    card:
-      "bg-sky-50 dark:bg-sky-950/30",
+    background:
+      "bg-sky-50 dark:bg-sky-950/30"
 
-    text:
-      "text-sky-700 dark:text-sky-300"
   },
 
   purple: {
+
     badge:
       "bg-purple-100 text-purple-700 dark:bg-purple-950 dark:text-purple-300",
 
     border:
       "border-purple-500",
 
-    card:
-      "bg-purple-50 dark:bg-purple-950/30",
+    background:
+      "bg-purple-50 dark:bg-purple-950/30"
 
-    text:
-      "text-purple-700 dark:text-purple-300"
   },
 
   emerald: {
+
     badge:
       "bg-emerald-100 text-emerald-700 dark:bg-emerald-950 dark:text-emerald-300",
 
     border:
       "border-emerald-500",
 
-    card:
-      "bg-emerald-50 dark:bg-emerald-950/30",
+    background:
+      "bg-emerald-50 dark:bg-emerald-950/30"
 
-    text:
-      "text-emerald-700 dark:text-emerald-300"
   },
 
   indigo: {
+
     badge:
       "bg-indigo-100 text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300",
 
     border:
       "border-indigo-500",
 
-    card:
-      "bg-indigo-50 dark:bg-indigo-950/30",
+    background:
+      "bg-indigo-50 dark:bg-indigo-950/30"
 
-    text:
-      "text-indigo-700 dark:text-indigo-300"
   },
 
   pink: {
+
     badge:
       "bg-pink-100 text-pink-700 dark:bg-pink-950 dark:text-pink-300",
 
     border:
       "border-pink-500",
 
-    card:
-      "bg-pink-50 dark:bg-pink-950/30",
+    background:
+      "bg-pink-50 dark:bg-pink-950/30"
 
-    text:
-      "text-pink-700 dark:text-pink-300"
   },
 
   slate: {
+
     badge:
       "bg-slate-200 text-slate-700 dark:bg-slate-800 dark:text-slate-300",
 
     border:
       "border-slate-500",
 
-    card:
-      "bg-slate-100 dark:bg-slate-800",
+    background:
+      "bg-slate-100 dark:bg-slate-800"
 
-    text:
-      "text-slate-700 dark:text-slate-300"
   }
 
 };
 
 
 /* ============================================================
-   GET SUBJECT COLOR
+   GET COURSE COLOR
 ============================================================ */
 
-function getSubjectColor(code) {
+function getCourseColor(code) {
 
   const course =
     courses.find(
@@ -1447,8 +1663,11 @@ function initializeTheme() {
   const savedTheme =
     localStorage.getItem("c16a-theme");
 
+
   if (savedTheme === "dark") {
+
     document.documentElement.classList.add("dark");
+
   }
 
 }
@@ -1457,6 +1676,7 @@ function initializeTheme() {
 function toggleDarkMode() {
 
   document.documentElement.classList.toggle("dark");
+
 
   localStorage.setItem(
     "c16a-theme",
@@ -1492,17 +1712,6 @@ function formatDate(dateString) {
    NEW ANNOUNCEMENT CHECK
 ============================================================ */
 
-/*
-   NEW = announcement is exactly 1 or 2 days old.
-
-   Example:
-   Today = Aug 27
-
-   Aug 26 = NEW
-   Aug 25 = NEW
-   Aug 24 = NOT NEW
-*/
-
 function isNewAnnouncement(dateString) {
 
   const today = new Date();
@@ -1530,14 +1739,21 @@ function isNewAnnouncement(dateString) {
 
   const difference =
     Math.floor(
-      (today - createdDate) /
-      (1000 * 60 * 60 * 24)
+      (
+        today - createdDate
+      ) /
+      (
+        1000 *
+        60 *
+        60 *
+        24
+      )
     );
 
 
   return (
-    difference === 1 ||
-    difference === 2
+    difference >= 1 &&
+    difference <= 2
   );
 
 }
@@ -1549,19 +1765,10 @@ function isNewAnnouncement(dateString) {
 
 function updateUnreadCount() {
 
-  /*
-     Only count announcements that:
-     1. Are currently NEW
-     2. Have not been opened/read
-  */
-
-  const unreadNew =
+  const newCount =
     announcements.filter(
       item =>
-        isNewAnnouncement(item.Date) &&
-        localStorage.getItem(
-          `read-${item.Code}`
-        ) !== "true"
+        isNewAnnouncement(item.Date)
     ).length;
 
 
@@ -1571,10 +1778,10 @@ function updateUnreadCount() {
     );
 
 
-  if (unreadNew > 0) {
+  if (newCount > 0) {
 
     badge.innerText =
-      `${unreadNew} NEW`;
+      `${newCount} NEW`;
 
     badge.classList.remove(
       "hidden"
@@ -1599,6 +1806,7 @@ function renderDashboard() {
 
   const now = new Date();
 
+
   document.getElementById(
     "currentDate"
   ).innerText =
@@ -1614,6 +1822,7 @@ function renderDashboard() {
 
 
   const dayNames = [
+
     "SUN",
     "MON",
     "TUE",
@@ -1621,11 +1830,14 @@ function renderDashboard() {
     "THU",
     "FRI",
     "SAT"
+
   ];
 
 
   const today =
-    dayNames[now.getDay()];
+    dayNames[
+      now.getDay()
+    ];
 
 
   document.getElementById(
@@ -1639,7 +1851,8 @@ function renderDashboard() {
 
   const todayClasses =
     schedule.filter(
-      item => item.day === today
+      item =>
+        item.day === today
     );
 
 
@@ -1653,9 +1866,13 @@ function renderDashboard() {
 
     todayContainer.innerHTML = `
 
-      <div class="bg-slate-50 dark:bg-slate-800 rounded-xl p-4 text-center">
+      <div
+        class="bg-slate-50 dark:bg-slate-800 rounded-xl p-4 text-center"
+      >
 
-        <div class="w-6 h-6 mx-auto mb-2 text-emerald-600">
+        <div
+          class="w-6 h-6 mx-auto mb-2 text-emerald-600"
+        >
 
           <svg
             class="w-full h-full"
@@ -1664,6 +1881,7 @@ function renderDashboard() {
             stroke-width="1.8"
             viewBox="0 0 24 24"
           >
+
             <path
               stroke-linecap="round"
               stroke-linejoin="round"
@@ -1675,15 +1893,22 @@ function renderDashboard() {
               d="M5 5l14 14M19 5L5 19"
               opacity=".35"
             />
+
           </svg>
 
         </div>
 
-        <p class="text-sm font-semibold text-slate-600 dark:text-slate-300">
+
+        <p
+          class="text-sm font-semibold text-slate-600 dark:text-slate-300"
+        >
           No classes today
         </p>
 
-        <p class="text-xs text-slate-400 mt-1">
+
+        <p
+          class="text-xs text-slate-400 mt-1"
+        >
           Enjoy your free time.
         </p>
 
@@ -1698,28 +1923,39 @@ function renderDashboard() {
         .map(item => {
 
           const colors =
-            getSubjectColor(item.code);
+            getCourseColor(
+              item.code
+            );
+
 
           return `
 
             <div
               onclick="openCourseModal('${item.code}')"
-              class="flex items-center justify-between ${colors.card} border-l-4 ${colors.border} rounded-xl p-3 cursor-pointer hover:shadow-md transition"
+              class="flex items-center justify-between ${colors.background} rounded-xl p-3 border-l-4 ${colors.border} cursor-pointer hover:shadow-sm transition"
             >
 
               <div>
 
-                <p class="font-bold text-xs ${colors.text}">
+                <p
+                  class="inline-flex text-[10px] font-bold ${colors.badge} px-2 py-1 rounded-lg"
+                >
                   ${item.code}
                 </p>
 
-                <p class="text-[10px] text-slate-500 dark:text-slate-400 mt-1">
+
+                <p
+                  class="text-[10px] text-slate-500 dark:text-slate-400 mt-2"
+                >
                   ${item.time}
                 </p>
 
               </div>
 
-              <span class="text-[10px] font-medium bg-white/80 dark:bg-slate-700 px-2 py-1 rounded-lg">
+
+              <span
+                class="text-[10px] font-medium bg-white/80 dark:bg-slate-700 px-2 py-1 rounded-lg"
+              >
                 ${item.room}
               </span>
 
@@ -1735,14 +1971,8 @@ function renderDashboard() {
 
   renderNextClass();
 
-  updateUnreadCount();
-
 }
 
-
-/* ============================================================
-   NEXT CLASS
-============================================================ */
 
 function renderNextClass() {
 
@@ -1757,6 +1987,7 @@ function renderNextClass() {
 
 
   const days = [
+
     "SUN",
     "MON",
     "TUE",
@@ -1764,6 +1995,7 @@ function renderNextClass() {
     "THU",
     "FRI",
     "SAT"
+
   ];
 
 
@@ -1777,7 +2009,10 @@ function renderNextClass() {
   ) {
 
     const index =
-      (todayIndex + offset) % 7;
+      (
+        todayIndex +
+        offset
+      ) % 7;
 
 
     const day =
@@ -1786,15 +2021,19 @@ function renderNextClass() {
 
     const found =
       schedule.find(
-        item => item.day === day
+        item =>
+          item.day === day
       );
 
 
     if (found) {
 
       next = {
+
         ...found,
+
         day
+
       };
 
       break;
@@ -1808,7 +2047,9 @@ function renderNextClass() {
 
     container.innerHTML = `
 
-      <p class="text-sm text-slate-400">
+      <p
+        class="text-sm text-slate-400"
+      >
         No upcoming classes.
       </p>
 
@@ -1821,43 +2062,62 @@ function renderNextClass() {
 
   const course =
     courses.find(
-      item => item.code === next.code
+      item =>
+        item.code === next.code
     );
 
 
   const colors =
-    getSubjectColor(next.code);
+    getCourseColor(
+      next.code
+    );
 
 
   container.innerHTML = `
 
     <div>
 
-      <div class="flex items-center gap-2">
+      <div
+        class="flex items-center gap-2"
+      >
 
-        <span class="bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 text-[10px] font-bold px-2 py-1 rounded-lg">
+        <span
+          class="${colors.badge} text-[10px] font-bold px-2 py-1 rounded-lg"
+        >
           ${next.day}
         </span>
 
-        <span class="text-xs text-slate-400">
+
+        <span
+          class="text-xs text-slate-400"
+        >
           ${next.time}
         </span>
 
       </div>
 
 
-      <h4 class="font-bold ${colors.text} mt-3">
+      <h4
+        class="font-bold text-slate-900 dark:text-white mt-3"
+      >
         ${next.name}
       </h4>
 
 
-      <div class="flex items-center justify-between mt-3">
+      <div
+        class="flex items-center justify-between mt-3"
+      >
 
-        <span class="text-xs font-mono font-semibold ${colors.text} px-2 py-1 rounded-lg ${colors.badge}">
+        <span
+          class="text-[10px] font-bold ${colors.badge} px-2 py-1 rounded-lg"
+        >
           ${next.code}
         </span>
 
-        <span class="text-xs font-semibold text-dlsu flex items-center gap-1">
+
+        <span
+          class="text-xs font-semibold text-dlsu flex items-center gap-1"
+        >
 
           <svg
             class="w-3.5 h-3.5"
@@ -1866,6 +2126,7 @@ function renderNextClass() {
             stroke-width="1.8"
             viewBox="0 0 24 24"
           >
+
             <path
               stroke-linecap="round"
               stroke-linejoin="round"
@@ -1877,6 +2138,7 @@ function renderNextClass() {
               cy="9"
               r="2.2"
             />
+
           </svg>
 
           ${next.room}
@@ -1889,7 +2151,10 @@ function renderNextClass() {
       ${
         course
           ? `
-            <p class="text-xs text-slate-400 mt-3 flex items-center gap-1">
+
+            <p
+              class="text-xs text-slate-400 mt-3 flex items-center gap-1"
+            >
 
               <svg
                 class="w-3.5 h-3.5"
@@ -1898,17 +2163,24 @@ function renderNextClass() {
                 stroke-width="1.8"
                 viewBox="0 0 24 24"
               >
-                <circle cx="12" cy="8" r="3"></circle>
+
+                <circle
+                  cx="12"
+                  cy="8"
+                  r="3"
+                ></circle>
 
                 <path
                   stroke-linecap="round"
                   d="M5 21a7 7 0 0114 0"
                 />
+
               </svg>
 
               ${course.instructor}
 
             </p>
+
           `
           : ""
       }
@@ -1927,12 +2199,14 @@ function renderNextClass() {
 function renderSchedule() {
 
   const days = [
+
     "MON",
     "TUE",
     "WED",
     "THU",
     "FRI",
     "SAT"
+
   ];
 
 
@@ -1948,7 +2222,8 @@ function renderSchedule() {
 
         const classes =
           schedule.filter(
-            item => item.day === day
+            item =>
+              item.day === day
           );
 
 
@@ -1956,32 +2231,47 @@ function renderSchedule() {
 
           <div>
 
-            <div class="text-center pb-3 mb-3 border-b border-slate-100 dark:border-slate-800">
+            <div
+              class="text-center pb-3 mb-3 border-b border-slate-100 dark:border-slate-800"
+            >
 
-              <span class="text-xs font-bold text-slate-500">
+              <span
+                class="text-xs font-bold text-slate-500"
+              >
                 ${day}
               </span>
 
             </div>
 
 
-            <div class="space-y-3">
+            <div
+              class="space-y-3"
+            >
 
               ${
                 classes.length
+
                   ? classes
-                      .map(item =>
-                        scheduleCard(item)
+                      .map(
+                        item =>
+                          scheduleCard(item)
                       )
                       .join("")
-                  : `
-                    <div class="h-40 flex items-center justify-center border border-dashed border-slate-200 dark:border-slate-800 rounded-xl">
 
-                      <span class="text-xs text-slate-400">
+                  : `
+
+                    <div
+                      class="h-40 flex items-center justify-center border border-dashed border-slate-200 dark:border-slate-800 rounded-xl"
+                    >
+
+                      <span
+                        class="text-xs text-slate-400"
+                      >
                         No Classes
                       </span>
 
                     </div>
+
                   `
               }
 
@@ -2007,12 +2297,15 @@ function renderSchedule() {
 function scheduleCard(item) {
 
   const colors =
-    getSubjectColor(item.code);
+    getCourseColor(
+      item.code
+    );
 
 
   const course =
     courses.find(
-      item2 => item2.code === item.code
+      item2 =>
+        item2.code === item.code
     );
 
 
@@ -2020,29 +2313,39 @@ function scheduleCard(item) {
 
     <div
       onclick="openCourseModal('${item.code}')"
-      class="p-3 rounded-xl border-l-4 ${colors.card} ${colors.border}
-      cursor-pointer hover:shadow-md transition"
+      class="p-3 rounded-xl border-l-4 ${colors.border} ${colors.background} cursor-pointer hover:shadow-md transition"
     >
 
-      <div class="flex items-center justify-between gap-2">
+      <div
+        class="flex items-center justify-between gap-2"
+      >
 
-        <span class="text-[10px] font-bold uppercase ${colors.text}">
+        <span
+          class="text-[10px] font-bold uppercase ${colors.badge} px-1.5 py-0.5 rounded"
+        >
           ${item.code}
         </span>
 
-        <span class="text-[9px] bg-white/70 dark:bg-slate-700 px-1.5 py-0.5 rounded font-medium">
+
+        <span
+          class="text-[9px] bg-white/70 dark:bg-slate-700 px-1.5 py-0.5 rounded font-medium"
+        >
           ${item.room}
         </span>
 
       </div>
 
 
-      <h4 class="text-xs font-semibold mt-2 leading-snug">
+      <h4
+        class="text-xs font-semibold mt-2 leading-snug"
+      >
         ${item.name}
       </h4>
 
 
-      <p class="text-[10px] text-slate-500 dark:text-slate-400 mt-2 font-medium">
+      <p
+        class="text-[10px] text-slate-500 dark:text-slate-400 mt-2 font-medium"
+      >
         ${item.time}
       </p>
 
@@ -2050,7 +2353,10 @@ function scheduleCard(item) {
       ${
         course
           ? `
-            <p class="text-[9px] text-slate-400 mt-2 flex items-center gap-1">
+
+            <p
+              class="text-[9px] text-slate-400 mt-2 flex items-center gap-1"
+            >
 
               <svg
                 class="w-3 h-3"
@@ -2059,17 +2365,24 @@ function scheduleCard(item) {
                 stroke-width="1.8"
                 viewBox="0 0 24 24"
               >
-                <circle cx="12" cy="8" r="3"></circle>
+
+                <circle
+                  cx="12"
+                  cy="8"
+                  r="3"
+                ></circle>
 
                 <path
                   stroke-linecap="round"
                   d="M5 21a7 7 0 0114 0"
                 />
+
               </svg>
 
               ${course.instructor}
 
             </p>
+
           `
           : ""
       }
@@ -2098,42 +2411,55 @@ function renderScheduleList() {
       .map(course => {
 
         const colors =
-          subjectColors[course.color];
+          getCourseColor(
+            course.code
+          );
 
 
         return `
 
           <div
             onclick="openCourseModal('${course.code}')"
-            class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 p-5 cursor-pointer hover:border-dlsu transition"
+            class="bg-white dark:bg-slate-900 rounded-xl border-l-4 ${colors.border} border-y border-r border-slate-200 dark:border-slate-800 p-5 cursor-pointer hover:shadow-md transition"
           >
 
-            <div class="flex justify-between items-start gap-3">
+            <div
+              class="flex justify-between items-start gap-3"
+            >
 
-              <!-- Subject code uses Weekly Grid color -->
-
-              <span class="font-mono text-xs font-bold ${colors.text} ${colors.badge} px-2.5 py-1 rounded-lg">
+              <span
+                class="font-mono text-xs font-bold ${colors.badge} px-2.5 py-1 rounded-lg"
+              >
                 ${course.code}
               </span>
 
-              <span class="text-xs text-slate-400">
+
+              <span
+                class="text-xs text-slate-400"
+              >
                 ${course.type}
               </span>
 
             </div>
 
 
-            <h3 class="font-bold text-slate-900 dark:text-white mt-3">
+            <h3
+              class="font-bold text-slate-900 dark:text-white mt-3"
+            >
               ${course.name}
             </h3>
 
 
-            <p class="text-xs text-slate-500 mt-3">
+            <p
+              class="text-xs text-slate-500 mt-3"
+            >
               ${course.schedule}
             </p>
 
 
-            <p class="text-xs text-slate-500 mt-1 flex items-center gap-1">
+            <p
+              class="text-xs text-slate-500 mt-1 flex items-center gap-1"
+            >
 
               <svg
                 class="w-3.5 h-3.5"
@@ -2142,6 +2468,7 @@ function renderScheduleList() {
                 stroke-width="1.8"
                 viewBox="0 0 24 24"
               >
+
                 <path
                   stroke-linecap="round"
                   stroke-linejoin="round"
@@ -2153,6 +2480,7 @@ function renderScheduleList() {
                   cy="9"
                   r="2.2"
                 />
+
               </svg>
 
               ${course.room}
@@ -2160,7 +2488,9 @@ function renderScheduleList() {
             </p>
 
 
-            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 flex items-center gap-1">
+            <p
+              class="text-xs text-slate-500 dark:text-slate-400 mt-1 flex items-center gap-1"
+            >
 
               <svg
                 class="w-3.5 h-3.5"
@@ -2169,12 +2499,18 @@ function renderScheduleList() {
                 stroke-width="1.8"
                 viewBox="0 0 24 24"
               >
-                <circle cx="12" cy="8" r="3"></circle>
+
+                <circle
+                  cx="12"
+                  cy="8"
+                  r="3"
+                ></circle>
 
                 <path
                   stroke-linecap="round"
                   d="M5 21a7 7 0 0114 0"
                 />
+
               </svg>
 
               ${course.instructor}
@@ -2223,8 +2559,13 @@ function toggleScheduleView(view) {
 
   if (view === "grid") {
 
-    grid.classList.remove("hidden");
-    list.classList.add("hidden");
+    grid.classList.remove(
+      "hidden"
+    );
+
+    list.classList.add(
+      "hidden"
+    );
 
 
     btnGrid.className =
@@ -2236,8 +2577,13 @@ function toggleScheduleView(view) {
 
   } else {
 
-    grid.classList.add("hidden");
-    list.classList.remove("hidden");
+    grid.classList.add(
+      "hidden"
+    );
+
+    list.classList.remove(
+      "hidden"
+    );
 
 
     btnList.className =
@@ -2253,7 +2599,7 @@ function toggleScheduleView(view) {
 
 
 /* ============================================================
-   VIEW SCHEDULE IMAGE
+   SCHEDULE IMAGE MODAL
 ============================================================ */
 
 function openScheduleImage() {
@@ -2265,7 +2611,7 @@ function openScheduleImage() {
 
 
   modal.classList.add(
-    "schedule-image-modal-active"
+    "modal-active"
   );
 
 
@@ -2285,7 +2631,7 @@ function closeScheduleImage() {
 
 
   modal.classList.remove(
-    "schedule-image-modal-active"
+    "modal-active"
   );
 
 
@@ -2304,7 +2650,8 @@ function openCourseModal(code) {
 
   const course =
     courses.find(
-      item => item.code === code
+      item =>
+        item.code === code
     );
 
 
@@ -2312,20 +2659,22 @@ function openCourseModal(code) {
 
 
   const colors =
-    subjectColors[course.color];
+    getCourseColor(
+      course.code
+    );
 
 
-  const codeElement =
+  const courseCode =
     document.getElementById(
       "courseModalCode"
     );
 
 
-  codeElement.innerText =
+  courseCode.innerText =
     course.code;
 
 
-  codeElement.className =
+  courseCode.className =
     `font-mono text-xs px-2 py-1 rounded ${colors.badge}`;
 
 
@@ -2339,39 +2688,57 @@ function openCourseModal(code) {
     "courseModalBody"
   ).innerHTML = `
 
-    <div class="${colors.card} border-l-4 ${colors.border} rounded-xl p-4">
+    <div
+      class="${colors.background} border-l-4 ${colors.border} rounded-xl p-4"
+    >
 
-      <p class="text-[10px] uppercase font-bold text-slate-400">
+      <p
+        class="text-[10px] uppercase font-bold text-slate-400"
+      >
         Professor
       </p>
 
-      <p class="font-semibold mt-1">
+      <p
+        class="font-semibold mt-1"
+      >
         ${course.instructor}
       </p>
 
     </div>
 
 
-    <div class="bg-slate-50 dark:bg-slate-800 rounded-xl p-4">
+    <div
+      class="bg-slate-50 dark:bg-slate-800 rounded-xl p-4"
+    >
 
-      <p class="text-[10px] uppercase font-bold text-slate-400">
+      <p
+        class="text-[10px] uppercase font-bold text-slate-400"
+      >
         Schedule
       </p>
 
-      <p class="font-semibold mt-1">
+      <p
+        class="font-semibold mt-1"
+      >
         ${course.schedule}
       </p>
 
     </div>
 
 
-    <div class="bg-slate-50 dark:bg-slate-800 rounded-xl p-4">
+    <div
+      class="bg-slate-50 dark:bg-slate-800 rounded-xl p-4"
+    >
 
-      <p class="text-[10px] uppercase font-bold text-slate-400">
+      <p
+        class="text-[10px] uppercase font-bold text-slate-400"
+      >
         Room
       </p>
 
-      <p class="font-semibold mt-1 flex items-center gap-1">
+      <p
+        class="font-semibold mt-1 flex items-center gap-1"
+      >
 
         <svg
           class="w-4 h-4"
@@ -2380,6 +2747,7 @@ function openCourseModal(code) {
           stroke-width="1.8"
           viewBox="0 0 24 24"
         >
+
           <path
             stroke-linecap="round"
             stroke-linejoin="round"
@@ -2391,6 +2759,7 @@ function openCourseModal(code) {
             cy="9"
             r="2.2"
           />
+
         </svg>
 
         ${course.room}
@@ -2400,13 +2769,19 @@ function openCourseModal(code) {
     </div>
 
 
-    <div class="bg-slate-50 dark:bg-slate-800 rounded-xl p-4">
+    <div
+      class="bg-slate-50 dark:bg-slate-800 rounded-xl p-4"
+    >
 
-      <p class="text-[10px] uppercase font-bold text-slate-400">
+      <p
+        class="text-[10px] uppercase font-bold text-slate-400"
+      >
         Course Type
       </p>
 
-      <p class="font-semibold mt-1">
+      <p
+        class="font-semibold mt-1"
+      >
         ${course.type}
       </p>
 
@@ -2415,7 +2790,9 @@ function openCourseModal(code) {
   `;
 
 
-  openModal("courseModal");
+  openModal(
+    "courseModal"
+  );
 
 }
 
@@ -2423,7 +2800,9 @@ function openCourseModal(code) {
 function openModal(id) {
 
   const modal =
-    document.getElementById(id);
+    document.getElementById(
+      id
+    );
 
 
   modal.classList.add(
@@ -2478,6 +2857,7 @@ function renderAnnouncements() {
 
   const filtered =
     announcements
+
       .filter(item => {
 
         const categoryMatch =
@@ -2486,23 +2866,43 @@ function renderAnnouncements() {
 
 
         const searchable =
-          `${item.Code}
-           ${item.Title}
-           ${item.Body}
-           ${item.Source}`
+          `
+            ${item.Code}
+            ${item.Title}
+            ${item.Body}
+            ${item.Source}
+          `
           .toLowerCase();
 
 
         return (
           categoryMatch &&
-          searchable.includes(searchQuery)
+          searchable.includes(
+            searchQuery
+          )
         );
 
       })
+
+      /* ====================================================
+         SORT BY ANNOUNCEMENT CODE
+         HIGHEST → LOWEST
+         Example:
+         C16A-126007
+         C16A-126006
+         ...
+         C16A-126001
+      ==================================================== */
+
       .sort(
         (a, b) =>
-          b.Date.localeCompare(
-            a.Date
+          b.Code.localeCompare(
+            a.Code,
+            undefined,
+            {
+              numeric: true,
+              sensitivity: "base"
+            }
           )
       );
 
@@ -2527,18 +2927,11 @@ function renderAnnouncements() {
 
   grid.innerHTML =
     filtered
-      .map(item =>
-        announcementCard(item)
+      .map(
+        item =>
+          announcementCard(item)
       )
       .join("");
-
-
-  /*
-     Keep the Command Center counter
-     synchronized every time cards render.
-  */
-
-  updateUnreadCount();
 
 }
 
@@ -2550,7 +2943,9 @@ function renderAnnouncements() {
 function announcementCard(item) {
 
   const isNew =
-    isNewAnnouncement(item.Date);
+    isNewAnnouncement(
+      item.Date
+    );
 
 
   const tagColors = {
@@ -2570,61 +2965,60 @@ function announcementCard(item) {
   };
 
 
-  /*
-     Announcement header:
-     NEW → Classification → Code → Date
-
-     Everything is kept in one row on larger screens.
-     On very small screens, it may scroll horizontally
-     rather than becoming visually misaligned.
-  */
-
   return `
 
     <article
-      class="bg-white dark:bg-slate-900 rounded-xl border
-      border-slate-200 dark:border-slate-800
-      p-5 shadow-sm hover:shadow-md transition"
+      class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 p-5 shadow-sm hover:shadow-md transition"
     >
 
-
+      <!-- ================================================= -->
       <!-- ANNOUNCEMENT HEADER -->
+      <!-- NEW → TYPE → CODE → DATE -->
+      <!-- ================================================= -->
 
-      <div class="flex items-center gap-2 mb-4 overflow-x-auto hide-scrollbar whitespace-nowrap">
+      <div
+        class="flex items-center gap-2 w-full mb-4 text-[9px] sm:text-[10px] whitespace-nowrap overflow-hidden"
+      >
 
         ${
           isNew
+
             ? `
-              <span class="shrink-0 text-[9px] bg-rose-100 dark:bg-rose-950 text-rose-600 dark:text-rose-300 px-1.5 py-0.5 rounded font-bold">
+
+              <span
+                class="shrink-0 bg-rose-100 text-rose-600 dark:bg-rose-950 dark:text-rose-300 px-1.5 py-0.5 rounded font-bold"
+              >
                 NEW
               </span>
+
             `
+
             : ""
         }
 
 
         <span
-          class="shrink-0 text-[9px] uppercase font-semibold px-2.5 py-1 rounded-full border ${tagColors[item.Category]}"
+          class="shrink-0 uppercase font-semibold px-2 py-1 rounded-full border ${tagColors[item.Category]}"
         >
           ${item.Category}
         </span>
 
 
         <span
-          class="shrink-0 text-[10px] font-mono text-slate-400 bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded"
+          class="shrink-0 font-mono text-slate-400 bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded"
         >
           ${item.Code}
         </span>
 
 
-        <span class="shrink-0 text-[10px] text-slate-400 ml-auto">
+        <span
+          class="shrink-0 text-slate-400 ml-auto"
+        >
           ${formatDate(item.Date)}
         </span>
 
       </div>
 
-
-      <!-- TITLE -->
 
       <h3
         onclick="openAnnouncement('${item.Code}')"
@@ -2634,8 +3028,6 @@ function announcementCard(item) {
       </h3>
 
 
-      <!-- BODY -->
-
       <p
         class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed line-clamp-4 mt-2 whitespace-pre-line"
       >
@@ -2643,11 +3035,13 @@ function announcementCard(item) {
       </p>
 
 
-      <!-- FOOTER -->
+      <div
+        class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between gap-3"
+      >
 
-      <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between gap-3">
-
-        <span class="text-[10px] text-slate-400 italic truncate">
+        <span
+          class="text-[10px] text-slate-400 italic truncate"
+        >
           Via: ${item.Source}
         </span>
 
@@ -2679,11 +3073,14 @@ function filterCategory(category) {
 
 
   document
-    .querySelectorAll(".filter-btn")
+    .querySelectorAll(
+      ".filter-btn"
+    )
     .forEach(button => {
 
       const active =
-        button.innerText.trim() === category;
+        button.innerText.trim() ===
+        category;
 
 
       if (active) {
@@ -2722,16 +3119,6 @@ function openAnnouncement(code) {
   if (!item) return;
 
 
-  /*
-     Mark announcement as read.
-  */
-
-  localStorage.setItem(
-    `read-${item.Code}`,
-    "true"
-  );
-
-
   document.getElementById(
     "modalCategory"
   ).innerText =
@@ -2753,7 +3140,9 @@ function openAnnouncement(code) {
   document.getElementById(
     "modalDate"
   ).innerText =
-    formatDate(item.Date);
+    formatDate(
+      item.Date
+    );
 
 
   document.getElementById(
@@ -2821,11 +3210,6 @@ function openAnnouncement(code) {
     "overflow-hidden"
   );
 
-
-  renderAnnouncements();
-
-  updateUnreadCount();
-
 }
 
 
@@ -2883,7 +3267,9 @@ document.addEventListener(
   "keydown",
   event => {
 
-    if (event.key === "Escape") {
+    if (
+      event.key === "Escape"
+    ) {
 
       closeAnnouncementModal();
 
@@ -2912,24 +3298,25 @@ renderAnnouncements();
 updateUnreadCount();
 
 
-/*
-   Refresh every minute so:
-   - Current date stays correct
-   - NEW indicators update automatically
-   - NEW counter stays accurate
-*/
+/* ============================================================
+   PERIODIC REFRESH
+============================================================ */
 
-setInterval(() => {
+setInterval(
+  () => {
 
-  renderDashboard();
+    renderDashboard();
 
-  renderAnnouncements();
+    renderAnnouncements();
 
-  updateUnreadCount();
+    updateUnreadCount();
 
-}, 60000);
+  },
+  60000
+);
 
 </script>
 
 </body>
+
 </html>
