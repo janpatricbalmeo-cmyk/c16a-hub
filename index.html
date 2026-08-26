@@ -105,10 +105,10 @@
         <!-- Schedule View Controls -->
         <div class="flex items-center space-x-2 self-start sm:self-auto">
           <div class="bg-slate-200/70 p-1 rounded-xl flex space-x-1 text-xs font-medium">
-            <button id="btnGrid" onclick="toggleScheduleView('grid')" class="px-3 py-1.5 rounded-lg bg-white shadow-sm text-slate-800 transition">
+            <button type="button" id="btnGrid" onclick="toggleScheduleView('grid')" class="px-3 py-1.5 rounded-lg bg-white shadow-sm text-slate-800 transition">
               Weekly Grid
             </button>
-            <button id="btnList" onclick="toggleScheduleView('list')" class="px-3 py-1.5 rounded-lg text-slate-600 hover:text-slate-900 transition">
+            <button type="button" id="btnList" onclick="toggleScheduleView('list')" class="px-3 py-1.5 rounded-lg text-slate-600 hover:text-slate-900 transition">
               Course List
             </button>
           </div>
@@ -470,7 +470,7 @@
           </div>
           <h3 id="modalTitle" class="text-xl font-bold text-slate-900"></h3>
         </div>
-        <button onclick="closeModal()" class="text-slate-400 hover:text-slate-600 p-1 rounded-lg hover:bg-slate-100 transition">
+        <button type="button" aria-label="Close announcement details" onclick="closeModal()" class="text-slate-400 hover:text-slate-600 p-1 rounded-lg hover:bg-slate-100 transition">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
           </svg>
@@ -481,7 +481,7 @@
       <div class="p-6 space-y-6">
         <!-- Photo Container -->
         <div id="modalImageWrapper" class="rounded-xl overflow-hidden bg-slate-100 border border-slate-200 max-h-96 flex items-center justify-center">
-          <img id="modalImage" src="" alt="Announcement Photo" class="w-full h-full object-contain">
+          <img id="modalImage" src="" alt="Announcement Photo" class="max-w-full max-h-96 object-contain">
         </div>
 
         <!-- Full Text Body -->
@@ -503,7 +503,7 @@
     <div onclick="event.stopPropagation()" class="bg-white rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden flex flex-col">
       <div class="p-4 border-b border-slate-100 flex items-center justify-between">
         <h3 class="font-bold text-slate-900 text-sm">C16A (Term 1) - Class Schedule Image</h3>
-        <button onclick="closeScheduleModal()" class="text-slate-400 hover:text-slate-600 p-1 rounded-lg hover:bg-slate-100 transition">
+        <button type="button" aria-label="Close schedule image" onclick="closeScheduleModal()" class="text-slate-400 hover:text-slate-600 p-1 rounded-lg hover:bg-slate-100 transition">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
           </svg>
@@ -635,12 +635,14 @@
       const backdrop = document.getElementById("scheduleModalBackdrop");
       backdrop.classList.remove("opacity-0", "pointer-events-none");
       backdrop.classList.add("opacity-100");
+      document.body.classList.add("overflow-hidden");
     }
 
     function closeScheduleModal() {
       const backdrop = document.getElementById("scheduleModalBackdrop");
       backdrop.classList.remove("opacity-100");
       backdrop.classList.add("opacity-0", "pointer-events-none");
+      document.body.classList.remove("overflow-hidden");
     }
 
     // Search Announcements Function
@@ -694,11 +696,17 @@
               <span class="text-xs text-slate-400">${item.Date}</span>
             </div>
 
-            <h3 onclick="openModal('${item.Code}')" class="font-bold text-slate-900 text-base mb-2 hover:text-dlsu transition cursor-pointer">
+            <h3
+              onclick="openModal('${item.Code}')"
+              onkeydown="if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); openModal('${item.Code}'); }"
+              role="button"
+              tabindex="0"
+              class="font-bold text-slate-900 text-base mb-2 hover:text-dlsu transition cursor-pointer"
+            >
               ${item.Title}
             </h3>
 
-            <p class="text-xs text-slate-600 leading-relaxed line-clamp-4">
+            <p class="text-xs text-slate-600 leading-relaxed line-clamp-4 whitespace-pre-line">
               ${item.Body}
             </p>
           </div>
@@ -745,22 +753,31 @@
       const imgEl = document.getElementById("modalImage");
       const imgWrapper = document.getElementById("modalImageWrapper");
 
+      // Reset image state before loading a new announcement.
+      imgEl.onerror = () => {
+        imgEl.src = "";
+        imgWrapper.classList.add("hidden");
+      };
+
       if (item.Image) {
         imgEl.src = item.Image;
         imgWrapper.classList.remove("hidden");
       } else {
+        imgEl.src = "";
         imgWrapper.classList.add("hidden");
       }
 
       const backdrop = document.getElementById("modalBackdrop");
       backdrop.classList.remove("opacity-0", "pointer-events-none");
       backdrop.classList.add("opacity-100");
+      document.body.classList.add("overflow-hidden");
     }
 
     function closeModal() {
       const backdrop = document.getElementById("modalBackdrop");
       backdrop.classList.remove("opacity-100");
       backdrop.classList.add("opacity-0", "pointer-events-none");
+      document.body.classList.remove("overflow-hidden");
     }
 
     document.addEventListener("keydown", (e) => {
