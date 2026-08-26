@@ -11,7 +11,10 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
 
   <script>
     tailwind.config = {
@@ -65,10 +68,20 @@
     .modal-active > div {
       transform: scale(1) !important;
     }
+
+    .schedule-image-modal-active {
+      opacity: 1 !important;
+      pointer-events: auto !important;
+    }
+
+    .schedule-image-modal-active > div {
+      transform: scale(1) !important;
+    }
   </style>
 </head>
 
 <body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-200 font-sans antialiased min-h-screen flex flex-col transition-colors">
+
 
 <!-- ========================================================= -->
 <!-- HEADER -->
@@ -108,6 +121,7 @@
 
     </div>
 
+
     <div class="flex items-center gap-2">
 
       <nav class="hidden lg:flex items-center gap-1 text-xs font-semibold mr-2">
@@ -135,6 +149,7 @@
 
       </nav>
 
+
       <!-- Theme Toggle -->
 
       <button
@@ -142,8 +157,6 @@
         aria-label="Toggle dark mode"
         class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-dlsu transition"
       >
-
-        <!-- Sun Icon -->
 
         <svg
           id="sunIcon"
@@ -168,7 +181,6 @@
           />
         </svg>
 
-        <!-- Moon Icon -->
 
         <svg
           id="moonIcon"
@@ -187,6 +199,7 @@
         </svg>
 
       </button>
+
 
       <span class="hidden sm:inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300">
 
@@ -235,6 +248,7 @@
 
   </div>
 
+
   <div class="bg-white p-3 rounded-xl shadow-lg shrink-0">
 
     <img
@@ -269,6 +283,9 @@
 
     </div>
 
+
+    <!-- Accurate NEW counter -->
+
     <span
       id="unreadBadge"
       class="hidden bg-rose-100 dark:bg-rose-950 text-rose-700 dark:text-rose-300 text-xs font-semibold px-3 py-1 rounded-full"
@@ -276,8 +293,6 @@
 
   </div>
 
-
-  <!-- Dashboard Cards -->
 
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
 
@@ -302,8 +317,6 @@
         </div>
 
         <div class="w-10 h-10 rounded-xl bg-dlsu-light dark:bg-emerald-950 text-dlsu flex items-center justify-center">
-
-          <!-- Calendar Icon -->
 
           <svg
             class="w-5 h-5"
@@ -330,6 +343,7 @@
 
       </div>
 
+
       <div id="todayClasses" class="mt-5 space-y-2"></div>
 
     </div>
@@ -355,8 +369,6 @@
 
         <div class="w-10 h-10 rounded-xl bg-sky-50 dark:bg-sky-950 text-sky-600 flex items-center justify-center">
 
-          <!-- Academic / Graduation Icon -->
-
           <svg
             class="w-5 h-5"
             fill="none"
@@ -380,6 +392,7 @@
         </div>
 
       </div>
+
 
       <div id="nextClass" class="mt-5"></div>
 
@@ -407,8 +420,6 @@
     >
 
       <div class="w-6 h-6 mb-2 text-dlsu">
-
-        <!-- Calendar Icon -->
 
         <svg
           class="w-full h-full"
@@ -452,8 +463,6 @@
     >
 
       <div class="w-6 h-6 mb-2 text-dlsu">
-
-        <!-- Bell Icon -->
 
         <svg
           class="w-full h-full"
@@ -512,22 +521,66 @@
     </div>
 
 
-    <div class="bg-slate-200/70 dark:bg-slate-800 p-1 rounded-xl flex gap-1 text-xs font-medium">
+    <div class="flex items-center gap-2">
+
+      <!-- Weekly Grid / Course List -->
+
+      <div class="bg-slate-200/70 dark:bg-slate-800 p-1 rounded-xl flex gap-1 text-xs font-medium">
+
+        <button
+          id="btnGrid"
+          onclick="toggleScheduleView('grid')"
+          class="px-3 py-1.5 rounded-lg bg-white dark:bg-slate-700 shadow-sm text-slate-800 dark:text-white"
+        >
+          Weekly Grid
+        </button>
+
+        <button
+          id="btnList"
+          onclick="toggleScheduleView('list')"
+          class="px-3 py-1.5 rounded-lg text-slate-600 dark:text-slate-300"
+        >
+          Course List
+        </button>
+
+      </div>
+
+
+      <!-- VIEW SCHEDULE BUTTON -->
 
       <button
-        id="btnGrid"
-        onclick="toggleScheduleView('grid')"
-        class="px-3 py-1.5 rounded-lg bg-white dark:bg-slate-700 shadow-sm text-slate-800 dark:text-white"
+        onclick="openScheduleImage()"
+        class="inline-flex items-center gap-2 px-3 py-2 rounded-xl bg-dlsu hover:bg-dlsu-dark text-white text-xs font-semibold shadow-sm transition whitespace-nowrap"
       >
-        Weekly Grid
-      </button>
 
-      <button
-        id="btnList"
-        onclick="toggleScheduleView('list')"
-        class="px-3 py-1.5 rounded-lg text-slate-600 dark:text-slate-300"
-      >
-        Course List
+        <svg
+          class="w-4 h-4"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+          viewBox="0 0 24 24"
+        >
+          <rect
+            x="3"
+            y="4"
+            width="18"
+            height="17"
+            rx="2"
+          />
+
+          <path
+            stroke-linecap="round"
+            d="M16 2v4M8 2v4M3 10h18"
+          />
+
+          <path
+            stroke-linecap="round"
+            d="M8 14h8M8 17h5"
+          />
+        </svg>
+
+        View Schedule
+
       </button>
 
     </div>
@@ -596,8 +649,6 @@
         placeholder="Search announcements..."
         class="w-full bg-white dark:bg-slate-900 text-xs rounded-xl pl-9 pr-4 py-2.5 border border-slate-200 dark:border-slate-800 focus:outline-none focus:border-dlsu"
       >
-
-      <!-- Search Icon -->
 
       <svg
         class="w-4 h-4 text-slate-400 absolute left-3 top-3"
@@ -673,16 +724,12 @@
   ></div>
 
 
-  <!-- Empty State -->
-
   <div
     id="emptyState"
     class="hidden text-center py-12"
   >
 
     <div class="w-10 h-10 mx-auto mb-3 text-slate-300 dark:text-slate-600">
-
-      <!-- Search / Empty Icon -->
 
       <svg
         class="w-full h-full"
@@ -876,7 +923,7 @@
 
           <span
             id="courseModalCode"
-            class="font-mono text-xs px-2 py-1 rounded bg-dlsu-light text-dlsu"
+            class="font-mono text-xs px-2 py-1 rounded"
           ></span>
 
           <h3
@@ -908,6 +955,41 @@
 </div>
 
 
+<!-- ========================================================= -->
+<!-- VIEW SCHEDULE IMAGE MODAL -->
+<!-- ========================================================= -->
+
+<div
+  id="scheduleImageModal"
+  onclick="closeScheduleImage()"
+  class="fixed inset-0 z-[60] bg-slate-950/90 backdrop-blur-sm flex items-center justify-center p-3 sm:p-6 opacity-0 pointer-events-none transition-opacity"
+>
+
+  <div
+    onclick="event.stopPropagation()"
+    class="relative w-full max-w-7xl max-h-[95vh] flex items-center justify-center transform scale-95 transition-transform"
+  >
+
+    <img
+      src="C16A Term 1 - Class Schedule.png"
+      alt="C16A Term 1 Class Schedule"
+      class="max-w-full max-h-[90vh] object-contain rounded-xl shadow-2xl"
+    >
+
+
+    <button
+      onclick="closeScheduleImage()"
+      aria-label="Close schedule"
+      class="absolute top-2 right-2 sm:top-4 sm:right-4 w-10 h-10 rounded-full bg-slate-900/80 hover:bg-slate-800 text-white text-2xl flex items-center justify-center shadow-lg"
+    >
+      ×
+    </button>
+
+  </div>
+
+</div>
+
+
 <script>
 
 /* ============================================================
@@ -915,7 +997,9 @@
 ============================================================ */
 
 
-/* COURSES */
+/* ============================================================
+   COURSES
+============================================================ */
 
 const courses = [
 
@@ -992,7 +1076,9 @@ const courses = [
 ];
 
 
-/* SCHEDULE */
+/* ============================================================
+   SCHEDULE
+============================================================ */
 
 const schedule = [
 
@@ -1107,7 +1193,9 @@ const schedule = [
 ];
 
 
-/* ANNOUNCEMENTS */
+/* ============================================================
+   ANNOUNCEMENTS
+============================================================ */
 
 const announcements = [
 
@@ -1218,6 +1306,139 @@ let searchQuery = "";
 
 
 /* ============================================================
+   SUBJECT COLOR SYSTEM
+============================================================ */
+
+/*
+   These colors are shared by:
+   - Weekly Grid
+   - Course List
+   - Command Center
+   - Course Modal
+*/
+
+const subjectColors = {
+
+  rose: {
+    badge:
+      "bg-rose-100 text-rose-700 dark:bg-rose-950 dark:text-rose-300",
+
+    border:
+      "border-rose-500",
+
+    card:
+      "bg-rose-50 dark:bg-rose-950/30",
+
+    text:
+      "text-rose-700 dark:text-rose-300"
+  },
+
+  sky: {
+    badge:
+      "bg-sky-100 text-sky-700 dark:bg-sky-950 dark:text-sky-300",
+
+    border:
+      "border-sky-500",
+
+    card:
+      "bg-sky-50 dark:bg-sky-950/30",
+
+    text:
+      "text-sky-700 dark:text-sky-300"
+  },
+
+  purple: {
+    badge:
+      "bg-purple-100 text-purple-700 dark:bg-purple-950 dark:text-purple-300",
+
+    border:
+      "border-purple-500",
+
+    card:
+      "bg-purple-50 dark:bg-purple-950/30",
+
+    text:
+      "text-purple-700 dark:text-purple-300"
+  },
+
+  emerald: {
+    badge:
+      "bg-emerald-100 text-emerald-700 dark:bg-emerald-950 dark:text-emerald-300",
+
+    border:
+      "border-emerald-500",
+
+    card:
+      "bg-emerald-50 dark:bg-emerald-950/30",
+
+    text:
+      "text-emerald-700 dark:text-emerald-300"
+  },
+
+  indigo: {
+    badge:
+      "bg-indigo-100 text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300",
+
+    border:
+      "border-indigo-500",
+
+    card:
+      "bg-indigo-50 dark:bg-indigo-950/30",
+
+    text:
+      "text-indigo-700 dark:text-indigo-300"
+  },
+
+  pink: {
+    badge:
+      "bg-pink-100 text-pink-700 dark:bg-pink-950 dark:text-pink-300",
+
+    border:
+      "border-pink-500",
+
+    card:
+      "bg-pink-50 dark:bg-pink-950/30",
+
+    text:
+      "text-pink-700 dark:text-pink-300"
+  },
+
+  slate: {
+    badge:
+      "bg-slate-200 text-slate-700 dark:bg-slate-800 dark:text-slate-300",
+
+    border:
+      "border-slate-500",
+
+    card:
+      "bg-slate-100 dark:bg-slate-800",
+
+    text:
+      "text-slate-700 dark:text-slate-300"
+  }
+
+};
+
+
+/* ============================================================
+   GET SUBJECT COLOR
+============================================================ */
+
+function getSubjectColor(code) {
+
+  const course =
+    courses.find(
+      item => item.code === code
+    );
+
+  return course
+    ? subjectColors[course.color]
+    : subjectColors.slate;
+
+}
+
+
+/* ============================================================
    DARK MODE
 ============================================================ */
 
@@ -1271,17 +1492,40 @@ function formatDate(dateString) {
    NEW ANNOUNCEMENT CHECK
 ============================================================ */
 
+/*
+   NEW = announcement is exactly 1 or 2 days old.
+
+   Example:
+   Today = Aug 27
+
+   Aug 26 = NEW
+   Aug 25 = NEW
+   Aug 24 = NOT NEW
+*/
+
 function isNewAnnouncement(dateString) {
 
   const today = new Date();
 
-  today.setHours(0, 0, 0, 0);
+  today.setHours(
+    0,
+    0,
+    0,
+    0
+  );
 
 
   const createdDate =
-    new Date(dateString + "T00:00:00");
+    new Date(
+      dateString + "T00:00:00"
+    );
 
-  createdDate.setHours(0, 0, 0, 0);
+  createdDate.setHours(
+    0,
+    0,
+    0,
+    0
+  );
 
 
   const difference =
@@ -1291,7 +1535,58 @@ function isNewAnnouncement(dateString) {
     );
 
 
-  return difference === 1 || difference === 2;
+  return (
+    difference === 1 ||
+    difference === 2
+  );
+
+}
+
+
+/* ============================================================
+   ACCURATE NEW COUNTER
+============================================================ */
+
+function updateUnreadCount() {
+
+  /*
+     Only count announcements that:
+     1. Are currently NEW
+     2. Have not been opened/read
+  */
+
+  const unreadNew =
+    announcements.filter(
+      item =>
+        isNewAnnouncement(item.Date) &&
+        localStorage.getItem(
+          `read-${item.Code}`
+        ) !== "true"
+    ).length;
+
+
+  const badge =
+    document.getElementById(
+      "unreadBadge"
+    );
+
+
+  if (unreadNew > 0) {
+
+    badge.innerText =
+      `${unreadNew} NEW`;
+
+    badge.classList.remove(
+      "hidden"
+    );
+
+  } else {
+
+    badge.classList.add(
+      "hidden"
+    );
+
+  }
 
 }
 
@@ -1304,7 +1599,9 @@ function renderDashboard() {
 
   const now = new Date();
 
-  document.getElementById("currentDate").innerText =
+  document.getElementById(
+    "currentDate"
+  ).innerText =
     now.toLocaleDateString(
       "en-US",
       {
@@ -1331,8 +1628,11 @@ function renderDashboard() {
     dayNames[now.getDay()];
 
 
-  document.getElementById("todayTitle").innerText =
-    today === "SUN" || today === "WED"
+  document.getElementById(
+    "todayTitle"
+  ).innerText =
+    today === "SUN" ||
+    today === "WED"
       ? "No Classes"
       : today;
 
@@ -1344,7 +1644,9 @@ function renderDashboard() {
 
 
   const todayContainer =
-    document.getElementById("todayClasses");
+    document.getElementById(
+      "todayClasses"
+    );
 
 
   if (!todayClasses.length) {
@@ -1392,44 +1694,62 @@ function renderDashboard() {
   } else {
 
     todayContainer.innerHTML =
-      todayClasses.map(item => `
+      todayClasses
+        .map(item => {
 
-        <div
-          class="flex items-center justify-between bg-slate-50 dark:bg-slate-800 rounded-xl p-3"
-        >
+          const colors =
+            getSubjectColor(item.code);
 
-          <div>
+          return `
 
-            <p class="font-bold text-xs text-slate-900 dark:text-white">
-              ${item.code}
-            </p>
+            <div
+              onclick="openCourseModal('${item.code}')"
+              class="flex items-center justify-between ${colors.card} border-l-4 ${colors.border} rounded-xl p-3 cursor-pointer hover:shadow-md transition"
+            >
 
-            <p class="text-[10px] text-slate-500 dark:text-slate-400 mt-1">
-              ${item.time}
-            </p>
+              <div>
 
-          </div>
+                <p class="font-bold text-xs ${colors.text}">
+                  ${item.code}
+                </p>
 
-          <span class="text-[10px] font-medium bg-white dark:bg-slate-700 px-2 py-1 rounded-lg">
-            ${item.room}
-          </span>
+                <p class="text-[10px] text-slate-500 dark:text-slate-400 mt-1">
+                  ${item.time}
+                </p>
 
-        </div>
+              </div>
 
-      `).join("");
+              <span class="text-[10px] font-medium bg-white/80 dark:bg-slate-700 px-2 py-1 rounded-lg">
+                ${item.room}
+              </span>
+
+            </div>
+
+          `;
+
+        })
+        .join("");
 
   }
 
 
   renderNextClass();
 
+  updateUnreadCount();
+
 }
 
+
+/* ============================================================
+   NEXT CLASS
+============================================================ */
 
 function renderNextClass() {
 
   const container =
-    document.getElementById("nextClass");
+    document.getElementById(
+      "nextClass"
+    );
 
 
   const todayIndex =
@@ -1505,6 +1825,10 @@ function renderNextClass() {
     );
 
 
+  const colors =
+    getSubjectColor(next.code);
+
+
   container.innerHTML = `
 
     <div>
@@ -1522,14 +1846,14 @@ function renderNextClass() {
       </div>
 
 
-      <h4 class="font-bold text-slate-900 dark:text-white mt-3">
+      <h4 class="font-bold ${colors.text} mt-3">
         ${next.name}
       </h4>
 
 
       <div class="flex items-center justify-between mt-3">
 
-        <span class="text-xs text-slate-500">
+        <span class="text-xs font-mono font-semibold ${colors.text} px-2 py-1 rounded-lg ${colors.badge}">
           ${next.code}
         </span>
 
@@ -1613,56 +1937,62 @@ function renderSchedule() {
 
 
   const grid =
-    document.getElementById("scheduleGrid");
+    document.getElementById(
+      "scheduleGrid"
+    );
 
 
   grid.innerHTML =
-    days.map(day => {
+    days
+      .map(day => {
 
-      const classes =
-        schedule.filter(
-          item => item.day === day
-        );
+        const classes =
+          schedule.filter(
+            item => item.day === day
+          );
 
 
-      return `
+        return `
 
-        <div>
+          <div>
 
-          <div class="text-center pb-3 mb-3 border-b border-slate-100 dark:border-slate-800">
+            <div class="text-center pb-3 mb-3 border-b border-slate-100 dark:border-slate-800">
 
-            <span class="text-xs font-bold text-slate-500">
-              ${day}
-            </span>
+              <span class="text-xs font-bold text-slate-500">
+                ${day}
+              </span>
+
+            </div>
+
+
+            <div class="space-y-3">
+
+              ${
+                classes.length
+                  ? classes
+                      .map(item =>
+                        scheduleCard(item)
+                      )
+                      .join("")
+                  : `
+                    <div class="h-40 flex items-center justify-center border border-dashed border-slate-200 dark:border-slate-800 rounded-xl">
+
+                      <span class="text-xs text-slate-400">
+                        No Classes
+                      </span>
+
+                    </div>
+                  `
+              }
+
+            </div>
 
           </div>
 
+        `;
 
-          <div class="space-y-3">
-
-            ${
-              classes.length
-                ? classes
-                    .map(item => scheduleCard(item))
-                    .join("")
-                : `
-                  <div class="h-40 flex items-center justify-center border border-dashed border-slate-200 dark:border-slate-800 rounded-xl">
-
-                    <span class="text-xs text-slate-400">
-                      No Classes
-                    </span>
-
-                  </div>
-                `
-            }
-
-          </div>
-
-        </div>
-
-      `;
-
-    }).join("");
+      })
+      .join("");
 
 
   renderScheduleList();
@@ -1670,32 +2000,14 @@ function renderSchedule() {
 }
 
 
+/* ============================================================
+   SCHEDULE CARD
+============================================================ */
+
 function scheduleCard(item) {
 
-  const colors = {
-
-    rose:
-      "bg-rose-50 border-rose-500 dark:bg-rose-950/30",
-
-    sky:
-      "bg-sky-50 border-sky-500 dark:bg-sky-950/30",
-
-    purple:
-      "bg-purple-50 border-purple-500 dark:bg-purple-950/30",
-
-    emerald:
-      "bg-emerald-50 border-emerald-500 dark:bg-emerald-950/30",
-
-    indigo:
-      "bg-indigo-50 border-indigo-500 dark:bg-indigo-950/30",
-
-    pink:
-      "bg-pink-50 border-pink-500 dark:bg-pink-950/30",
-
-    slate:
-      "bg-slate-100 border-slate-500 dark:bg-slate-800"
-
-  };
+  const colors =
+    getSubjectColor(item.code);
 
 
   const course =
@@ -1708,13 +2020,13 @@ function scheduleCard(item) {
 
     <div
       onclick="openCourseModal('${item.code}')"
-      class="p-3 rounded-xl border-l-4 ${colors[item.color]}
+      class="p-3 rounded-xl border-l-4 ${colors.card} ${colors.border}
       cursor-pointer hover:shadow-md transition"
     >
 
-      <div class="flex items-center justify-between">
+      <div class="flex items-center justify-between gap-2">
 
-        <span class="text-[10px] font-bold uppercase">
+        <span class="text-[10px] font-bold uppercase ${colors.text}">
           ${item.code}
         </span>
 
@@ -1769,114 +2081,144 @@ function scheduleCard(item) {
 }
 
 
+/* ============================================================
+   COURSE LIST
+============================================================ */
+
 function renderScheduleList() {
 
   const container =
-    document.getElementById("scheduleListView");
+    document.getElementById(
+      "scheduleListView"
+    );
 
 
   container.innerHTML =
-    courses.map(course => `
+    courses
+      .map(course => {
 
-      <div
-        onclick="openCourseModal('${course.code}')"
-        class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 p-5 cursor-pointer hover:border-dlsu transition"
-      >
-
-        <div class="flex justify-between">
-
-          <span class="font-mono text-xs font-bold text-dlsu bg-dlsu-light dark:bg-emerald-950 px-2.5 py-1 rounded-lg">
-            ${course.code}
-          </span>
-
-          <span class="text-xs text-slate-400">
-            ${course.type}
-          </span>
-
-        </div>
+        const colors =
+          subjectColors[course.color];
 
 
-        <h3 class="font-bold text-slate-900 dark:text-white mt-3">
-          ${course.name}
-        </h3>
+        return `
 
-
-        <p class="text-xs text-slate-500 mt-3">
-          ${course.schedule}
-        </p>
-
-
-        <p class="text-xs text-slate-500 mt-1 flex items-center gap-1">
-
-          <svg
-            class="w-3.5 h-3.5"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.8"
-            viewBox="0 0 24 24"
+          <div
+            onclick="openCourseModal('${course.code}')"
+            class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 p-5 cursor-pointer hover:border-dlsu transition"
           >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M12 21s7-6.1 7-12a7 7 0 10-14 0c0 5.9 7 12 7 12z"
-            />
 
-            <circle
-              cx="12"
-              cy="9"
-              r="2.2"
-            />
-          </svg>
+            <div class="flex justify-between items-start gap-3">
 
-          ${course.room}
+              <!-- Subject code uses Weekly Grid color -->
 
-        </p>
+              <span class="font-mono text-xs font-bold ${colors.text} ${colors.badge} px-2.5 py-1 rounded-lg">
+                ${course.code}
+              </span>
+
+              <span class="text-xs text-slate-400">
+                ${course.type}
+              </span>
+
+            </div>
 
 
-        <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 flex items-center gap-1">
+            <h3 class="font-bold text-slate-900 dark:text-white mt-3">
+              ${course.name}
+            </h3>
 
-          <svg
-            class="w-3.5 h-3.5"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.8"
-            viewBox="0 0 24 24"
-          >
-            <circle cx="12" cy="8" r="3"></circle>
 
-            <path
-              stroke-linecap="round"
-              d="M5 21a7 7 0 0114 0"
-            />
-          </svg>
+            <p class="text-xs text-slate-500 mt-3">
+              ${course.schedule}
+            </p>
 
-          ${course.instructor}
 
-        </p>
+            <p class="text-xs text-slate-500 mt-1 flex items-center gap-1">
 
-      </div>
+              <svg
+                class="w-3.5 h-3.5"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 21s7-6.1 7-12a7 7 0 10-14 0c0 5.9 7 12 7 12z"
+                />
 
-    `).join("");
+                <circle
+                  cx="12"
+                  cy="9"
+                  r="2.2"
+                />
+              </svg>
+
+              ${course.room}
+
+            </p>
+
+
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 flex items-center gap-1">
+
+              <svg
+                class="w-3.5 h-3.5"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                viewBox="0 0 24 24"
+              >
+                <circle cx="12" cy="8" r="3"></circle>
+
+                <path
+                  stroke-linecap="round"
+                  d="M5 21a7 7 0 0114 0"
+                />
+              </svg>
+
+              ${course.instructor}
+
+            </p>
+
+          </div>
+
+        `;
+
+      })
+      .join("");
 
 }
 
 
+/* ============================================================
+   TOGGLE SCHEDULE VIEW
+============================================================ */
+
 function toggleScheduleView(view) {
 
   const grid =
-    document.getElementById("scheduleGridView");
+    document.getElementById(
+      "scheduleGridView"
+    );
 
 
   const list =
-    document.getElementById("scheduleListView");
+    document.getElementById(
+      "scheduleListView"
+    );
 
 
   const btnGrid =
-    document.getElementById("btnGrid");
+    document.getElementById(
+      "btnGrid"
+    );
 
 
   const btnList =
-    document.getElementById("btnList");
+    document.getElementById(
+      "btnList"
+    );
 
 
   if (view === "grid") {
@@ -1911,6 +2253,50 @@ function toggleScheduleView(view) {
 
 
 /* ============================================================
+   VIEW SCHEDULE IMAGE
+============================================================ */
+
+function openScheduleImage() {
+
+  const modal =
+    document.getElementById(
+      "scheduleImageModal"
+    );
+
+
+  modal.classList.add(
+    "schedule-image-modal-active"
+  );
+
+
+  document.body.classList.add(
+    "overflow-hidden"
+  );
+
+}
+
+
+function closeScheduleImage() {
+
+  const modal =
+    document.getElementById(
+      "scheduleImageModal"
+    );
+
+
+  modal.classList.remove(
+    "schedule-image-modal-active"
+  );
+
+
+  document.body.classList.remove(
+    "overflow-hidden"
+  );
+
+}
+
+
+/* ============================================================
    COURSE MODAL
 ============================================================ */
 
@@ -1925,10 +2311,22 @@ function openCourseModal(code) {
   if (!course) return;
 
 
-  document.getElementById(
-    "courseModalCode"
-  ).innerText =
+  const colors =
+    subjectColors[course.color];
+
+
+  const codeElement =
+    document.getElementById(
+      "courseModalCode"
+    );
+
+
+  codeElement.innerText =
     course.code;
+
+
+  codeElement.className =
+    `font-mono text-xs px-2 py-1 rounded ${colors.badge}`;
 
 
   document.getElementById(
@@ -1941,7 +2339,7 @@ function openCourseModal(code) {
     "courseModalBody"
   ).innerHTML = `
 
-    <div class="bg-slate-50 dark:bg-slate-800 rounded-xl p-4">
+    <div class="${colors.card} border-l-4 ${colors.border} rounded-xl p-4">
 
       <p class="text-[10px] uppercase font-bold text-slate-400">
         Professor
@@ -2043,7 +2441,9 @@ function openModal(id) {
 function closeCourseModal() {
 
   const modal =
-    document.getElementById("courseModal");
+    document.getElementById(
+      "courseModal"
+    );
 
 
   modal.classList.remove(
@@ -2065,11 +2465,15 @@ function closeCourseModal() {
 function renderAnnouncements() {
 
   const grid =
-    document.getElementById("cardGrid");
+    document.getElementById(
+      "cardGrid"
+    );
 
 
   const empty =
-    document.getElementById("emptyState");
+    document.getElementById(
+      "emptyState"
+    );
 
 
   const filtered =
@@ -2097,7 +2501,9 @@ function renderAnnouncements() {
       })
       .sort(
         (a, b) =>
-          b.Date.localeCompare(a.Date)
+          b.Date.localeCompare(
+            a.Date
+          )
       );
 
 
@@ -2126,16 +2532,22 @@ function renderAnnouncements() {
       )
       .join("");
 
+
+  /*
+     Keep the Command Center counter
+     synchronized every time cards render.
+  */
+
+  updateUnreadCount();
+
 }
 
 
+/* ============================================================
+   ANNOUNCEMENT CARD
+============================================================ */
+
 function announcementCard(item) {
-
-  const isRead =
-    localStorage.getItem(
-      `read-${item.Code}`
-    ) === "true";
-
 
   const isNew =
     isNewAnnouncement(item.Date);
@@ -2158,6 +2570,15 @@ function announcementCard(item) {
   };
 
 
+  /*
+     Announcement header:
+     NEW → Classification → Code → Date
+
+     Everything is kept in one row on larger screens.
+     On very small screens, it may scroll horizontally
+     rather than becoming visually misaligned.
+  */
+
   return `
 
     <article
@@ -2166,47 +2587,44 @@ function announcementCard(item) {
       p-5 shadow-sm hover:shadow-md transition"
     >
 
-      <div class="flex items-center justify-between gap-2 mb-3">
 
-        <div class="flex items-center gap-2">
+      <!-- ANNOUNCEMENT HEADER -->
 
-          ${
-            isNew
-              ? `
-                <span class="text-[9px] bg-rose-100 text-rose-600 px-1.5 py-0.5 rounded font-bold">
-                  NEW
-                </span>
-              `
-              : ""
-          }
+      <div class="flex items-center gap-2 mb-4 overflow-x-auto hide-scrollbar whitespace-nowrap">
 
-        </div>
+        ${
+          isNew
+            ? `
+              <span class="shrink-0 text-[9px] bg-rose-100 dark:bg-rose-950 text-rose-600 dark:text-rose-300 px-1.5 py-0.5 rounded font-bold">
+                NEW
+              </span>
+            `
+            : ""
+        }
 
-
-        <span class="text-[10px] text-slate-400">
-          ${formatDate(item.Date)}
-        </span>
-
-      </div>
-
-
-      <div class="flex gap-2 mb-3">
 
         <span
-          class="text-[10px] uppercase font-semibold px-2.5 py-1 rounded-full border ${tagColors[item.Category]}"
+          class="shrink-0 text-[9px] uppercase font-semibold px-2.5 py-1 rounded-full border ${tagColors[item.Category]}"
         >
           ${item.Category}
         </span>
 
 
         <span
-          class="text-[10px] font-mono text-slate-400 bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded"
+          class="shrink-0 text-[10px] font-mono text-slate-400 bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded"
         >
           ${item.Code}
         </span>
 
+
+        <span class="shrink-0 text-[10px] text-slate-400 ml-auto">
+          ${formatDate(item.Date)}
+        </span>
+
       </div>
 
+
+      <!-- TITLE -->
 
       <h3
         onclick="openAnnouncement('${item.Code}')"
@@ -2216,6 +2634,8 @@ function announcementCard(item) {
       </h3>
 
 
+      <!-- BODY -->
+
       <p
         class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed line-clamp-4 mt-2 whitespace-pre-line"
       >
@@ -2223,16 +2643,18 @@ function announcementCard(item) {
       </p>
 
 
-      <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
+      <!-- FOOTER -->
 
-        <span class="text-[10px] text-slate-400 italic">
+      <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between gap-3">
+
+        <span class="text-[10px] text-slate-400 italic truncate">
           Via: ${item.Source}
         </span>
 
 
         <button
           onclick="openAnnouncement('${item.Code}')"
-          class="text-xs font-semibold text-dlsu"
+          class="text-xs font-semibold text-dlsu shrink-0"
         >
           Read Details →
         </button>
@@ -2299,6 +2721,10 @@ function openAnnouncement(code) {
 
   if (!item) return;
 
+
+  /*
+     Mark announcement as read.
+  */
 
   localStorage.setItem(
     `read-${item.Code}`,
@@ -2426,52 +2852,13 @@ function closeAnnouncementModal() {
 
 
 /* ============================================================
-   UNREAD COUNT
-============================================================ */
-
-function updateUnreadCount() {
-
-  const unread =
-    announcements.filter(
-      item =>
-        localStorage.getItem(
-          `read-${item.Code}`
-        ) !== "true"
-    ).length;
-
-
-  const badge =
-    document.getElementById(
-      "unreadBadge"
-    );
-
-
-  if (unread > 0) {
-
-    badge.innerText =
-      `${unread} NEW`;
-
-    badge.classList.remove(
-      "hidden"
-    );
-
-  } else {
-
-    badge.classList.add(
-      "hidden"
-    );
-
-  }
-
-}
-
-
-/* ============================================================
    SEARCH
 ============================================================ */
 
 document
-  .getElementById("searchInput")
+  .getElementById(
+    "searchInput"
+  )
   .addEventListener(
     "input",
     event => {
@@ -2502,6 +2889,8 @@ document.addEventListener(
 
       closeCourseModal();
 
+      closeScheduleImage();
+
     }
 
   }
@@ -2524,8 +2913,10 @@ updateUnreadCount();
 
 
 /*
-  Refresh the dashboard date and announcement
-  NEW status periodically.
+   Refresh every minute so:
+   - Current date stays correct
+   - NEW indicators update automatically
+   - NEW counter stays accurate
 */
 
 setInterval(() => {
@@ -2533,6 +2924,8 @@ setInterval(() => {
   renderDashboard();
 
   renderAnnouncements();
+
+  updateUnreadCount();
 
 }, 60000);
 
