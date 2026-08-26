@@ -113,25 +113,31 @@
 
       <nav class="hidden lg:flex items-center gap-1 text-xs font-semibold mr-2">
 
-        <a href="#dashboard"
-           class="px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:text-dlsu hover:bg-slate-100 dark:hover:bg-slate-800">
+        <a
+          href="#dashboard"
+          class="px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:text-dlsu hover:bg-slate-100 dark:hover:bg-slate-800"
+        >
           Dashboard
         </a>
 
-        <a href="#scheduleSection"
-           class="px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:text-dlsu hover:bg-slate-100 dark:hover:bg-slate-800">
+        <a
+          href="#scheduleSection"
+          class="px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:text-dlsu hover:bg-slate-100 dark:hover:bg-slate-800"
+        >
           Schedule
         </a>
 
-        <a href="#announcementsSection"
-           class="px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:text-dlsu hover:bg-slate-100 dark:hover:bg-slate-800">
+        <a
+          href="#announcementsSection"
+          class="px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:text-dlsu hover:bg-slate-100 dark:hover:bg-slate-800"
+        >
           Announcements
         </a>
 
       </nav>
 
 
-      <!-- Theme Toggle -->
+      <!-- THEME TOGGLE -->
 
       <button
         onclick="toggleDarkMode()"
@@ -145,11 +151,13 @@
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
+          aria-hidden="true"
         >
           <circle cx="12" cy="12" r="4"></circle>
 
           <path
             stroke-linecap="round"
+            stroke-width="1.8"
             d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"
           />
         </svg>
@@ -160,16 +168,20 @@
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
+          aria-hidden="true"
         >
           <path
             stroke-linecap="round"
             stroke-linejoin="round"
+            stroke-width="1.8"
             d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"
           />
         </svg>
 
       </button>
 
+
+      <!-- TERM BADGE -->
 
       <span class="hidden sm:inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300">
 
@@ -245,22 +257,22 @@
         Command Center
       </h2>
 
-      <p id="currentDate"
-         class="text-xs text-slate-500 dark:text-slate-400 mt-1">
-      </p>
+      <p
+        id="currentDate"
+        class="text-xs text-slate-500 dark:text-slate-400 mt-1"
+      ></p>
 
     </div>
 
     <span
       id="unreadBadge"
       class="hidden bg-rose-100 dark:bg-rose-950 text-rose-700 dark:text-rose-300 text-xs font-semibold px-3 py-1 rounded-full"
-    >
-    </span>
+    ></span>
 
   </div>
 
 
-  <!-- Dashboard Cards -->
+  <!-- DASHBOARD CARDS -->
 
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
 
@@ -280,19 +292,32 @@
           <h3
             id="todayTitle"
             class="text-lg font-bold text-slate-900 dark:text-white mt-1"
-          >
-          </h3>
+          ></h3>
 
         </div>
 
         <div class="w-10 h-10 rounded-xl bg-dlsu-light dark:bg-emerald-950 text-dlsu flex items-center justify-center">
-          📅
+
+          <svg
+            class="w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.8"
+              d="M6.75 3v2.25M17.25 3v2.25M3.75 9.75h16.5M5.25 5.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25A2.25 2.25 0 0 1 18.75 21H5.25A2.25 2.25 0 0 1 3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25Z"
+            />
+          </svg>
+
         </div>
 
       </div>
 
-      <div id="todayClasses" class="mt-5 space-y-2">
-      </div>
+      <div id="todayClasses" class="mt-5 space-y-2"></div>
 
     </div>
 
@@ -316,13 +341,34 @@
         </div>
 
         <div class="w-10 h-10 rounded-xl bg-sky-50 dark:bg-sky-950 text-sky-600 flex items-center justify-center">
-          🎓
+
+          <svg
+            class="w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.8"
+              d="M12 14.25a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9ZM5.25 21a6.75 6.75 0 0 1 13.5 0"
+            />
+
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.8"
+              d="M16.5 3.75h1.125A2.625 2.625 0 0 1 20.25 6.375v1.5"
+            />
+          </svg>
+
         </div>
 
       </div>
 
-      <div id="nextClass" class="mt-5">
-      </div>
+      <div id="nextClass" class="mt-5"></div>
 
     </div>
 
@@ -340,13 +386,30 @@
   <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
 
 
+    <!-- SCHEDULE -->
+
     <a
       href="#scheduleSection"
       class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-4 hover:border-dlsu transition"
     >
 
-      <div class="text-xl mb-2">
-        📅
+      <div class="text-dlsu mb-2">
+
+        <svg
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1.8"
+            d="M6.75 3v2.25M17.25 3v2.25M3.75 9.75h16.5M5.25 5.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25A2.25 2.25 0 0 1 18.75 21H5.25A2.25 2.25 0 0 1 3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25Z"
+          />
+        </svg>
+
       </div>
 
       <p class="font-bold text-sm text-slate-900 dark:text-white">
@@ -360,13 +423,37 @@
     </a>
 
 
+    <!-- ANNOUNCEMENTS -->
+
     <a
       href="#announcementsSection"
       class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-4 hover:border-dlsu transition"
     >
 
-      <div class="text-xl mb-2">
-        🔔
+      <div class="text-dlsu mb-2">
+
+        <svg
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1.8"
+            d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"
+          />
+
+          <path
+            stroke-linecap="round"
+            stroke-width="1.8"
+            d="M10 21h4"
+          />
+
+        </svg>
+
       </div>
 
       <p class="font-bold text-sm text-slate-900 dark:text-white">
@@ -380,13 +467,38 @@
     </a>
 
 
+    <!-- COURSES -->
+
     <a
       href="#coursesSection"
       class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-4 hover:border-dlsu transition"
     >
 
-      <div class="text-xl mb-2">
-        📚
+      <div class="text-dlsu mb-2">
+
+        <svg
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1.8"
+            d="M4.5 5.25A2.25 2.25 0 0 1 6.75 3H20v15H6.75A2.25 2.25 0 0 0 4.5 20.25V5.25Z"
+          />
+
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1.8"
+            d="M4.5 5.25v15M6.75 21H20"
+          />
+
+        </svg>
+
       </div>
 
       <p class="font-bold text-sm text-slate-900 dark:text-white">
@@ -460,8 +572,7 @@
       <div
         id="scheduleGrid"
         class="grid grid-cols-6 gap-3"
-      >
-      </div>
+      ></div>
 
     </div>
 
@@ -473,8 +584,7 @@
   <div
     id="scheduleListView"
     class="hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
-  >
-  </div>
+  ></div>
 
 </section>
 
@@ -500,8 +610,7 @@
   <div
     id="courseGrid"
     class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
-  >
-  </div>
+  ></div>
 
 </section>
 
@@ -544,11 +653,13 @@
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
+        aria-hidden="true"
       >
 
         <path
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="1.8"
           d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
         />
 
@@ -602,17 +713,41 @@
   <div
     id="cardGrid"
     class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"
-  >
-  </div>
+  ></div>
 
+
+  <!-- EMPTY STATE -->
 
   <div
     id="emptyState"
     class="hidden text-center py-12"
   >
 
-    <div class="text-3xl mb-3">
-      🔎
+    <div class="flex justify-center mb-3 text-slate-300 dark:text-slate-600">
+
+      <svg
+        class="w-9 h-9"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+      >
+
+        <circle
+          cx="11"
+          cy="11"
+          r="6.5"
+          stroke-width="1.8"
+        />
+
+        <path
+          stroke-linecap="round"
+          stroke-width="1.8"
+          d="m16 16 4.25 4.25"
+        />
+
+      </svg>
+
     </div>
 
     <p class="text-slate-400 text-sm">
@@ -681,36 +816,49 @@
           <span
             id="modalCategory"
             class="text-[10px] uppercase font-semibold px-2.5 py-1 rounded-full border"
-          >
-          </span>
+          ></span>
 
           <span
             id="modalCode"
             class="text-[10px] font-mono text-slate-400 bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded"
-          >
-          </span>
+          ></span>
 
         </div>
 
         <h3
           id="modalTitle"
           class="text-xl font-bold text-slate-900 dark:text-white"
-        >
-        </h3>
+        ></h3>
 
         <p
           id="modalDate"
           class="text-xs text-slate-400 mt-2"
-        >
-        </p>
+        ></p>
 
       </div>
 
       <button
         onclick="closeAnnouncementModal()"
-        class="text-slate-400 hover:text-slate-700 dark:hover:text-white text-xl"
+        aria-label="Close announcement"
+        class="text-slate-400 hover:text-slate-700 dark:hover:text-white"
       >
-        ✕
+
+        <svg
+          class="w-5 h-5"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+
+          <path
+            stroke-linecap="round"
+            stroke-width="1.8"
+            d="M6 6l12 12M18 6 6 18"
+          />
+
+        </svg>
+
       </button>
 
     </div>
@@ -735,8 +883,7 @@
       <div
         id="modalBody"
         class="text-sm leading-relaxed whitespace-pre-line text-slate-700 dark:text-slate-300"
-      >
-      </div>
+      ></div>
 
     </div>
 
@@ -746,8 +893,7 @@
       <span
         id="modalSource"
         class="text-slate-400 italic"
-      >
-      </span>
+      ></span>
 
       <button
         onclick="closeAnnouncementModal()"
@@ -787,22 +933,37 @@
           <span
             id="courseModalCode"
             class="font-mono text-xs px-2 py-1 rounded bg-dlsu-light text-dlsu"
-          >
-          </span>
+          ></span>
 
           <h3
             id="courseModalTitle"
             class="text-xl font-bold text-slate-900 dark:text-white mt-3"
-          >
-          </h3>
+          ></h3>
 
         </div>
 
         <button
           onclick="closeCourseModal()"
-          class="text-slate-400 text-xl"
+          aria-label="Close course"
+          class="text-slate-400 hover:text-slate-700 dark:hover:text-white"
         >
-          ✕
+
+          <svg
+            class="w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+
+            <path
+              stroke-linecap="round"
+              stroke-width="1.8"
+              d="M6 6l12 12M18 6 6 18"
+            />
+
+          </svg>
+
         </button>
 
       </div>
@@ -810,8 +971,7 @@
       <div
         id="courseModalBody"
         class="mt-6 space-y-4 text-sm"
-      >
-      </div>
+      ></div>
 
     </div>
 
@@ -1183,19 +1343,6 @@ function formatDate(dateString) {
    NEW ANNOUNCEMENT CHECK
 ============================================================ */
 
-/*
-  An announcement is NEW only if it was created
-  1 or 2 calendar days ago.
-
-  Example:
-  Today = August 27
-
-  August 26 = NEW
-  August 25 = NEW
-  August 24 = NOT NEW
-  August 27 = NOT NEW
-*/
-
 function isNewAnnouncement(dateString) {
 
   const today = new Date();
@@ -1278,9 +1425,37 @@ function renderDashboard() {
 
       <div class="bg-slate-50 dark:bg-slate-800 rounded-xl p-4 text-center">
 
-        <p class="text-sm font-semibold text-slate-600 dark:text-slate-300">
-          🎉 No classes today
-        </p>
+        <div class="flex items-center justify-center gap-2">
+
+          <svg
+            class="w-4 h-4 text-dlsu"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.8"
+              d="M6.75 3v2.25M17.25 3v2.25M3.75 9.75h16.5M5.25 5.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25A2.25 2.25 0 0 1 18.75 21H5.25A2.25 2.25 0 0 1 3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25Z"
+            />
+
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.8"
+              d="m8.25 15 2.25 2.25 5.25-5.25"
+            />
+
+          </svg>
+
+          <p class="text-sm font-semibold text-slate-600 dark:text-slate-300">
+            No classes today
+          </p>
+
+        </div>
 
         <p class="text-xs text-slate-400 mt-1">
           Enjoy your free time!
@@ -1434,8 +1609,34 @@ function renderNextClass() {
           ${next.code}
         </span>
 
-        <span class="text-xs font-semibold text-dlsu">
-          📍 ${next.room}
+        <span class="text-xs font-semibold text-dlsu flex items-center gap-1">
+
+          <svg
+            class="w-3.5 h-3.5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.8"
+              d="M12 21s6-5.25 6-11a6 6 0 1 0-12 0c0 5.75 6 11 6 11Z"
+            />
+
+            <circle
+              cx="12"
+              cy="10"
+              r="2"
+              stroke-width="1.8"
+            />
+
+          </svg>
+
+          ${next.room}
+
         </span>
 
       </div>
@@ -1444,8 +1645,34 @@ function renderNextClass() {
       ${
         course
           ? `
-            <p class="text-xs text-slate-400 mt-3">
-              👨‍🏫 ${course.instructor}
+            <p class="text-xs text-slate-400 mt-3 flex items-center gap-1">
+
+              <svg
+                class="w-3.5 h-3.5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.8"
+                  d="M15.75 7.5a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z"
+                />
+
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.8"
+                  d="M4.5 20.25a7.5 7.5 0 0 1 15 0"
+                />
+
+              </svg>
+
+              ${course.instructor}
+
             </p>
           `
           : ""
@@ -1600,8 +1827,34 @@ function scheduleCard(item) {
       ${
         course
           ? `
-            <p class="text-[9px] text-slate-400 mt-2">
-              👨‍🏫 ${course.instructor}
+            <p class="text-[9px] text-slate-400 mt-2 flex items-center gap-1">
+
+              <svg
+                class="w-3 h-3"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.8"
+                  d="M15.75 7.5a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z"
+                />
+
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.8"
+                  d="M4.5 20.25a7.5 7.5 0 0 1 15 0"
+                />
+
+              </svg>
+
+              ${course.instructor}
+
             </p>
           `
           : ""
@@ -1646,18 +1899,95 @@ function renderScheduleList() {
         </h3>
 
 
-        <p class="text-xs text-slate-500 mt-3">
-          ${course.schedule}
+        <p class="text-xs text-slate-500 mt-3 flex items-start gap-2">
+
+          <svg
+            class="w-3.5 h-3.5 shrink-0 mt-0.5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+
+            <circle
+              cx="12"
+              cy="12"
+              r="8.5"
+              stroke-width="1.8"
+            />
+
+            <path
+              stroke-linecap="round"
+              stroke-width="1.8"
+              d="M12 7.5v5l3 1.75"
+            />
+
+          </svg>
+
+          <span>${course.schedule}</span>
+
         </p>
 
 
-        <p class="text-xs text-slate-500 mt-1">
-          📍 ${course.room}
+        <p class="text-xs text-slate-500 mt-1 flex items-center gap-2">
+
+          <svg
+            class="w-3.5 h-3.5 shrink-0"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.8"
+              d="M12 21s6-5.25 6-11a6 6 0 1 0-12 0c0 5.75 6 11 6 11Z"
+            />
+
+            <circle
+              cx="12"
+              cy="10"
+              r="2"
+              stroke-width="1.8"
+            />
+
+          </svg>
+
+          ${course.room}
+
         </p>
 
 
-        <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">
-          👨‍🏫 ${course.instructor}
+        <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 flex items-center gap-2">
+
+          <svg
+            class="w-3.5 h-3.5 shrink-0"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.8"
+              d="M15.75 7.5a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z"
+            />
+
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.8"
+              d="M4.5 20.25a7.5 7.5 0 0 1 15 0"
+            />
+
+          </svg>
+
+          ${course.instructor}
+
         </p>
 
       </div>
@@ -1754,23 +2084,128 @@ function renderCourses() {
 
         <div class="mt-4 space-y-2 text-xs text-slate-500">
 
-          <p>
-            🕐 ${course.schedule}
+
+          <!-- SCHEDULE -->
+
+          <p class="flex items-start gap-2">
+
+            <svg
+              class="w-4 h-4 shrink-0 mt-0.5 text-slate-400"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+
+              <circle
+                cx="12"
+                cy="12"
+                r="8.5"
+                stroke-width="1.8"
+              />
+
+              <path
+                stroke-linecap="round"
+                stroke-width="1.8"
+                d="M12 7.5v5l3 1.75"
+              />
+
+            </svg>
+
+            <span>${course.schedule}</span>
+
           </p>
 
-          <p>
-            📍 ${course.room}
+
+          <!-- ROOM -->
+
+          <p class="flex items-start gap-2">
+
+            <svg
+              class="w-4 h-4 shrink-0 mt-0.5 text-slate-400"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.8"
+                d="M12 21s6-5.25 6-11a6 6 0 1 0-12 0c0 5.75 6 11 6 11Z"
+              />
+
+              <circle
+                cx="12"
+                cy="10"
+                r="2"
+                stroke-width="1.8"
+              />
+
+            </svg>
+
+            <span>${course.room}</span>
+
           </p>
 
-          <p>
-            👨‍🏫 ${course.instructor}
+
+          <!-- PROFESSOR -->
+
+          <p class="flex items-start gap-2">
+
+            <svg
+              class="w-4 h-4 shrink-0 mt-0.5 text-slate-400"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.8"
+                d="M15.75 7.5a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z"
+              />
+
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.8"
+                d="M4.5 20.25a7.5 7.5 0 0 1 15 0"
+              />
+
+            </svg>
+
+            <span>${course.instructor}</span>
+
           </p>
 
         </div>
 
 
-        <div class="mt-4 text-xs font-semibold text-dlsu">
-          View Course →
+        <div class="mt-4 text-xs font-semibold text-dlsu flex items-center gap-1">
+
+          View Course
+
+          <svg
+            class="w-3.5 h-3.5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.8"
+              d="M5 12h14M13 6l6 6-6 6"
+            />
+
+          </svg>
+
         </div>
 
       </article>
@@ -1811,6 +2246,8 @@ function openCourseModal(code) {
     "courseModalBody"
   ).innerHTML = `
 
+    <!-- PROFESSOR -->
+
     <div class="bg-slate-50 dark:bg-slate-800 rounded-xl p-4">
 
       <p class="text-[10px] uppercase font-bold text-slate-400">
@@ -1823,6 +2260,8 @@ function openCourseModal(code) {
 
     </div>
 
+
+    <!-- SCHEDULE -->
 
     <div class="bg-slate-50 dark:bg-slate-800 rounded-xl p-4">
 
@@ -1837,18 +2276,48 @@ function openCourseModal(code) {
     </div>
 
 
+    <!-- ROOM -->
+
     <div class="bg-slate-50 dark:bg-slate-800 rounded-xl p-4">
 
       <p class="text-[10px] uppercase font-bold text-slate-400">
         Room
       </p>
 
-      <p class="font-semibold mt-1">
-        📍 ${course.room}
+      <p class="font-semibold mt-1 flex items-center gap-2">
+
+        <svg
+          class="w-4 h-4 text-dlsu"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1.8"
+            d="M12 21s6-5.25 6-11a6 6 0 1 0-12 0c0 5.75 6 11 6 11Z"
+          />
+
+          <circle
+            cx="12"
+            cy="10"
+            r="2"
+            stroke-width="1.8"
+          />
+
+        </svg>
+
+        ${course.room}
+
       </p>
 
     </div>
 
+
+    <!-- COURSE TYPE -->
 
     <div class="bg-slate-50 dark:bg-slate-800 rounded-xl p-4">
 
@@ -2080,9 +2549,28 @@ function announcementCard(item) {
 
         <button
           onclick="openAnnouncement('${item.Code}')"
-          class="text-xs font-semibold text-dlsu"
+          class="text-xs font-semibold text-dlsu flex items-center gap-1"
         >
-          Read Details →
+
+          Read Details
+
+          <svg
+            class="w-3.5 h-3.5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.8"
+              d="M5 12h14M13 6l6 6-6 6"
+            />
+
+          </svg>
+
         </button>
 
       </div>
