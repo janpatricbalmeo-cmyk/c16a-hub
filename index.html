@@ -464,8 +464,6 @@
       Links
     </a>
 
-    <!-- MAP TAB REMOVED FOR MOBILE -->
-
   </div>
 
 </div>
@@ -499,6 +497,14 @@
     >
       C16A Central Hub
     </h2>
+
+    <!-- Dynamic introductory greeting -->
+
+    <p
+      id="welcomeGreeting"
+      class="mt-2 text-white text-sm font-semibold leading-relaxed"
+      aria-live="polite"
+    ></p>
 
     <p
       class="mt-2 text-slate-200 text-sm leading-relaxed"
@@ -1756,48 +1762,6 @@
 </section>
 
 <!-- ========================================================= -->
-<!-- CAMPUS MAP SECTION -->
-<!-- ========================================================= -->
-
-<section
-  id="mapSection"
-  class="scroll-mt-24 border-t border-slate-200 dark:border-slate-800 pt-8"
->
-
-  <div class="mb-5">
-
-    <h2
-      class="text-xl font-bold text-slate-900 dark:text-white"
-    >
-      DLSU Campus Map
-    </h2>
-
-    <p
-      class="text-xs text-slate-500 dark:text-slate-400 mt-1"
-    >
-      Full campus map reference.
-    </p>
-
-  </div>
-
-  <button
-    onclick="openCampusMap()"
-    class="w-full bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-3 sm:p-5 shadow-sm cursor-zoom-in"
-  >
-
-    <img
-      src="DLSU-Map.jpg"
-      alt="DLSU Campus Map"
-      class="w-full max-h-[650px] object-contain mx-auto rounded-xl"
-    >
-
-  </button>
-
-</section>
-
-</main>
-
-<!-- ========================================================= -->
 <!-- FOOTER -->
 <!-- ========================================================= -->
 
@@ -2507,6 +2471,73 @@ function getPhilippineDay() {
   ];
 
   return days[now.getDay()];
+
+}
+
+/* ============================================================
+   DYNAMIC WELCOME GREETING
+============================================================ */
+
+function getGreetingPeriod() {
+
+  const now =
+    getPhilippineNow();
+
+  const hour =
+    now.getHours();
+
+  if (hour >= 5 && hour < 12) {
+    return "morning";
+  }
+
+  if (hour >= 12 && hour < 18) {
+    return "afternoon";
+  }
+
+  return "evening";
+
+}
+
+function updateWelcomeGreeting() {
+
+  const greeting =
+    document.getElementById(
+      "welcomeGreeting"
+    );
+
+  if (!greeting) return;
+
+  let name = "Blockmate";
+
+  try {
+
+    const savedInfo =
+      JSON.parse(
+        localStorage.getItem(
+          INFO_KEY
+        ) || "{}"
+      );
+
+    const savedName =
+      typeof savedInfo.fullName === "string"
+        ? savedInfo.fullName.trim()
+        : "";
+
+    if (savedName) {
+      name = savedName;
+    }
+
+  } catch (error) {
+
+    name = "Blockmate";
+
+  }
+
+  const period =
+    getGreetingPeriod();
+
+  greeting.innerText =
+    `Good ${period}, ${name}! Welcome to the C16A Central Hub!`;
 
 }
 
@@ -4539,6 +4570,8 @@ function loadPersonalInfo() {
   ).value =
     info.idNumber || "";
 
+  updateWelcomeGreeting();
+
 }
 
 function savePersonalInfo() {
@@ -4575,6 +4608,8 @@ function savePersonalInfo() {
     INFO_KEY,
     JSON.stringify(info)
   );
+
+  updateWelcomeGreeting();
 
   const status =
     document.getElementById(
@@ -4921,6 +4956,8 @@ renderNotes();
 
 updateDigitalClock();
 
+updateWelcomeGreeting();
+
 renderDashboard();
 
 renderSchedule();
@@ -4950,6 +4987,8 @@ setInterval(
     renderAnnouncements();
 
     updateUnreadCount();
+
+    updateWelcomeGreeting();
 
   },
   1000
