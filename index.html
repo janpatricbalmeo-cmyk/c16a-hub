@@ -23,27 +23,22 @@
 
       theme: {
         extend: {
-
           fontFamily: {
             sans: ['Inter', 'sans-serif']
           },
 
           colors: {
-
             dlsu: {
               DEFAULT: '#00573D',
               dark: '#00402D',
               light: '#E6F0EB',
               accent: '#10B981'
             }
-
           }
-
         }
       }
     }
   </script>
-
 
   <style>
 
@@ -51,39 +46,32 @@
       scroll-behavior: smooth;
     }
 
-
     .glass-card {
       background: rgba(255,255,255,.9);
       backdrop-filter: blur(10px);
     }
 
-
     .dark .glass-card {
       background: rgba(15,23,42,.9);
     }
 
-
     .hide-scrollbar::-webkit-scrollbar {
       display: none;
     }
-
 
     .hide-scrollbar {
       -ms-overflow-style: none;
       scrollbar-width: none;
     }
 
-
     .modal-active {
       opacity: 1 !important;
       pointer-events: auto !important;
     }
 
-
     .modal-active > div {
       transform: scale(1) !important;
     }
-
 
     /* Subject color helpers */
 
@@ -122,7 +110,6 @@
       background: #f1f5f9;
     }
 
-
     .dark .subject-rose {
       background: rgba(136,19,55,.30);
     }
@@ -151,13 +138,18 @@
       background: rgba(51,65,85,.65);
     }
 
-
     /* Schedule image */
 
     #scheduleImage {
       max-height: 80vh;
     }
 
+    /* Campus map */
+
+    #campusMapImage {
+      max-height: 80vh;
+      object-fit: contain;
+    }
 
     /* Announcement header */
 
@@ -169,12 +161,10 @@
       min-width: 0;
     }
 
-
     .announcement-date {
       margin-left: auto;
       white-space: nowrap;
     }
-
 
     @media (max-width: 480px) {
 
@@ -192,15 +182,65 @@
 
     }
 
+    /* =========================================================
+       STUDENT DASHBOARD / UTILITIES / MOBILE ENHANCEMENTS
+    ========================================================= */
+
+    .utility-card {
+      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    }
+
+    .utility-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(15,23,42,.07);
+    }
+
+    .note-item {
+      word-break: break-word;
+    }
+
+    .favorite-btn.is-favorite {
+      background: #ecfdf5;
+      color: #047857;
+      border-color: #a7f3d0;
+    }
+
+    .dark .favorite-btn.is-favorite {
+      background: rgba(6,78,59,.3);
+      color: #6ee7b7;
+      border-color: rgba(16,185,129,.35);
+    }
+
+    @media (max-width: 640px) {
+
+      .mobile-stack {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .announcement-header {
+        overflow-x: auto;
+        padding-bottom: 2px;
+        scrollbar-width: none;
+      }
+
+      .announcement-header::-webkit-scrollbar {
+        display: none;
+      }
+
+      .announcement-date {
+        margin-left: 0;
+      }
+
+    }
+
   </style>
 
 </head>
 
-
 <body
   class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-200 font-sans antialiased min-h-screen flex flex-col transition-colors"
 >
-
 
 <!-- ========================================================= -->
 <!-- HEADER -->
@@ -254,7 +294,6 @@
 
     </div>
 
-
     <div class="flex items-center gap-2">
 
       <nav
@@ -282,8 +321,14 @@
           Announcements
         </a>
 
-      </nav>
+        <a
+          href="#mapSection"
+          class="px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:text-dlsu hover:bg-slate-100 dark:hover:bg-slate-800"
+        >
+          Map
+        </a>
 
+      </nav>
 
       <!-- Theme Toggle -->
 
@@ -324,7 +369,6 @@
 
         </svg>
 
-
         <svg
           id="moonIcon"
           class="w-4 h-4 block dark:hidden"
@@ -347,7 +391,6 @@
 
       </button>
 
-
       <span
         class="hidden sm:inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300"
       >
@@ -366,6 +409,61 @@
 
 </header>
 
+<!-- MOBILE QUICK NAV -->
+
+<div
+  class="lg:hidden sticky top-20 z-30 bg-white/95 dark:bg-slate-900/95 backdrop-blur border-b border-slate-200 dark:border-slate-800"
+>
+
+  <div
+    class="max-w-7xl mx-auto px-4 py-2 flex gap-2 overflow-x-auto hide-scrollbar"
+  >
+
+    <a
+      href="#dashboard"
+      class="whitespace-nowrap px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-[10px] font-semibold"
+    >
+      Dashboard
+    </a>
+
+    <a
+      href="#myDashboard"
+      class="whitespace-nowrap px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-[10px] font-semibold"
+    >
+      My Dashboard
+    </a>
+
+    <a
+      href="#scheduleSection"
+      class="whitespace-nowrap px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-[10px] font-semibold"
+    >
+      Schedule
+    </a>
+
+    <a
+      href="#announcementsSection"
+      class="whitespace-nowrap px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-[10px] font-semibold"
+    >
+      Announcements
+    </a>
+
+    <a
+      href="#linksSection"
+      class="whitespace-nowrap px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-[10px] font-semibold"
+    >
+      Links
+    </a>
+
+    <a
+      href="#mapSection"
+      class="whitespace-nowrap px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-[10px] font-semibold"
+    >
+      Map
+    </a>
+
+  </div>
+
+</div>
 
 <!-- ========================================================= -->
 <!-- MAIN -->
@@ -374,7 +472,6 @@
 <main
   class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow w-full space-y-8"
 >
-
 
 <!-- ========================================================= -->
 <!-- HERO -->
@@ -407,7 +504,6 @@
 
   </div>
 
-
   <div
     class="bg-white p-3 rounded-xl shadow-lg shrink-0"
   >
@@ -422,9 +518,8 @@
 
 </section>
 
-
 <!-- ========================================================= -->
-<!-- DASHBOARD -->
+<!-- DASHBOARD / COMMAND CENTER -->
 <!-- ========================================================= -->
 
 <section
@@ -446,7 +541,6 @@
           Command Center
         </h2>
 
-
         <span
           id="unreadBadge"
           class="hidden bg-rose-100 dark:bg-rose-950 text-rose-700 dark:text-rose-300 text-xs font-semibold px-3 py-1 rounded-full"
@@ -454,14 +548,12 @@
 
       </div>
 
-
       <p
         id="currentDate"
         class="text-xs text-slate-500 dark:text-slate-400 mt-1"
       ></p>
 
     </div>
-
 
     <!-- PHILIPPINE DIGITAL CLOCK -->
 
@@ -493,13 +585,11 @@
 
   </div>
 
-
   <!-- Dashboard Cards -->
 
   <div
     class="grid grid-cols-1 lg:grid-cols-2 gap-5"
   >
-
 
     <!-- TODAY -->
 
@@ -525,7 +615,6 @@
           ></h3>
 
         </div>
-
 
         <div
           class="w-10 h-10 rounded-xl bg-dlsu-light dark:bg-emerald-950 text-dlsu flex items-center justify-center"
@@ -558,14 +647,12 @@
 
       </div>
 
-
       <div
         id="todayClasses"
         class="mt-5 space-y-2"
       ></div>
 
     </div>
-
 
     <!-- NEXT CLASS -->
 
@@ -592,7 +679,6 @@
           </h3>
 
         </div>
-
 
         <div
           class="w-10 h-10 rounded-xl bg-sky-50 dark:bg-sky-950 text-sky-600 flex items-center justify-center"
@@ -629,7 +715,6 @@
 
       </div>
 
-
       <div
         id="nextClass"
         class="mt-5"
@@ -639,8 +724,205 @@
 
   </div>
 
+  <!-- ========================================================= -->
+  <!-- DLSU MAP IN COMMAND CENTER -->
+  <!-- ========================================================= -->
+
+  <div
+    class="mt-5 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-5 shadow-sm"
+  >
+
+    <div
+      class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4"
+    >
+
+      <div>
+
+        <h3
+          class="font-bold text-slate-900 dark:text-white"
+        >
+          DLSU Campus Map
+        </h3>
+
+        <p
+          class="text-[10px] text-slate-400 mt-1"
+        >
+          Quick reference for campus buildings and locations.
+        </p>
+
+      </div>
+
+      <a
+        href="#mapSection"
+        class="text-xs font-semibold text-dlsu hover:text-dlsu-dark whitespace-nowrap"
+      >
+        View Full Map →
+      </a>
+
+    </div>
+
+    <button
+      onclick="openCampusMap()"
+      class="w-full rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 bg-slate-100 dark:bg-slate-800 cursor-zoom-in"
+      aria-label="Open DLSU Campus Map"
+    >
+
+      <img
+        src="DLSU-Map.jpg"
+        alt="DLSU Campus Map"
+        class="w-full max-h-[420px] object-contain mx-auto"
+      >
+
+    </button>
+
+  </div>
+
 </section>
 
+<!-- ========================================================= -->
+<!-- PERSONAL STUDENT DASHBOARD -->
+<!-- ========================================================= -->
+
+<section
+  id="myDashboard"
+  class="scroll-mt-24"
+>
+
+  <div
+    class="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-5"
+  >
+
+    <div>
+
+      <h2
+        class="text-xl font-bold text-slate-900 dark:text-white"
+      >
+        My Dashboard
+      </h2>
+
+      <p
+        class="text-xs text-slate-500 dark:text-slate-400 mt-1"
+      >
+        Personalize your C16A hub. Your settings are saved only in this browser.
+      </p>
+
+    </div>
+
+    <button
+      onclick="resetPersonalDashboard()"
+      class="text-xs font-semibold text-slate-400 hover:text-dlsu transition"
+    >
+      Reset My Dashboard
+    </button>
+
+  </div>
+
+  <div
+    class="grid grid-cols-1 lg:grid-cols-3 gap-5"
+  >
+
+    <div
+      class="lg:col-span-2 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-5 shadow-sm"
+    >
+
+      <div
+        class="flex items-center justify-between gap-3 mb-4"
+      >
+
+        <div>
+
+          <h3
+            class="font-bold text-slate-900 dark:text-white"
+          >
+            Favorite Subjects
+          </h3>
+
+          <p
+            class="text-[10px] text-slate-400 mt-1"
+          >
+            Select subjects you want to see first.
+          </p>
+
+        </div>
+
+        <span
+          id="favoriteCount"
+          class="text-[10px] font-semibold text-dlsu bg-dlsu-light dark:bg-emerald-950 px-2.5 py-1 rounded-full"
+        >
+          0 selected
+        </span>
+
+      </div>
+
+      <div
+        id="favoriteSubjects"
+        class="grid grid-cols-1 sm:grid-cols-2 gap-3"
+      ></div>
+
+    </div>
+
+    <div
+      class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-5 shadow-sm"
+    >
+
+      <div
+        class="flex items-center justify-between gap-3 mb-4"
+      >
+
+        <div>
+
+          <h3
+            class="font-bold text-slate-900 dark:text-white"
+          >
+            Personal Reminders
+          </h3>
+
+          <p
+            class="text-[10px] text-slate-400 mt-1"
+          >
+            Keep short reminders for yourself.
+          </p>
+
+        </div>
+
+        <span
+          id="noteCount"
+          class="text-[10px] font-semibold text-slate-500 bg-slate-100 dark:bg-slate-800 px-2.5 py-1 rounded-full"
+        >
+          0
+        </span>
+
+      </div>
+
+      <div class="flex gap-2 mb-3">
+
+        <input
+          id="noteInput"
+          type="text"
+          maxlength="160"
+          placeholder="Add a reminder..."
+          class="flex-1 min-w-0 bg-slate-50 dark:bg-slate-800 text-xs rounded-lg px-3 py-2 border border-slate-200 dark:border-slate-700 focus:outline-none focus:border-dlsu"
+        >
+
+        <button
+          onclick="addNote()"
+          class="px-3 py-2 rounded-lg bg-dlsu hover:bg-dlsu-dark text-white text-xs font-semibold"
+        >
+          Add
+        </button>
+
+      </div>
+
+      <div
+        id="notesList"
+        class="space-y-2 max-h-56 overflow-y-auto"
+      ></div>
+
+    </div>
+
+  </div>
+
+</section>
 
 <!-- ========================================================= -->
 <!-- QUICK ACCESS -->
@@ -651,7 +933,6 @@
   <div
     class="grid grid-cols-2 sm:grid-cols-2 gap-3"
   >
-
 
     <!-- Schedule -->
 
@@ -702,7 +983,6 @@
       </p>
 
     </a>
-
 
     <!-- Announcements -->
 
@@ -759,7 +1039,6 @@
 
 </section>
 
-
 <!-- ========================================================= -->
 <!-- SCHEDULE -->
 <!-- ========================================================= -->
@@ -789,14 +1068,9 @@
 
     </div>
 
-
-    <!-- BUTTONS -->
-
     <div
-      class="flex items-center gap-2"
+      class="flex items-center gap-2 flex-wrap justify-end"
     >
-
-      <!-- Weekly Grid / Course List -->
 
       <div
         class="bg-slate-200/70 dark:bg-slate-800 p-1 rounded-xl flex gap-1 text-xs font-medium"
@@ -819,9 +1093,6 @@
         </button>
 
       </div>
-
-
-      <!-- VIEW SCHEDULE -->
 
       <button
         onclick="openScheduleImage()"
@@ -859,7 +1130,6 @@
 
   </div>
 
-
   <!-- GRID -->
 
   <div
@@ -880,7 +1150,6 @@
 
   </div>
 
-
   <!-- LIST -->
 
   <div
@@ -889,7 +1158,6 @@
   ></div>
 
 </section>
-
 
 <!-- ========================================================= -->
 <!-- ANNOUNCEMENTS -->
@@ -920,7 +1188,6 @@
 
     </div>
 
-
     <div
       class="relative max-w-sm w-full"
     >
@@ -931,7 +1198,6 @@
         placeholder="Search announcements..."
         class="w-full bg-white dark:bg-slate-900 text-xs rounded-xl pl-9 pr-4 py-2.5 border border-slate-200 dark:border-slate-800 focus:outline-none focus:border-dlsu"
       >
-
 
       <svg
         class="w-4 h-4 text-slate-400 absolute left-3 top-3"
@@ -957,7 +1223,6 @@
     </div>
 
   </div>
-
 
   <!-- Category Filters -->
 
@@ -1002,12 +1267,36 @@
 
   </div>
 
+  <div class="flex flex-wrap items-center gap-2 mb-5">
+
+    <button
+      id="announcementViewActive"
+      onclick="setAnnouncementView('active')"
+      class="px-3 py-2 rounded-lg bg-dlsu text-white text-xs font-semibold"
+    >
+      Current Announcements
+    </button>
+
+    <button
+      id="announcementViewArchive"
+      onclick="setAnnouncementView('archive')"
+      class="px-3 py-2 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs font-semibold text-slate-600 dark:text-slate-300"
+    >
+      Archive
+    </button>
+
+    <span
+      class="text-[10px] text-slate-400 ml-1"
+    >
+      Older announcements are automatically archived after 30 days.
+    </span>
+
+  </div>
 
   <div
     id="cardGrid"
     class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"
   ></div>
-
 
   <!-- Empty State -->
 
@@ -1058,8 +1347,148 @@
 
 </section>
 
-</main>
+<!-- ========================================================= -->
+<!-- IMPORTANT LINKS -->
+<!-- ========================================================= -->
 
+<section
+  id="linksSection"
+  class="scroll-mt-24 border-t border-slate-200 dark:border-slate-800 pt-8"
+>
+
+  <div class="mb-5">
+
+    <h2
+      class="text-xl font-bold text-slate-900 dark:text-white"
+    >
+      Important Links
+    </h2>
+
+    <p
+      class="text-xs text-slate-500 dark:text-slate-400 mt-1"
+    >
+      Quick access to official C16A and DLSU resources.
+    </p>
+
+  </div>
+
+  <div
+    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"
+  >
+
+    <a
+      href="https://www.dlsu.edu.ph/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="utility-card bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 p-5 block hover:border-dlsu"
+    >
+
+      <p
+        class="text-[10px] uppercase font-bold text-slate-400"
+      >
+        University
+      </p>
+
+      <h3
+        class="font-bold text-slate-900 dark:text-white mt-1"
+      >
+        DLSU Website
+      </h3>
+
+      <p
+        class="text-xs text-slate-400 mt-2"
+      >
+        Official De La Salle University website.
+      </p>
+
+    </a>
+
+    <a
+      href="https://archershub.dlsu.edu.ph/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="utility-card bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 p-5 block hover:border-dlsu"
+    >
+
+      <p
+        class="text-[10px] uppercase font-bold text-slate-400"
+      >
+        Student Platform
+      </p>
+
+      <h3
+        class="font-bold text-slate-900 dark:text-white mt-1"
+      >
+        DLSU Archer's Hub
+      </h3>
+
+      <p
+        class="text-xs text-slate-400 mt-2"
+      >
+        Access the DLSU Archer's Hub.
+      </p>
+
+    </a>
+
+    <a
+      href="https://dlsu.instructure.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="utility-card bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 p-5 block hover:border-dlsu"
+    >
+
+      <p
+        class="text-[10px] uppercase font-bold text-slate-400"
+      >
+        Learning
+      </p>
+
+      <h3
+        class="font-bold text-slate-900 dark:text-white mt-1"
+      >
+        DLSU AnimoSpace
+      </h3>
+
+      <p
+        class="text-xs text-slate-400 mt-2"
+      >
+        Access your courses and learning materials.
+      </p>
+
+    </a>
+
+    <a
+      href="https://janpatricbalmeo-cmyk.github.io/c16a-hub/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="utility-card bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 p-5 block hover:border-dlsu"
+    >
+
+      <p
+        class="text-[10px] uppercase font-bold text-slate-400"
+      >
+        Block Website
+      </p>
+
+      <h3
+        class="font-bold text-slate-900 dark:text-white mt-1"
+      >
+        C16A Central Hub
+      </h3>
+
+      <p
+        class="text-xs text-slate-400 mt-2"
+      >
+        Open the C16A block website.
+      </p>
+
+    </a>
+
+  </div>
+
+</section>
+
+</main>
 
 <!-- ========================================================= -->
 <!-- FOOTER -->
@@ -1096,7 +1525,6 @@
   </div>
 
 </footer>
-
 
 <!-- ========================================================= -->
 <!-- ANNOUNCEMENT MODAL -->
@@ -1145,7 +1573,6 @@
 
       </div>
 
-
       <button
         onclick="closeAnnouncementModal()"
         aria-label="Close announcement"
@@ -1155,7 +1582,6 @@
       </button>
 
     </div>
-
 
     <div class="p-6">
 
@@ -1173,14 +1599,12 @@
 
       </div>
 
-
       <div
         id="modalBody"
         class="text-sm leading-relaxed whitespace-pre-line text-slate-700 dark:text-slate-300"
       ></div>
 
     </div>
-
 
     <div
       class="px-6 py-4 bg-slate-50 dark:bg-slate-950 border-t border-slate-100 dark:border-slate-800 flex justify-between text-xs"
@@ -1203,7 +1627,6 @@
   </div>
 
 </div>
-
 
 <!-- ========================================================= -->
 <!-- COURSE MODAL -->
@@ -1238,7 +1661,6 @@
 
         </div>
 
-
         <button
           onclick="closeCourseModal()"
           aria-label="Close course details"
@@ -1248,7 +1670,6 @@
         </button>
 
       </div>
-
 
       <div
         id="courseModalBody"
@@ -1260,7 +1681,6 @@
   </div>
 
 </div>
-
 
 <!-- ========================================================= -->
 <!-- SCHEDULE IMAGE MODAL -->
@@ -1297,7 +1717,6 @@
 
       </div>
 
-
       <button
         onclick="closeScheduleImage()"
         aria-label="Close schedule"
@@ -1308,8 +1727,9 @@
 
     </div>
 
-
-    <div class="p-4 sm:p-6 bg-slate-100 dark:bg-slate-950">
+    <div
+      class="p-4 sm:p-6 bg-slate-100 dark:bg-slate-950"
+    >
 
       <img
         id="scheduleImage"
@@ -1324,6 +1744,66 @@
 
 </div>
 
+<!-- ========================================================= -->
+<!-- CAMPUS MAP MODAL -->
+<!-- ========================================================= -->
+
+<div
+  id="campusMapModal"
+  onclick="closeCampusMap()"
+  class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity"
+>
+
+  <div
+    onclick="event.stopPropagation()"
+    class="bg-white dark:bg-slate-900 rounded-2xl shadow-2xl max-w-7xl w-full max-h-[95vh] overflow-auto transform scale-95 transition-transform"
+  >
+
+    <div
+      class="sticky top-0 z-10 bg-white/95 dark:bg-slate-900/95 backdrop-blur border-b border-slate-200 dark:border-slate-800 px-5 py-4 flex items-center justify-between"
+    >
+
+      <div>
+
+        <h3
+          class="font-bold text-slate-900 dark:text-white"
+        >
+          DLSU Campus Map
+        </h3>
+
+        <p
+          class="text-[10px] text-slate-400 mt-1"
+        >
+          De La Salle University — Manila
+        </p>
+
+      </div>
+
+      <button
+        onclick="closeCampusMap()"
+        aria-label="Close campus map"
+        class="text-slate-400 hover:text-slate-700 dark:hover:text-white text-2xl"
+      >
+        ×
+      </button>
+
+    </div>
+
+    <div
+      class="p-3 sm:p-6 bg-slate-100 dark:bg-slate-950"
+    >
+
+      <img
+        src="DLSU-Map.jpg"
+        alt="DLSU Campus Map"
+        class="w-full h-auto mx-auto object-contain rounded-xl shadow-sm"
+      >
+
+    </div>
+
+  </div>
+
+</div>
 
 <!-- ========================================================= -->
 <!-- JAVASCRIPT -->
@@ -1331,11 +1811,9 @@
 
 <script>
 
-
 /* ============================================================
    CENTRAL DATA
 ============================================================ */
-
 
 /* COURSES */
 
@@ -1412,7 +1890,6 @@ const courses = [
   }
 
 ];
-
 
 /* SCHEDULE */
 
@@ -1552,19 +2029,11 @@ const schedule = [
 
 ];
 
-
 /* ============================================================
    TERM SETTINGS
 ============================================================ */
 
-/*
-   Term 1 officially begins September 7, 2026.
-   The dashboard will therefore not show classes before
-   the official term start.
-*/
-
 const TERM_START = "2026-09-07";
-
 
 /* ============================================================
    ANNOUNCEMENTS
@@ -1669,14 +2138,18 @@ Please note that the schedule is tentative and may still change depending on fur
 
 ];
 
-
 /* ============================================================
    GLOBAL STATE
 ============================================================ */
 
 let activeCategory = "All";
 let searchQuery = "";
+let announcementView = "active";
 
+const ARCHIVE_DAYS = 30;
+
+const FAVORITES_KEY = "c16a-favorite-subjects";
+const NOTES_KEY = "c16a-personal-notes";
 
 /* ============================================================
    PHILIPPINE TIME
@@ -1695,13 +2168,11 @@ function getPhilippineNow() {
 
 }
 
-
 function getPhilippineDateString() {
 
   const now = getPhilippineNow();
 
-  const year =
-    now.getFullYear();
+  const year = now.getFullYear();
 
   const month =
     String(now.getMonth() + 1).padStart(2, "0");
@@ -1713,11 +2184,9 @@ function getPhilippineDateString() {
 
 }
 
-
 function getPhilippineDay() {
 
-  const now =
-    getPhilippineNow();
+  const now = getPhilippineNow();
 
   const days = [
     "SUN",
@@ -1733,7 +2202,6 @@ function getPhilippineDay() {
 
 }
 
-
 /* ============================================================
    DARK MODE
 ============================================================ */
@@ -1744,13 +2212,10 @@ function initializeTheme() {
     localStorage.getItem("c16a-theme");
 
   if (savedTheme === "dark") {
-
     document.documentElement.classList.add("dark");
-
   }
 
 }
-
 
 function toggleDarkMode() {
 
@@ -1764,7 +2229,6 @@ function toggleDarkMode() {
   );
 
 }
-
 
 /* ============================================================
    DATE FORMAT
@@ -1786,39 +2250,20 @@ function formatDate(dateString) {
 
 }
 
-
 /* ============================================================
    NEW ANNOUNCEMENT CHECK
 ============================================================ */
-
-/*
-   NEW is determined from Philippine calendar dates.
-
-   Example:
-   Announcement: August 25
-   Today: August 27
-   Difference = 2 days
-   Result = NEW
-
-   Announcement: August 24
-   Today: August 27
-   Difference = 3 days
-   Result = not NEW
-*/
 
 function isNewAnnouncement(dateString) {
 
   const todayString =
     getPhilippineDateString();
 
-
   const today =
     new Date(todayString + "T00:00:00");
 
-
   const createdDate =
     new Date(dateString + "T00:00:00");
-
 
   const difference =
     Math.floor(
@@ -1826,11 +2271,9 @@ function isNewAnnouncement(dateString) {
       (1000 * 60 * 60 * 24)
     );
 
-
   return difference >= 0 && difference <= 2;
 
 }
-
 
 /* ============================================================
    CLOCK
@@ -1840,7 +2283,6 @@ function updateDigitalClock() {
 
   const now =
     getPhilippineNow();
-
 
   const time =
     now.toLocaleTimeString(
@@ -1853,11 +2295,9 @@ function updateDigitalClock() {
       }
     );
 
-
   document.getElementById(
     "digitalClock"
   ).innerText = time;
-
 
   document.getElementById(
     "clockPeriod"
@@ -1865,7 +2305,6 @@ function updateDigitalClock() {
     "Philippine Time • Asia/Manila";
 
 }
-
 
 /* ============================================================
    DASHBOARD
@@ -1875,7 +2314,6 @@ function renderDashboard() {
 
   const now =
     getPhilippineNow();
-
 
   document.getElementById(
     "currentDate"
@@ -1891,7 +2329,6 @@ function renderDashboard() {
     ) +
     " • Philippine Time";
 
-
   const dayNames = [
     "SUN",
     "MON",
@@ -1902,26 +2339,17 @@ function renderDashboard() {
     "SAT"
   ];
 
-
   const today =
     dayNames[now.getDay()];
-
 
   const todayTitle =
     document.getElementById("todayTitle");
 
-
   const todayContainer =
     document.getElementById("todayClasses");
 
-
   const todayDate =
     getPhilippineDateString();
-
-
-  /*
-     Before Term 1 begins, don't display normal classes.
-  */
 
   if (todayDate < TERM_START) {
 
@@ -1984,18 +2412,15 @@ function renderDashboard() {
 
   }
 
-
   todayTitle.innerText =
     today === "SUN" || today === "WED"
       ? `${today} • No Classes`
       : today;
 
-
   const todayClasses =
     schedule.filter(
       item => item.day === today
     );
-
 
   if (!todayClasses.length) {
 
@@ -2058,11 +2483,9 @@ function renderDashboard() {
 
   }
 
-
   renderNextClass();
 
 }
-
 
 /* ============================================================
    DASHBOARD CLASS CARD
@@ -2099,7 +2522,6 @@ function dashboardClassCard(item) {
 
       </div>
 
-
       <span
         class="text-[10px] font-semibold bg-white/70 dark:bg-slate-700/70 px-2 py-1 rounded-lg shrink-0"
       >
@@ -2111,7 +2533,6 @@ function dashboardClassCard(item) {
   `;
 
 }
-
 
 /* ============================================================
    TIME CONVERSION
@@ -2128,7 +2549,6 @@ function timeToMinutes(timeString) {
 
 }
 
-
 function currentTimeMinutes() {
 
   const now =
@@ -2141,7 +2561,6 @@ function currentTimeMinutes() {
 
 }
 
-
 /* ============================================================
    NEXT CLASS
 ============================================================ */
@@ -2151,21 +2570,13 @@ function renderNextClass() {
   const container =
     document.getElementById("nextClass");
 
-
   const todayDate =
     getPhilippineDateString();
-
-
-  /*
-     If Term 1 has not started, find the first
-     scheduled class beginning on/after September 7.
-  */
 
   if (todayDate < TERM_START) {
 
     const firstDay =
       findNextScheduledClassFromTermStart();
-
 
     if (!firstDay) {
 
@@ -2179,7 +2590,6 @@ function renderNextClass() {
 
     }
 
-
     renderNextClassCard(
       container,
       firstDay,
@@ -2190,22 +2600,11 @@ function renderNextClass() {
 
   }
 
-
-  const now =
-    getPhilippineNow();
-
-
   const today =
     getPhilippineDay();
 
-
   const currentMinutes =
     currentTimeMinutes();
-
-
-  /*
-     1. Check remaining classes today.
-  */
 
   const todayClasses =
     schedule
@@ -2218,14 +2617,12 @@ function renderNextClass() {
           timeToMinutes(b.start)
       );
 
-
   const nextToday =
     todayClasses.find(
       item =>
         timeToMinutes(item.start) >
         currentMinutes
     );
-
 
   if (nextToday) {
 
@@ -2239,12 +2636,6 @@ function renderNextClass() {
 
   }
 
-
-  /*
-     2. No more classes today.
-     Search upcoming days.
-  */
-
   const days = [
     "SUN",
     "MON",
@@ -2255,10 +2646,8 @@ function renderNextClass() {
     "SAT"
   ];
 
-
   const todayIndex =
     days.indexOf(today);
-
 
   for (
     let offset = 1;
@@ -2269,10 +2658,8 @@ function renderNextClass() {
     const index =
       (todayIndex + offset) % 7;
 
-
     const day =
       days[index];
-
 
     const classes =
       schedule
@@ -2284,7 +2671,6 @@ function renderNextClass() {
             timeToMinutes(a.start) -
             timeToMinutes(b.start)
         );
-
 
     if (classes.length) {
 
@@ -2300,7 +2686,6 @@ function renderNextClass() {
 
   }
 
-
   container.innerHTML = `
     <p class="text-sm text-slate-400">
       No upcoming classes.
@@ -2308,7 +2693,6 @@ function renderNextClass() {
   `;
 
 }
-
 
 /* ============================================================
    FIRST CLASS AFTER TERM START
@@ -2321,7 +2705,6 @@ function findNextScheduledClassFromTermStart() {
       TERM_START + "T00:00:00"
     );
 
-
   const days = [
     "SUN",
     "MON",
@@ -2332,14 +2715,11 @@ function findNextScheduledClassFromTermStart() {
     "SAT"
   ];
 
-
   const startDay =
     days[startDate.getDay()];
 
-
   const startIndex =
     days.indexOf(startDay);
-
 
   for (
     let offset = 0;
@@ -2350,10 +2730,8 @@ function findNextScheduledClassFromTermStart() {
     const index =
       (startIndex + offset) % 7;
 
-
     const day =
       days[index];
-
 
     const classes =
       schedule
@@ -2366,20 +2744,15 @@ function findNextScheduledClassFromTermStart() {
             timeToMinutes(b.start)
         );
 
-
     if (classes.length) {
-
       return classes[0];
-
     }
 
   }
 
-
   return null;
 
 }
-
 
 /* ============================================================
    NEXT CLASS CARD
@@ -2396,7 +2769,6 @@ function renderNextClassCard(
       course =>
         course.code === item.code
     );
-
 
   container.innerHTML = `
 
@@ -2420,13 +2792,11 @@ function renderNextClassCard(
 
       </div>
 
-
       <h4
         class="font-bold text-slate-900 dark:text-white mt-3"
       >
         ${item.name}
       </h4>
-
 
       <div
         class="flex items-center justify-between gap-3 mt-3"
@@ -2437,7 +2807,6 @@ function renderNextClassCard(
         >
           ${item.code}
         </span>
-
 
         <span
           class="text-xs font-semibold text-dlsu flex items-center gap-1"
@@ -2474,7 +2843,6 @@ function renderNextClassCard(
         </span>
 
       </div>
-
 
       ${
         course
@@ -2517,7 +2885,6 @@ function renderNextClassCard(
 
 }
 
-
 /* ============================================================
    SCHEDULE
 ============================================================ */
@@ -2533,12 +2900,8 @@ function renderSchedule() {
     "SAT"
   ];
 
-
   const grid =
-    document.getElementById(
-      "scheduleGrid"
-    );
-
+    document.getElementById("scheduleGrid");
 
   grid.innerHTML =
     days.map(day => {
@@ -2547,7 +2910,6 @@ function renderSchedule() {
         schedule.filter(
           item => item.day === day
         );
-
 
       return `
 
@@ -2564,7 +2926,6 @@ function renderSchedule() {
             </span>
 
           </div>
-
 
           <div
             class="space-y-3"
@@ -2600,11 +2961,9 @@ function renderSchedule() {
 
     }).join("");
 
-
   renderScheduleList();
 
 }
-
 
 /* ============================================================
    SCHEDULE CARD
@@ -2637,13 +2996,11 @@ function scheduleCard(item) {
 
   };
 
-
   const course =
     courses.find(
       item2 =>
         item2.code === item.code
     );
-
 
   return `
 
@@ -2671,20 +3028,17 @@ function scheduleCard(item) {
 
       </div>
 
-
       <h4
         class="text-xs font-semibold mt-2 leading-snug"
       >
         ${item.name}
       </h4>
 
-
       <p
         class="text-[10px] text-slate-500 dark:text-slate-400 mt-2 font-medium"
       >
         ${item.time}
       </p>
-
 
       ${
         course
@@ -2727,7 +3081,6 @@ function scheduleCard(item) {
 
 }
 
-
 /* ============================================================
    COURSE LIST
 ============================================================ */
@@ -2738,7 +3091,6 @@ function renderScheduleList() {
     document.getElementById(
       "scheduleListView"
     );
-
 
   container.innerHTML =
     courses.map(course => `
@@ -2751,8 +3103,6 @@ function renderScheduleList() {
         <div
           class="flex justify-between items-start gap-3"
         >
-
-          <!-- SAME SUBJECT COLOR AS WEEKLY GRID -->
 
           <span
             class="subject-${course.color} font-mono text-xs font-bold px-2.5 py-1 rounded-lg"
@@ -2768,20 +3118,17 @@ function renderScheduleList() {
 
         </div>
 
-
         <h3
           class="font-bold text-slate-900 dark:text-white mt-3"
         >
           ${course.name}
         </h3>
 
-
         <p
           class="text-xs text-slate-500 mt-3"
         >
           ${course.schedule}
         </p>
-
 
         <p
           class="text-xs text-slate-500 mt-1 flex items-center gap-1"
@@ -2816,7 +3163,6 @@ function renderScheduleList() {
           ${course.room}
 
         </p>
-
 
         <p
           class="text-xs text-slate-500 dark:text-slate-400 mt-1 flex items-center gap-1"
@@ -2853,7 +3199,6 @@ function renderScheduleList() {
 
 }
 
-
 /* ============================================================
    TOGGLE SCHEDULE VIEW
 ============================================================ */
@@ -2865,34 +3210,28 @@ function toggleScheduleView(view) {
       "scheduleGridView"
     );
 
-
   const list =
     document.getElementById(
       "scheduleListView"
     );
-
 
   const btnGrid =
     document.getElementById(
       "btnGrid"
     );
 
-
   const btnList =
     document.getElementById(
       "btnList"
     );
-
 
   if (view === "grid") {
 
     grid.classList.remove("hidden");
     list.classList.add("hidden");
 
-
     btnGrid.className =
       "px-3 py-1.5 rounded-lg bg-white dark:bg-slate-700 shadow-sm text-slate-800 dark:text-white whitespace-nowrap";
-
 
     btnList.className =
       "px-3 py-1.5 rounded-lg text-slate-600 dark:text-slate-300 whitespace-nowrap";
@@ -2902,10 +3241,8 @@ function toggleScheduleView(view) {
     grid.classList.add("hidden");
     list.classList.remove("hidden");
 
-
     btnList.className =
       "px-3 py-1.5 rounded-lg bg-white dark:bg-slate-700 shadow-sm text-slate-800 dark:text-white whitespace-nowrap";
-
 
     btnGrid.className =
       "px-3 py-1.5 rounded-lg text-slate-600 dark:text-slate-300 whitespace-nowrap";
@@ -2913,7 +3250,6 @@ function toggleScheduleView(view) {
   }
 
 }
-
 
 /* ============================================================
    COURSE MODAL
@@ -2926,29 +3262,23 @@ function openCourseModal(code) {
       item => item.code === code
     );
 
-
   if (!course) return;
-
 
   const codeElement =
     document.getElementById(
       "courseModalCode"
     );
 
-
   codeElement.innerText =
     course.code;
 
-
   codeElement.className =
     `subject-${course.color} font-mono text-xs font-bold px-2.5 py-1 rounded-lg`;
-
 
   document.getElementById(
     "courseModalTitle"
   ).innerText =
     course.name;
-
 
   document.getElementById(
     "courseModalBody"
@@ -2972,7 +3302,6 @@ function openCourseModal(code) {
 
     </div>
 
-
     <div
       class="bg-slate-50 dark:bg-slate-800 rounded-xl p-4"
     >
@@ -2990,7 +3319,6 @@ function openCourseModal(code) {
       </p>
 
     </div>
-
 
     <div
       class="bg-slate-50 dark:bg-slate-800 rounded-xl p-4"
@@ -3038,7 +3366,6 @@ function openCourseModal(code) {
 
     </div>
 
-
     <div
       class="bg-slate-50 dark:bg-slate-800 rounded-xl p-4"
     >
@@ -3059,11 +3386,9 @@ function openCourseModal(code) {
 
   `;
 
-
   openModal("courseModal");
 
 }
-
 
 /* ============================================================
    GENERIC MODAL
@@ -3074,18 +3399,15 @@ function openModal(id) {
   const modal =
     document.getElementById(id);
 
-
   modal.classList.add(
     "modal-active"
   );
-
 
   document.body.classList.add(
     "overflow-hidden"
   );
 
 }
-
 
 /* ============================================================
    COURSE MODAL CLOSE
@@ -3098,18 +3420,15 @@ function closeCourseModal() {
       "courseModal"
     );
 
-
   modal.classList.remove(
     "modal-active"
   );
-
 
   document.body.classList.remove(
     "overflow-hidden"
   );
 
 }
-
 
 /* ============================================================
    SCHEDULE IMAGE MODAL
@@ -3122,18 +3441,15 @@ function openScheduleImage() {
       "scheduleImageModal"
     );
 
-
   modal.classList.add(
     "modal-active"
   );
-
 
   document.body.classList.add(
     "overflow-hidden"
   );
 
 }
-
 
 function closeScheduleImage() {
 
@@ -3142,11 +3458,9 @@ function closeScheduleImage() {
       "scheduleImageModal"
     );
 
-
   modal.classList.remove(
     "modal-active"
   );
-
 
   document.body.classList.remove(
     "overflow-hidden"
@@ -3154,10 +3468,108 @@ function closeScheduleImage() {
 
 }
 
+/* ============================================================
+   DLSU CAMPUS MAP MODAL
+============================================================ */
+
+function openCampusMap() {
+
+  const modal =
+    document.getElementById(
+      "campusMapModal"
+    );
+
+  modal.classList.add(
+    "modal-active"
+  );
+
+  document.body.classList.add(
+    "overflow-hidden"
+  );
+
+}
+
+function closeCampusMap() {
+
+  const modal =
+    document.getElementById(
+      "campusMapModal"
+    );
+
+  modal.classList.remove(
+    "modal-active"
+  );
+
+  document.body.classList.remove(
+    "overflow-hidden"
+  );
+
+}
 
 /* ============================================================
    ANNOUNCEMENTS
 ============================================================ */
+
+function getAnnouncementAgeDays(dateString) {
+
+  const today =
+    new Date(
+      getPhilippineDateString() +
+      "T00:00:00"
+    );
+
+  const created =
+    new Date(
+      dateString +
+      "T00:00:00"
+    );
+
+  return Math.floor(
+    (today - created) /
+    (1000 * 60 * 60 * 24)
+  );
+
+}
+
+function isArchivedAnnouncement(dateString) {
+
+  return getAnnouncementAgeDays(dateString) >= ARCHIVE_DAYS;
+
+}
+
+function setAnnouncementView(view) {
+
+  announcementView = view;
+
+  const activeButton =
+    document.getElementById(
+      "announcementViewActive"
+    );
+
+  const archiveButton =
+    document.getElementById(
+      "announcementViewArchive"
+    );
+
+  const activeClasses =
+    "px-3 py-2 rounded-lg bg-dlsu text-white text-xs font-semibold";
+
+  const inactiveClasses =
+    "px-3 py-2 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs font-semibold text-slate-600 dark:text-slate-300";
+
+  activeButton.className =
+    view === "active"
+      ? activeClasses
+      : inactiveClasses;
+
+  archiveButton.className =
+    view === "archive"
+      ? activeClasses
+      : inactiveClasses;
+
+  renderAnnouncements();
+
+}
 
 function renderAnnouncements() {
 
@@ -3166,48 +3578,35 @@ function renderAnnouncements() {
       "cardGrid"
     );
 
-
   const empty =
     document.getElementById(
       "emptyState"
     );
 
-
   const filtered =
     announcements
-
       .filter(item => {
 
         const categoryMatch =
           activeCategory === "All" ||
           item.Category === activeCategory;
 
+        const archiveMatch =
+          announcementView === "archive"
+            ? isArchivedAnnouncement(item.Date)
+            : !isArchivedAnnouncement(item.Date);
 
         const searchable =
-          `
-            ${item.Code}
-            ${item.Title}
-            ${item.Body}
-            ${item.Source}
-            ${item.Category}
-          `
-          .toLowerCase();
-
+          `${item.Code} ${item.Title} ${item.Body} ${item.Source} ${item.Category}`
+            .toLowerCase();
 
         return (
           categoryMatch &&
+          archiveMatch &&
           searchable.includes(searchQuery)
         );
 
       })
-
-
-      /*
-         IMPORTANT:
-         Sort by announcement CODE
-         from highest to lowest.
-      */
-
       .sort(
         (a, b) =>
           b.Code.localeCompare(
@@ -3218,7 +3617,6 @@ function renderAnnouncements() {
             }
           )
       );
-
 
   if (!filtered.length) {
 
@@ -3232,25 +3630,19 @@ function renderAnnouncements() {
 
   }
 
-
   empty.classList.add(
     "hidden"
   );
 
-
   grid.innerHTML =
     filtered
-      .map(item =>
-        announcementCard(item)
+      .map(
+        item =>
+          announcementCard(item)
       )
       .join("");
 
 }
-
-
-/* ============================================================
-   ANNOUNCEMENT CARD
-============================================================ */
 
 function announcementCard(item) {
 
@@ -3258,7 +3650,6 @@ function announcementCard(item) {
     isNewAnnouncement(
       item.Date
     );
-
 
   const tagColors = {
 
@@ -3276,18 +3667,11 @@ function announcementCard(item) {
 
   };
 
-
   return `
 
     <article
       class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 p-5 shadow-sm hover:shadow-md transition"
     >
-
-
-      <!-- ================================================= -->
-      <!-- ANNOUNCEMENT HEADER -->
-      <!-- NEW → TYPE → CODE → DATE -->
-      <!-- ================================================= -->
 
       <div
         class="announcement-header mb-4 w-full"
@@ -3305,20 +3689,17 @@ function announcementCard(item) {
             : ""
         }
 
-
         <span
           class="text-[9px] sm:text-[10px] uppercase font-semibold px-2 py-1 rounded-full border ${tagColors[item.Category]} whitespace-nowrap shrink-0"
         >
           ${item.Category}
         </span>
 
-
         <span
           class="text-[9px] sm:text-[10px] font-mono text-slate-400 bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded whitespace-nowrap shrink-0"
         >
           ${item.Code}
         </span>
-
 
         <span
           class="announcement-date text-[9px] sm:text-[10px] text-slate-400"
@@ -3328,7 +3709,6 @@ function announcementCard(item) {
 
       </div>
 
-
       <h3
         onclick="openAnnouncement('${item.Code}')"
         class="font-bold text-slate-900 dark:text-white text-base cursor-pointer hover:text-dlsu transition"
@@ -3336,13 +3716,11 @@ function announcementCard(item) {
         ${item.Title}
       </h3>
 
-
       <p
         class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed line-clamp-4 mt-2 whitespace-pre-line"
       >
         ${item.Body}
       </p>
-
 
       <div
         class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between gap-3"
@@ -3353,7 +3731,6 @@ function announcementCard(item) {
         >
           Via: ${item.Source}
         </span>
-
 
         <button
           onclick="openAnnouncement('${item.Code}')"
@@ -3370,7 +3747,6 @@ function announcementCard(item) {
 
 }
 
-
 /* ============================================================
    CATEGORY FILTER
 ============================================================ */
@@ -3380,14 +3756,12 @@ function filterCategory(category) {
   activeCategory =
     category;
 
-
   document
     .querySelectorAll(".filter-btn")
     .forEach(button => {
 
       const active =
         button.innerText.trim() === category;
-
 
       if (active) {
 
@@ -3403,11 +3777,9 @@ function filterCategory(category) {
 
     });
 
-
   renderAnnouncements();
 
 }
-
 
 /* ============================================================
    OPEN ANNOUNCEMENT
@@ -3421,63 +3793,52 @@ function openAnnouncement(code) {
         announcement.Code === code
     );
 
-
   if (!item) return;
-
 
   document.getElementById(
     "modalCategory"
   ).innerText =
     item.Category;
 
-
   document.getElementById(
     "modalCode"
   ).innerText =
     item.Code;
-
 
   document.getElementById(
     "modalTitle"
   ).innerText =
     item.Title;
 
-
   document.getElementById(
     "modalDate"
   ).innerText =
     formatDate(item.Date);
-
 
   document.getElementById(
     "modalBody"
   ).innerText =
     item.Body;
 
-
   document.getElementById(
     "modalSource"
   ).innerText =
     `Via: ${item.Source}`;
-
 
   const image =
     document.getElementById(
       "modalImage"
     );
 
-
   const wrapper =
     document.getElementById(
       "modalImageWrapper"
     );
 
-
   if (item.Image) {
 
     image.src =
       item.Image;
-
 
     image.onerror = () => {
 
@@ -3486,7 +3847,6 @@ function openAnnouncement(code) {
       );
 
     };
-
 
     wrapper.classList.remove(
       "hidden"
@@ -3500,7 +3860,6 @@ function openAnnouncement(code) {
 
   }
 
-
   document
     .getElementById(
       "announcementModal"
@@ -3509,13 +3868,11 @@ function openAnnouncement(code) {
       "modal-active"
     );
 
-
   document.body.classList.add(
     "overflow-hidden"
   );
 
 }
-
 
 /* ============================================================
    CLOSE ANNOUNCEMENT
@@ -3531,25 +3888,15 @@ function closeAnnouncementModal() {
       "modal-active"
     );
 
-
   document.body.classList.remove(
     "overflow-hidden"
   );
 
 }
 
-
 /* ============================================================
    NEW COUNTER
 ============================================================ */
-
-/*
-   This counter is now NOT based on whether an announcement
-   was opened/read.
-
-   It counts ONLY announcements whose date is within the
-   current 0–2 day window.
-*/
 
 function updateUnreadCount() {
 
@@ -3561,12 +3908,10 @@ function updateUnreadCount() {
         )
     ).length;
 
-
   const badge =
     document.getElementById(
       "unreadBadge"
     );
-
 
   if (newCount > 0) {
 
@@ -3587,6 +3932,294 @@ function updateUnreadCount() {
 
 }
 
+/* ============================================================
+   PERSONAL DASHBOARD
+============================================================ */
+
+function getFavorites() {
+
+  try {
+
+    return JSON.parse(
+      localStorage.getItem(
+        FAVORITES_KEY
+      ) || "[]"
+    );
+
+  } catch (error) {
+
+    return [];
+
+  }
+
+}
+
+function saveFavorites(favorites) {
+
+  localStorage.setItem(
+    FAVORITES_KEY,
+    JSON.stringify(favorites)
+  );
+
+}
+
+function toggleFavorite(code) {
+
+  const favorites =
+    getFavorites();
+
+  const index =
+    favorites.indexOf(code);
+
+  if (index >= 0) {
+
+    favorites.splice(
+      index,
+      1
+    );
+
+  } else {
+
+    favorites.push(code);
+
+  }
+
+  saveFavorites(favorites);
+
+  renderFavoriteSubjects();
+
+}
+
+function renderFavoriteSubjects() {
+
+  const container =
+    document.getElementById(
+      "favoriteSubjects"
+    );
+
+  const count =
+    document.getElementById(
+      "favoriteCount"
+    );
+
+  const favorites =
+    getFavorites();
+
+  count.innerText =
+    `${favorites.length} selected`;
+
+  container.innerHTML =
+    courses
+      .map(course => {
+
+        const selected =
+          favorites.includes(
+            course.code
+          );
+
+        return `
+
+          <button
+            onclick="toggleFavorite('${course.code}')"
+            class="favorite-btn ${selected ? 'is-favorite' : ''} text-left rounded-xl border border-slate-200 dark:border-slate-700 p-3 transition hover:border-dlsu"
+          >
+
+            <div
+              class="flex items-center justify-between gap-2"
+            >
+
+              <span
+                class="subject-${course.color} font-mono text-[10px] font-bold px-2 py-1 rounded-lg"
+              >
+                ${course.code}
+              </span>
+
+              <span
+                class="text-[10px] font-semibold"
+              >
+                ${selected ? 'Selected' : 'Select'}
+              </span>
+
+            </div>
+
+            <p
+              class="text-xs font-semibold text-slate-900 dark:text-white mt-2"
+            >
+              ${course.name}
+            </p>
+
+            <p
+              class="text-[10px] text-slate-400 mt-1"
+            >
+              ${course.schedule}
+            </p>
+
+          </button>
+
+        `;
+
+      })
+      .join("");
+
+}
+
+function getNotes() {
+
+  try {
+
+    return JSON.parse(
+      localStorage.getItem(
+        NOTES_KEY
+      ) || "[]"
+    );
+
+  } catch (error) {
+
+    return [];
+
+  }
+
+}
+
+function saveNotes(notes) {
+
+  localStorage.setItem(
+    NOTES_KEY,
+    JSON.stringify(notes)
+  );
+
+}
+
+function addNote() {
+
+  const input =
+    document.getElementById(
+      "noteInput"
+    );
+
+  const text =
+    input.value.trim();
+
+  if (!text) return;
+
+  const notes =
+    getNotes();
+
+  notes.unshift({
+    id: Date.now(),
+    text
+  });
+
+  saveNotes(
+    notes.slice(0, 20)
+  );
+
+  input.value = "";
+
+  renderNotes();
+
+}
+
+function deleteNote(id) {
+
+  const notes =
+    getNotes().filter(
+      note =>
+        note.id !== id
+    );
+
+  saveNotes(notes);
+
+  renderNotes();
+
+}
+
+function renderNotes() {
+
+  const container =
+    document.getElementById(
+      "notesList"
+    );
+
+  const count =
+    document.getElementById(
+      "noteCount"
+    );
+
+  const notes =
+    getNotes();
+
+  count.innerText =
+    notes.length;
+
+  if (!notes.length) {
+
+    container.innerHTML =
+      `<p class="text-xs text-slate-400 py-3">No personal reminders yet.</p>`;
+
+    return;
+
+  }
+
+  container.innerHTML =
+    notes
+      .map(note => `
+
+        <div
+          class="note-item flex items-start justify-between gap-2 bg-slate-50 dark:bg-slate-800 rounded-lg p-3"
+        >
+
+          <p
+            class="text-xs text-slate-700 dark:text-slate-300"
+          >
+            ${escapeHtml(note.text)}
+          </p>
+
+          <button
+            onclick="deleteNote(${note.id})"
+            class="text-slate-400 hover:text-rose-500 shrink-0"
+            aria-label="Delete reminder"
+          >
+            ×
+          </button>
+
+        </div>
+
+      `)
+      .join("");
+
+}
+
+function escapeHtml(value) {
+
+  return value.replace(
+    /[&<>'"]/g,
+    character => ({
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      "'": '&#39;',
+      '"': '&quot;'
+    }[character])
+  );
+
+}
+
+function resetPersonalDashboard() {
+
+  localStorage.removeItem(
+    FAVORITES_KEY
+  );
+
+  localStorage.removeItem(
+    NOTES_KEY
+  );
+
+  renderFavoriteSubjects();
+
+  renderNotes();
+
+}
 
 /* ============================================================
    SEARCH
@@ -3605,12 +4238,10 @@ document
           .trim()
           .toLowerCase();
 
-
       renderAnnouncements();
 
     }
   );
-
 
 /* ============================================================
    KEYBOARD
@@ -3628,17 +4259,42 @@ document.addEventListener(
 
       closeScheduleImage();
 
+      closeCampusMap();
+
     }
 
   }
 );
-
 
 /* ============================================================
    INITIALIZE
 ============================================================ */
 
 initializeTheme();
+
+renderFavoriteSubjects();
+
+renderNotes();
+
+const noteInputElement =
+  document.getElementById(
+    "noteInput"
+  );
+
+if (noteInputElement) {
+
+  noteInputElement.addEventListener(
+    "keydown",
+    event => {
+
+      if (event.key === "Enter") {
+        addNote();
+      }
+
+    }
+  );
+
+}
 
 updateDigitalClock();
 
@@ -3650,33 +4306,18 @@ renderAnnouncements();
 
 updateUnreadCount();
 
-
 /* ============================================================
    REAL-TIME CLOCK
 ============================================================ */
-
-/*
-   Clock updates every second.
-*/
 
 setInterval(
   updateDigitalClock,
   1000
 );
 
-
 /* ============================================================
    REAL-TIME DASHBOARD
 ============================================================ */
-
-/*
-   Dashboard updates every second so that:
-   - Today remains accurate
-   - Up Next changes automatically when
-     a class starts/ends
-   - NEW counter automatically changes
-     after midnight
-*/
 
 setInterval(
   () => {
