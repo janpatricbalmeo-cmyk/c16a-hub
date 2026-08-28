@@ -1,23 +1,23 @@
-\<!DOCTYPE html>
-\<html lang="en">
-\<head>
-  \<meta charset="UTF-8">
-  \<meta name="viewport" content="width=device-width, initial-scale=1.0">
-  \<meta name="theme-color" content="#00573D">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#00573D">
 
-  \<title>DLSU C16A - Announcement Hub\</title>
+  <title>DLSU C16A - Announcement Hub</title>
 
-  \<script src="[https://cdn.tailwindcss.com](https://cdn.tailwindcss.com)">\</script>
+  <script src="https://cdn.tailwindcss.com"></script>
 
-  \<link rel="preconnect" href="[https://fonts.googleapis.com](https://fonts.googleapis.com)">
-  \<link rel="preconnect" href="[https://fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  \<link
-    href="[https://fonts.googleapis.com/css2?family=Inter\:wght@400;500;600;700;800&display=swap](https://fonts.googleapis.com/css2?family=Inter\:wght@400;500;600;700;800\&display=swap)"
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
     rel="stylesheet"
-  \>
+  >
 
-  \<script>
+  <script>
     tailwind.config = {
       darkMode: 'class',
 
@@ -38,9 +38,9 @@
         }
       }
     }
-  \</script>
+  </script>
 
-  \<style>
+  <style>
 
     html {
       scroll-behavior: smooth;
@@ -73,7 +73,7 @@
       transform: scale(1) !important;
     }
 
-    /\* Subject colors \*/
+    /* Subject colors */
 
     .subject-rose {
       color: #e11d48;
@@ -138,20 +138,20 @@
       background: rgba(51,65,85,.65);
     }
 
-    /\* Schedule image \*/
+    /* Schedule image */
 
-    \#scheduleImage {
+    #scheduleImage {
       max-height: 80vh;
     }
 
-    /\* Campus map \*/
+    /* Campus map */
 
-    \#campusMapImage {
+    #campusMapImage {
       max-height: 80vh;
       object-fit: contain;
     }
 
-    /\* Announcement header \*/
+    /* Announcement header */
 
     .announcement-header {
       display: flex;
@@ -182,7 +182,7 @@
 
     }
 
-    /\* Dashboard / utility cards \*/
+    /* Dashboard / utility cards */
 
     .utility-card {
       transition:
@@ -191,7 +191,7 @@
         border-color .2s ease;
     }
 
-    .utility-card\:hover {
+    .utility-card:hover {
       transform: translateY(-2px);
       box-shadow: 0 10px 25px rgba(15,23,42,.07);
     }
@@ -219,7 +219,7 @@
       transition: .2s ease;
     }
 
-    .info-input\:focus {
+    .info-input:focus {
       border-color: #00573D;
       box-shadow: 0 0 0 2px rgba(0,87,61,.08);
     }
@@ -230,7 +230,7 @@
       color: #f8fafc;
     }
 
-    .dark .info-input\:focus {
+    .dark .info-input:focus {
       border-color: #10B981;
     }
 
@@ -257,114 +257,114 @@
 
     }
 
-  \</style>
+  </style>
 
-\</head>
+</head>
 
-\<body
-  class="bg-slate-50 dark\:bg-slate-950 text-slate-800 dark\:text-slate-200 font-sans antialiased min-h-screen flex flex-col transition-colors"
-\>
+<body
+  class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-200 font-sans antialiased min-h-screen flex flex-col transition-colors"
+>
 
-\<!-- ========================================================= -->
-\<!-- HEADER -->
-\<!-- ========================================================= -->
+<!-- ========================================================= -->
+<!-- HEADER -->
+<!-- ========================================================= -->
 
-\<header
-  class="bg-white dark\:bg-slate-900 border-b border-slate-200 dark\:border-slate-800 sticky top-0 z-40 shadow-sm"
-\>
+<header
+  class="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 sticky top-0 z-40 shadow-sm"
+>
 
-  \<div
-    class="max-w-7xl mx-auto px-4 sm\:px-6 lg\:px-8 h-20 flex items-center justify-between"
-  \>
+  <div
+    class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between"
+  >
 
-    \<div class="flex items-center gap-3">
+    <div class="flex items-center gap-3">
 
-      \<img
+      <img
         src="dlsu-logo.jpg"
         alt="DLSU Seal"
-        class="h-10 w-10 sm\:h-12 sm\:w-12 object-contain"
-      \>
+        class="h-10 w-10 sm:h-12 sm:w-12 object-contain"
+      >
 
-      \<div
-        class="h-8 w-px bg-slate-200 dark\:bg-slate-700 hidden sm\:block"
-      \>\</div>
+      <div
+        class="h-8 w-px bg-slate-200 dark:bg-slate-700 hidden sm:block"
+      ></div>
 
-      \<img
+      <img
         src="rvrcob-logo.png"
         alt="RVRCOB Logo"
-        class="h-8 sm\:h-10 object-contain hidden sm\:block"
-      \>
+        class="h-8 sm:h-10 object-contain hidden sm:block"
+      >
 
-      \<div
-        class="h-8 w-px bg-slate-200 dark\:bg-slate-700"
-      \>\</div>
+      <div
+        class="h-8 w-px bg-slate-200 dark:bg-slate-700"
+      ></div>
 
-      \<div>
+      <div>
 
-        \<h1
-          class="text-sm font-bold text-slate-900 dark\:text-white leading-tight"
-        \>
+        <h1
+          class="text-sm font-bold text-slate-900 dark:text-white leading-tight"
+        >
           C16A • BS-MGT
-        \</h1>
+        </h1>
 
-        \<p
-          class="text-[10px] sm\:text-xs text-slate-500 dark\:text-slate-400"
-        \>
+        <p
+          class="text-[10px] sm:text-xs text-slate-500 dark:text-slate-400"
+        >
           RVRCOB • A.Y. 2026–2027
-        \</p>
+        </p>
 
-      \</div>
+      </div>
 
-    \</div>
+    </div>
 
-    \<div class="flex items-center gap-2">
+    <div class="flex items-center gap-2">
 
-      \<nav
-        class="hidden lg\:flex items-center gap-1 text-xs font-semibold mr-2"
-      \>
+      <nav
+        class="hidden lg:flex items-center gap-1 text-xs font-semibold mr-2"
+      >
 
-        \<a
+        <a
           href="#dashboard"
-          class="px-3 py-2 rounded-lg text-slate-600 dark\:text-slate-300 hover\:text-dlsu hover\:bg-slate-100 dark\:hover\:bg-slate-800"
-        \>
+          class="px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:text-dlsu hover:bg-slate-100 dark:hover:bg-slate-800"
+        >
           Dashboard
-        \</a>
+        </a>
 
-        \<a
+        <a
           href="#scheduleSection"
-          class="px-3 py-2 rounded-lg text-slate-600 dark\:text-slate-300 hover\:text-dlsu hover\:bg-slate-100 dark\:hover\:bg-slate-800"
-        \>
+          class="px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:text-dlsu hover:bg-slate-100 dark:hover:bg-slate-800"
+        >
           Schedule
-        \</a>
+        </a>
 
-        \<a
+        <a
           href="#announcementsSection"
-          class="px-3 py-2 rounded-lg text-slate-600 dark\:text-slate-300 hover\:text-dlsu hover\:bg-slate-100 dark\:hover\:bg-slate-800"
-        \>
+          class="px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:text-dlsu hover:bg-slate-100 dark:hover:bg-slate-800"
+        >
           Announcements
-        \</a>
+        </a>
 
-      \</nav>
+      </nav>
 
-      \<!-- Theme Toggle -->
+      <!-- Theme Toggle -->
 
-      \<button
+      <button
         onclick="toggleDarkMode()"
         aria-label="Toggle dark mode"
-        class="p-2.5 rounded-xl bg-slate-100 dark\:bg-slate-800 text-slate-600 dark\:text-slate-300 hover\:text-dlsu transition"
-      \>
+        class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-dlsu transition"
+      >
 
-        \<svg
+        <svg
           id="sunIcon"
-          class="w-4 h-4 hidden dark\:block"
+          class="w-4 h-4 hidden dark:block"
           fill="none"
           stroke="currentColor"
           stroke-width="2"
           viewBox="0 0 24 24"
-        \>
-          \<circle cx="12" cy="12" r="4">\</circle>
+        >
+          <circle cx="12" cy="12" r="4"></circle>
 
-          \<path
+          <path
             stroke-linecap="round"
             d="
               M12 2v2
@@ -377,17 +377,17 @@
               M17.65 6.35l1.42-1.42
             "
           />
-        \</svg>
+        </svg>
 
-        \<svg
+        <svg
           id="moonIcon"
-          class="w-4 h-4 block dark\:hidden"
+          class="w-4 h-4 block dark:hidden"
           fill="none"
           stroke="currentColor"
           stroke-width="2"
           viewBox="0 0 24 24"
-        \>
-          \<path
+        >
+          <path
             stroke-linecap="round"
             stroke-linejoin="round"
             d="
@@ -395,245 +395,245 @@
               7 7 0 0021 12.79z
             "
           />
-        \</svg>
+        </svg>
 
-      \</button>
+      </button>
 
-      \<span
-        class="hidden sm\:inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-emerald-100 dark\:bg-emerald-950 text-emerald-800 dark\:text-emerald-300"
-      \>
+      <span
+        class="hidden sm:inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300"
+      >
 
-        \<span
+        <span
           class="w-1.5 h-1.5 bg-emerald-500 rounded-full mr-1.5 animate-pulse"
-        \>\</span>
+        ></span>
 
         Term 1
 
-      \</span>
+      </span>
 
-    \</div>
+    </div>
 
-  \</div>
+  </div>
 
-\</header>
+</header>
 
-\<!-- ========================================================= -->
-\<!-- MOBILE QUICK NAV -->
-\<!-- ========================================================= -->
+<!-- ========================================================= -->
+<!-- MOBILE QUICK NAV -->
+<!-- ========================================================= -->
 
-\<div
-  class="lg\:hidden sticky top-20 z-30 bg-white/95 dark\:bg-slate-900/95 backdrop-blur border-b border-slate-200 dark\:border-slate-800"
-\>
+<div
+  class="lg:hidden sticky top-20 z-30 bg-white/95 dark:bg-slate-900/95 backdrop-blur border-b border-slate-200 dark:border-slate-800"
+>
 
-  \<div
+  <div
     class="max-w-7xl mx-auto px-4 py-2 flex gap-2 overflow-x-auto hide-scrollbar"
-  \>
+  >
 
-    \<a
+    <a
       href="#dashboard"
-      class="whitespace-nowrap px-3 py-1.5 rounded-lg bg-slate-100 dark\:bg-slate-800 text-[10px] font-semibold"
-    \>
+      class="whitespace-nowrap px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-[10px] font-semibold"
+    >
       Dashboard
-    \</a>
+    </a>
 
-    \<a
+    <a
       href="#myDashboard"
-      class="whitespace-nowrap px-3 py-1.5 rounded-lg bg-slate-100 dark\:bg-slate-800 text-[10px] font-semibold"
-    \>
+      class="whitespace-nowrap px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-[10px] font-semibold"
+    >
       My Dashboard
-    \</a>
+    </a>
 
-    \<a
+    <a
       href="#scheduleSection"
-      class="whitespace-nowrap px-3 py-1.5 rounded-lg bg-slate-100 dark\:bg-slate-800 text-[10px] font-semibold"
-    \>
+      class="whitespace-nowrap px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-[10px] font-semibold"
+    >
       Schedule
-    \</a>
+    </a>
 
-    \<a
+    <a
       href="#announcementsSection"
-      class="whitespace-nowrap px-3 py-1.5 rounded-lg bg-slate-100 dark\:bg-slate-800 text-[10px] font-semibold"
-    \>
+      class="whitespace-nowrap px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-[10px] font-semibold"
+    >
       Announcements
-    \</a>
+    </a>
 
-    \<a
+    <a
       href="#linksSection"
-      class="whitespace-nowrap px-3 py-1.5 rounded-lg bg-slate-100 dark\:bg-slate-800 text-[10px] font-semibold"
-    \>
+      class="whitespace-nowrap px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-[10px] font-semibold"
+    >
       Links
-    \</a>
+    </a>
 
-    \<!-- MAP TAB REMOVED FOR MOBILE -->
+    <!-- MAP TAB REMOVED FOR MOBILE -->
 
-  \</div>
+  </div>
 
-\</div>
+</div>
 
-\<!-- ========================================================= -->
-\<!-- MAIN -->
-\<!-- ========================================================= -->
+<!-- ========================================================= -->
+<!-- MAIN -->
+<!-- ========================================================= -->
 
-\<main
-  class="max-w-7xl mx-auto px-4 sm\:px-6 lg\:px-8 py-8 flex-grow w-full space-y-8"
-\>
+<main
+  class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow w-full space-y-8"
+>
 
-\<!-- ========================================================= -->
-\<!-- HERO -->
-\<!-- ========================================================= -->
+<!-- ========================================================= -->
+<!-- HERO -->
+<!-- ========================================================= -->
 
-\<section
-  class="bg-gradient-to-r from-dlsu to-dlsu-dark rounded-2xl p-6 sm\:p-8 text-white shadow-sm flex flex-col md\:flex-row items-center justify-between gap-6"
-\>
+<section
+  class="bg-gradient-to-r from-dlsu to-dlsu-dark rounded-2xl p-6 sm:p-8 text-white shadow-sm flex flex-col md:flex-row items-center justify-between gap-6"
+>
 
-  \<div class="max-w-2xl">
+  <div class="max-w-2xl">
 
-    \<span
-      class="bg-white/10 text-emerald-200 text-[10px] sm\:text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider"
-    \>
+    <span
+      class="bg-white/10 text-emerald-200 text-[10px] sm:text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider"
+    >
       De La Salle University
-    \</span>
+    </span>
 
-    \<h2
-      class="text-2xl sm\:text-3xl font-bold tracking-tight mt-3"
-    \>
+    <h2
+      class="text-2xl sm:text-3xl font-bold tracking-tight mt-3"
+    >
       C16A Central Hub
-    \</h2>
+    </h2>
 
-    \<p
+    <p
       class="mt-2 text-slate-200 text-sm leading-relaxed"
-    \>
+    >
       Your centralized hub for schedules, announcements, courses,
       rooms, professors, and important block updates.
-    \</p>
+    </p>
 
-  \</div>
+  </div>
 
-  \<div
+  <div
     class="bg-white p-3 rounded-xl shadow-lg shrink-0"
-  \>
+  >
 
-    \<img
+    <img
       src="c16a-logo.jpg"
       alt="C16A Block Logo"
-      class="h-24 sm\:h-28 object-contain rounded-lg"
-    \>
+      class="h-24 sm:h-28 object-contain rounded-lg"
+    >
 
-  \</div>
+  </div>
 
-\</section>
+</section>
 
-\<!-- ========================================================= -->
-\<!-- DASHBOARD -->
-\<!-- ========================================================= -->
+<!-- ========================================================= -->
+<!-- DASHBOARD -->
+<!-- ========================================================= -->
 
-\<section
+<section
   id="dashboard"
   class="scroll-mt-24"
-\>
+>
 
-  \<div
-    class="flex flex-col sm\:flex-row sm\:items-center justify-between gap-3 mb-5"
-  \>
+  <div
+    class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-5"
+  >
 
-    \<div>
+    <div>
 
-      \<div class="flex items-center gap-2">
+      <div class="flex items-center gap-2">
 
-        \<h2
-          class="text-xl font-bold text-slate-900 dark\:text-white"
-        \>
+        <h2
+          class="text-xl font-bold text-slate-900 dark:text-white"
+        >
           Command Center
-        \</h2>
+        </h2>
 
-        \<span
+        <span
           id="unreadBadge"
-          class="hidden bg-rose-100 dark\:bg-rose-950 text-rose-700 dark\:text-rose-300 text-xs font-semibold px-3 py-1 rounded-full"
-        \>\</span>
+          class="hidden bg-rose-100 dark:bg-rose-950 text-rose-700 dark:text-rose-300 text-xs font-semibold px-3 py-1 rounded-full"
+        ></span>
 
-      \</div>
+      </div>
 
-      \<p
+      <p
         id="currentDate"
-        class="text-xs text-slate-500 dark\:text-slate-400 mt-1"
-      \>\</p>
+        class="text-xs text-slate-500 dark:text-slate-400 mt-1"
+      ></p>
 
-    \</div>
+    </div>
 
-    \<!-- PHILIPPINE DIGITAL CLOCK -->
+    <!-- PHILIPPINE DIGITAL CLOCK -->
 
-    \<div
-      class="bg-slate-900 dark\:bg-slate-800 text-white rounded-xl px-4 py-2.5 shadow-sm text-center sm\:text-right"
-    \>
+    <div
+      class="bg-slate-900 dark:bg-slate-800 text-white rounded-xl px-4 py-2.5 shadow-sm text-center sm:text-right"
+    >
 
-      \<p
+      <p
         class="text-[9px] uppercase tracking-widest text-emerald-300 font-bold"
-      \>
+      >
         Philippine Time
-      \</p>
+      </p>
 
-      \<p
+      <p
         id="digitalClock"
-        class="font-mono text-lg sm\:text-xl font-bold tracking-wide mt-0.5"
-      \>
-        \--:--:--
-      \</p>
+        class="font-mono text-lg sm:text-xl font-bold tracking-wide mt-0.5"
+      >
+        --:--:--
+      </p>
 
-      \<p
+      <p
         id="clockPeriod"
         class="text-[9px] text-slate-400"
-      \>
+      >
         Asia/Manila
-      \</p>
+      </p>
 
-    \</div>
+    </div>
 
-  \</div>
+  </div>
 
-  \<!-- Dashboard Cards -->
+  <!-- Dashboard Cards -->
 
-  \<div
-    class="grid grid-cols-1 lg\:grid-cols-2 gap-5"
-  \>
+  <div
+    class="grid grid-cols-1 lg:grid-cols-2 gap-5"
+  >
 
-    \<!-- TODAY -->
+    <!-- TODAY -->
 
-    \<div
-      class="bg-white dark\:bg-slate-900 rounded-2xl border border-slate-200 dark\:border-slate-800 p-5 shadow-sm"
-    \>
+    <div
+      class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-5 shadow-sm"
+    >
 
-      \<div
+      <div
         class="flex items-center justify-between"
-      \>
+      >
 
-        \<div>
+        <div>
 
-          \<p
+          <p
             class="text-[10px] uppercase tracking-wider font-bold text-slate-400"
-          \>
+          >
             Today
-          \</p>
+          </p>
 
-          \<h3
+          <h3
             id="todayTitle"
-            class="text-lg font-bold text-slate-900 dark\:text-white mt-1"
-          \>\</h3>
+            class="text-lg font-bold text-slate-900 dark:text-white mt-1"
+          ></h3>
 
-        \</div>
+        </div>
 
-        \<div
-          class="w-10 h-10 rounded-xl bg-dlsu-light dark\:bg-emerald-950 text-dlsu flex items-center justify-center"
-        \>
+        <div
+          class="w-10 h-10 rounded-xl bg-dlsu-light dark:bg-emerald-950 text-dlsu flex items-center justify-center"
+        >
 
-          \<svg
+          <svg
             class="w-5 h-5"
             fill="none"
             stroke="currentColor"
             stroke-width="1.8"
             viewBox="0 0 24 24"
-          \>
+          >
 
-            \<rect
+            <rect
               x="3"
               y="4"
               width="18"
@@ -641,63 +641,63 @@
               rx="2"
             />
 
-            \<path
+            <path
               stroke-linecap="round"
               d="M16 2v4M8 2v4M3 10h18"
             />
 
-          \</svg>
+          </svg>
 
-        \</div>
+        </div>
 
-      \</div>
+      </div>
 
-      \<div
+      <div
         id="todayClasses"
         class="mt-5 space-y-2"
-      \>\</div>
+      ></div>
 
-    \</div>
+    </div>
 
-    \<!-- NEXT CLASS -->
+    <!-- NEXT CLASS -->
 
-    \<div
-      class="bg-white dark\:bg-slate-900 rounded-2xl border border-slate-200 dark\:border-slate-800 p-5 shadow-sm"
-    \>
+    <div
+      class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-5 shadow-sm"
+    >
 
-      \<div
+      <div
         class="flex items-center justify-between"
-      \>
+      >
 
-        \<div>
+        <div>
 
-          \<p
+          <p
             class="text-[10px] uppercase tracking-wider font-bold text-slate-400"
-          \>
+          >
             Next Class
-          \</p>
+          </p>
 
-          \<h3
-            class="text-lg font-bold text-slate-900 dark\:text-white mt-1"
-          \>
+          <h3
+            class="text-lg font-bold text-slate-900 dark:text-white mt-1"
+          >
             Up Next
-          \</h3>
+          </h3>
 
-        \</div>
+        </div>
 
-        \<div
-          class="w-10 h-10 rounded-xl bg-sky-50 dark\:bg-sky-950 text-sky-600 flex items-center justify-center"
-        \>
+        <div
+          class="w-10 h-10 rounded-xl bg-sky-50 dark:bg-sky-950 text-sky-600 flex items-center justify-center"
+        >
 
-          \<svg
+          <svg
             class="w-5 h-5"
             fill="none"
             stroke="currentColor"
             stroke-width="1.8"
             viewBox="0 0 24 24"
-          \>
+          >
 
-            \<path
+            <path
               stroke-linecap="round"
               stroke-linejoin="round"
               d="
@@ -706,7 +706,7 @@
               "
             />
 
-            \<path
+            <path
               stroke-linecap="round"
               d="
                 M6 12.5V17c3.5 2.5 8.5 2.5 12 0v-4.5
@@ -714,537 +714,537 @@
               "
             />
 
-          \</svg>
+          </svg>
 
-        \</div>
+        </div>
 
-      \</div>
+      </div>
 
-      \<div
+      <div
         id="nextClass"
         class="mt-5"
-      \>\</div>
+      ></div>
 
-    \</div>
+    </div>
 
-  \</div>
+  </div>
 
-  \<!-- ========================================================= -->
-  \<!-- DLSU MAP IN COMMAND CENTER -->
-  \<!-- ========================================================= -->
+  <!-- ========================================================= -->
+  <!-- DLSU MAP IN COMMAND CENTER -->
+  <!-- ========================================================= -->
 
-  \<div
-    class="mt-5 bg-white dark\:bg-slate-900 rounded-2xl border border-slate-200 dark\:border-slate-800 p-5 shadow-sm"
-  \>
+  <div
+    class="mt-5 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-5 shadow-sm"
+  >
 
-    \<div
-      class="flex flex-col sm\:flex-row sm\:items-center justify-between gap-3 mb-4"
-    \>
+    <div
+      class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4"
+    >
 
-      \<div>
+      <div>
 
-        \<h3
-          class="font-bold text-slate-900 dark\:text-white"
-        \>
+        <h3
+          class="font-bold text-slate-900 dark:text-white"
+        >
           DLSU Campus Map
-        \</h3>
+        </h3>
 
-        \<p
+        <p
           class="text-[10px] text-slate-400 mt-1"
-        \>
+        >
           Quick reference for campus buildings and locations.
-        \</p>
+        </p>
 
-      \</div>
+      </div>
 
-      \<a
+      <a
         href="#mapSection"
-        class="text-xs font-semibold text-dlsu hover\:text-dlsu-dark whitespace-nowrap"
-      \>
+        class="text-xs font-semibold text-dlsu hover:text-dlsu-dark whitespace-nowrap"
+      >
         View Full Map →
-      \</a>
+      </a>
 
-    \</div>
+    </div>
 
-    \<button
+    <button
       onclick="openCampusMap()"
-      class="w-full rounded-xl overflow-hidden border border-slate-200 dark\:border-slate-800 bg-slate-100 dark\:bg-slate-800 cursor-zoom-in"
+      class="w-full rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 bg-slate-100 dark:bg-slate-800 cursor-zoom-in"
       aria-label="Open DLSU Campus Map"
-    \>
+    >
 
-      \<img
+      <img
         src="DLSU-Map.jpg"
         alt="DLSU Campus Map"
         class="w-full max-h-[420px] object-contain mx-auto"
-      \>
+      >
 
-    \</button>
+    </button>
 
-  \</div>
+  </div>
 
-\</section>
+</section>
 
-\<!-- ========================================================= -->
-\<!-- PERSONAL STUDENT DASHBOARD -->
-\<!-- ========================================================= -->
+<!-- ========================================================= -->
+<!-- PERSONAL STUDENT DASHBOARD -->
+<!-- ========================================================= -->
 
-\<section
+<section
   id="myDashboard"
   class="scroll-mt-24"
-\>
+>
 
-  \<div
-    class="flex flex-col sm\:flex-row sm\:items-end justify-between gap-3 mb-5"
-  \>
+  <div
+    class="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-5"
+  >
 
-    \<div>
+    <div>
 
-      \<h2
-        class="text-xl font-bold text-slate-900 dark\:text-white"
-      \>
+      <h2
+        class="text-xl font-bold text-slate-900 dark:text-white"
+      >
         My Dashboard
-      \</h2>
+      </h2>
 
-      \<p
-        class="text-xs text-slate-500 dark\:text-slate-400 mt-1"
-      \>
+      <p
+        class="text-xs text-slate-500 dark:text-slate-400 mt-1"
+      >
         Personalize your C16A hub. Your settings are saved only in this browser.
-      \</p>
+      </p>
 
-    \</div>
+    </div>
 
-    \<button
+    <button
       onclick="resetPersonalDashboard()"
-      class="text-xs font-semibold text-slate-400 hover\:text-dlsu transition"
-    \>
+      class="text-xs font-semibold text-slate-400 hover:text-dlsu transition"
+    >
       Reset My Dashboard
-    \</button>
+    </button>
 
-  \</div>
+  </div>
 
-  \<div
-    class="grid grid-cols-1 lg\:grid-cols-2 gap-5"
-  \>
+  <div
+    class="grid grid-cols-1 lg:grid-cols-2 gap-5"
+  >
 
-    \<!-- ===================================================== -->
-    \<!-- MY QUICK TASKS -->
-    \<!-- ===================================================== -->
+    <!-- ===================================================== -->
+    <!-- MY QUICK TASKS -->
+    <!-- ===================================================== -->
 
-    \<div
-      class="bg-white dark\:bg-slate-900 rounded-2xl border border-slate-200 dark\:border-slate-800 p-5 shadow-sm"
-    \>
+    <div
+      class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-5 shadow-sm"
+    >
 
-      \<div
+      <div
         class="flex items-center justify-between gap-3 mb-4"
-      \>
+      >
 
-        \<div>
+        <div>
 
-          \<h3
-            class="font-bold text-slate-900 dark\:text-white"
-          \>
+          <h3
+            class="font-bold text-slate-900 dark:text-white"
+          >
             My Quick Tasks
-          \</h3>
+          </h3>
 
-          \<p
+          <p
             class="text-[10px] text-slate-400 mt-1"
-          \>
+          >
             Add simple tasks and check them off when completed.
-          \</p>
+          </p>
 
-        \</div>
+        </div>
 
-        \<span
+        <span
           id="taskCount"
-          class="text-[10px] font-semibold text-dlsu bg-dlsu-light dark\:bg-emerald-950 px-2.5 py-1 rounded-full"
-        \>
+          class="text-[10px] font-semibold text-dlsu bg-dlsu-light dark:bg-emerald-950 px-2.5 py-1 rounded-full"
+        >
           0 tasks
-        \</span>
+        </span>
 
-      \</div>
+      </div>
 
-      \<div
+      <div
         class="flex gap-2 mb-4"
-      \>
+      >
 
-        \<input
+        <input
           id="taskInput"
           type="text"
           maxlength="120"
           placeholder="Add a quick task..."
-          class="flex-1 min-w-0 bg-slate-50 dark\:bg-slate-800 text-xs rounded-lg px-3 py-2.5 border border-slate-200 dark\:border-slate-700 focus\:outline-none focus\:border-dlsu"
-        \>
+          class="flex-1 min-w-0 bg-slate-50 dark:bg-slate-800 text-xs rounded-lg px-3 py-2.5 border border-slate-200 dark:border-slate-700 focus:outline-none focus:border-dlsu"
+        >
 
-        \<button
+        <button
           onclick="addTask()"
-          class="px-3.5 py-2.5 rounded-lg bg-dlsu hover\:bg-dlsu-dark text-white text-xs font-semibold transition"
-        \>
+          class="px-3.5 py-2.5 rounded-lg bg-dlsu hover:bg-dlsu-dark text-white text-xs font-semibold transition"
+        >
           Add
-        \</button>
+        </button>
 
-      \</div>
+      </div>
 
-      \<div
+      <div
         id="tasksList"
         class="space-y-2 max-h-72 overflow-y-auto"
-      \>\</div>
+      ></div>
 
-    \</div>
+    </div>
 
-    \<!-- ===================================================== -->
-    \<!-- PERSONAL INFO CARD -->
-    \<!-- ===================================================== -->
+    <!-- ===================================================== -->
+    <!-- PERSONAL INFO CARD -->
+    <!-- ===================================================== -->
 
-    \<div
-      class="bg-white dark\:bg-slate-900 rounded-2xl border border-slate-200 dark\:border-slate-800 p-5 shadow-sm"
-    \>
+    <div
+      class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-5 shadow-sm"
+    >
 
-      \<div
+      <div
         class="flex items-center justify-between gap-3 mb-4"
-      \>
+      >
 
-        \<div>
+        <div>
 
-          \<h3
-            class="font-bold text-slate-900 dark\:text-white"
-          \>
+          <h3
+            class="font-bold text-slate-900 dark:text-white"
+          >
             Personal Info Card
-          \</h3>
+          </h3>
 
-          \<p
+          <p
             class="text-[10px] text-slate-400 mt-1"
-          \>
+          >
             Your personal student information is stored only in this browser.
-          \</p>
+          </p>
 
-        \</div>
+        </div>
 
-        \<div
-          class="w-9 h-9 rounded-xl bg-dlsu-light dark\:bg-emerald-950 text-dlsu flex items-center justify-center shrink-0"
-        \>
+        <div
+          class="w-9 h-9 rounded-xl bg-dlsu-light dark:bg-emerald-950 text-dlsu flex items-center justify-center shrink-0"
+        >
 
-          \<svg
+          <svg
             class="w-5 h-5"
             fill="none"
             stroke="currentColor"
             stroke-width="1.8"
             viewBox="0 0 24 24"
-          \>
+          >
 
-            \<circle
+            <circle
               cx="12"
               cy="8"
               r="3.5"
             />
 
-            \<path
+            <path
               stroke-linecap="round"
               d="M5 21a7 7 0 0114 0"
             />
 
-          \</svg>
+          </svg>
 
-        \</div>
+        </div>
 
-      \</div>
+      </div>
 
-      \<div
-        class="grid grid-cols-1 sm\:grid-cols-2 gap-3"
-      \>
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 gap-3"
+      >
 
-        \<!-- Full Name -->
+        <!-- Full Name -->
 
-        \<div class="sm\:col-span-2">
+        <div class="sm:col-span-2">
 
-          \<label
+          <label
             for="studentFullName"
             class="block text-[10px] uppercase tracking-wider font-bold text-slate-400 mb-1.5"
-          \>
+          >
             Full Name
-          \</label>
+          </label>
 
-          \<input
+          <input
             id="studentFullName"
             type="text"
             maxlength="100"
             placeholder="Enter your full name"
             class="info-input"
-          \>
+          >
 
-        \</div>
+        </div>
 
-        \<!-- Age -->
+        <!-- Age -->
 
-        \<div>
+        <div>
 
-          \<label
+          <label
             for="studentAge"
             class="block text-[10px] uppercase tracking-wider font-bold text-slate-400 mb-1.5"
-          \>
+          >
             Age
-          \</label>
+          </label>
 
-          \<input
+          <input
             id="studentAge"
             type="number"
             min="1"
             max="120"
             placeholder="Age"
             class="info-input"
-          \>
+          >
 
-        \</div>
+        </div>
 
-        \<!-- ID Number -->
+        <!-- ID Number -->
 
-        \<div>
+        <div>
 
-          \<label
+          <label
             for="studentId"
             class="block text-[10px] uppercase tracking-wider font-bold text-slate-400 mb-1.5"
-          \>
+          >
             ID Number
-          \</label>
+          </label>
 
-          \<input
+          <input
             id="studentId"
             type="text"
             maxlength="30"
             placeholder="ID Number"
             class="info-input"
-          \>
+          >
 
-        \</div>
+        </div>
 
-        \<!-- Block -->
+        <!-- Block -->
 
-        \<div>
+        <div>
 
-          \<label
+          <label
             class="block text-[10px] uppercase tracking-wider font-bold text-slate-400 mb-1.5"
-          \>
+          >
             Block
-          \</label>
+          </label>
 
-          \<div
-            class="bg-dlsu-light dark\:bg-emerald-950 text-dlsu rounded-lg px-3 py-2.5 text-xs font-bold"
-          \>
+          <div
+            class="bg-dlsu-light dark:bg-emerald-950 text-dlsu rounded-lg px-3 py-2.5 text-xs font-bold"
+          >
             C16A
-          \</div>
+          </div>
 
-        \</div>
+        </div>
 
-        \<!-- Academic Year -->
+        <!-- Academic Year -->
 
-        \<div>
+        <div>
 
-          \<label
+          <label
             class="block text-[10px] uppercase tracking-wider font-bold text-slate-400 mb-1.5"
-          \>
+          >
             Academic Year
-          \</label>
+          </label>
 
-          \<div
-            class="bg-slate-50 dark\:bg-slate-800 text-slate-700 dark\:text-slate-300 rounded-lg px-3 py-2.5 text-xs font-semibold border border-slate-200 dark\:border-slate-700"
-          \>
+          <div
+            class="bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-lg px-3 py-2.5 text-xs font-semibold border border-slate-200 dark:border-slate-700"
+          >
             2026–2027
-          \</div>
+          </div>
 
-        \</div>
+        </div>
 
-        \<!-- Program -->
+        <!-- Program -->
 
-        \<div class="sm\:col-span-2">
+        <div class="sm:col-span-2">
 
-          \<label
+          <label
             class="block text-[10px] uppercase tracking-wider font-bold text-slate-400 mb-1.5"
-          \>
+          >
             Program
-          \</label>
+          </label>
 
-          \<div
-            class="bg-slate-50 dark\:bg-slate-800 text-slate-700 dark\:text-slate-300 rounded-lg px-3 py-2.5 text-xs font-semibold border border-slate-200 dark\:border-slate-700 leading-relaxed"
-          \>
+          <div
+            class="bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-lg px-3 py-2.5 text-xs font-semibold border border-slate-200 dark:border-slate-700 leading-relaxed"
+          >
             Bachelor of Science in Business Management
-          \</div>
+          </div>
 
-        \</div>
+        </div>
 
-        \<!-- College -->
+        <!-- College -->
 
-        \<div class="sm\:col-span-2">
+        <div class="sm:col-span-2">
 
-          \<label
+          <label
             class="block text-[10px] uppercase tracking-wider font-bold text-slate-400 mb-1.5"
-          \>
+          >
             College
-          \</label>
+          </label>
 
-          \<div
-            class="bg-slate-50 dark\:bg-slate-800 text-slate-700 dark\:text-slate-300 rounded-lg px-3 py-2.5 text-xs font-semibold border border-slate-200 dark\:border-slate-700 leading-relaxed"
-          \>
+          <div
+            class="bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-lg px-3 py-2.5 text-xs font-semibold border border-slate-200 dark:border-slate-700 leading-relaxed"
+          >
             Ramon V. del Rosario College of Business
-          \</div>
+          </div>
 
-        \</div>
+        </div>
 
-        \<!-- Term -->
+        <!-- Term -->
 
-        \<div>
+        <div>
 
-          \<label
+          <label
             class="block text-[10px] uppercase tracking-wider font-bold text-slate-400 mb-1.5"
-          \>
+          >
             Current Term
-          \</label>
+          </label>
 
-          \<div
-            class="bg-slate-50 dark\:bg-slate-800 text-slate-700 dark\:text-slate-300 rounded-lg px-3 py-2.5 text-xs font-semibold border border-slate-200 dark\:border-slate-700"
-          \>
+          <div
+            class="bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-lg px-3 py-2.5 text-xs font-semibold border border-slate-200 dark:border-slate-700"
+          >
             Term 1
-          \</div>
+          </div>
 
-        \</div>
+        </div>
 
-        \<!-- Campus -->
+        <!-- Campus -->
 
-        \<div>
+        <div>
 
-          \<label
+          <label
             class="block text-[10px] uppercase tracking-wider font-bold text-slate-400 mb-1.5"
-          \>
+          >
             Campus
-          \</label>
+          </label>
 
-          \<div
-            class="bg-slate-50 dark\:bg-slate-800 text-slate-700 dark\:text-slate-300 rounded-lg px-3 py-2.5 text-xs font-semibold border border-slate-200 dark\:border-slate-700"
-          \>
+          <div
+            class="bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-lg px-3 py-2.5 text-xs font-semibold border border-slate-200 dark:border-slate-700"
+          >
             Manila
-          \</div>
+          </div>
 
-        \</div>
+        </div>
 
-      \</div>
+      </div>
 
-      \<div
+      <div
         class="mt-4 flex items-center justify-between gap-3"
-      \>
+      >
 
-        \<p
+        <p
           id="infoSaveStatus"
           class="text-[10px] text-slate-400"
-        \>
+        >
           Changes are saved automatically.
-        \</p>
+        </p>
 
-        \<button
+        <button
           onclick="savePersonalInfo()"
-          class="px-3.5 py-2 rounded-lg bg-dlsu hover\:bg-dlsu-dark text-white text-xs font-semibold transition"
-        \>
+          class="px-3.5 py-2 rounded-lg bg-dlsu hover:bg-dlsu-dark text-white text-xs font-semibold transition"
+        >
           Save Info
-        \</button>
+        </button>
 
-      \</div>
+      </div>
 
-    \</div>
+    </div>
 
-  \</div>
+  </div>
 
-  \<!-- PERSONAL REMINDERS -->
+  <!-- PERSONAL REMINDERS -->
 
-  \<div
-    class="mt-5 bg-white dark\:bg-slate-900 rounded-2xl border border-slate-200 dark\:border-slate-800 p-5 shadow-sm"
-  \>
+  <div
+    class="mt-5 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-5 shadow-sm"
+  >
 
-    \<div
+    <div
       class="flex items-center justify-between gap-3 mb-4"
-    \>
+    >
 
-      \<div>
+      <div>
 
-        \<h3
-          class="font-bold text-slate-900 dark\:text-white"
-        \>
+        <h3
+          class="font-bold text-slate-900 dark:text-white"
+        >
           Personal Reminders
-        \</h3>
+        </h3>
 
-        \<p
+        <p
           class="text-[10px] text-slate-400 mt-1"
-        \>
+        >
           Keep short reminders for yourself.
-        \</p>
+        </p>
 
-      \</div>
+      </div>
 
-      \<span
+      <span
         id="noteCount"
-        class="text-[10px] font-semibold text-slate-500 bg-slate-100 dark\:bg-slate-800 px-2.5 py-1 rounded-full"
-      \>
+        class="text-[10px] font-semibold text-slate-500 bg-slate-100 dark:bg-slate-800 px-2.5 py-1 rounded-full"
+      >
         0
-      \</span>
+      </span>
 
-    \</div>
+    </div>
 
-    \<div
+    <div
       class="flex gap-2 mb-3"
-    \>
+    >
 
-      \<input
+      <input
         id="noteInput"
         type="text"
         maxlength="160"
         placeholder="Add a reminder..."
-        class="flex-1 min-w-0 bg-slate-50 dark\:bg-slate-800 text-xs rounded-lg px-3 py-2 border border-slate-200 dark\:border-slate-700 focus\:outline-none focus\:border-dlsu"
-      \>
+        class="flex-1 min-w-0 bg-slate-50 dark:bg-slate-800 text-xs rounded-lg px-3 py-2 border border-slate-200 dark:border-slate-700 focus:outline-none focus:border-dlsu"
+      >
 
-      \<button
+      <button
         onclick="addNote()"
-        class="px-3 py-2 rounded-lg bg-dlsu hover\:bg-dlsu-dark text-white text-xs font-semibold"
-      \>
+        class="px-3 py-2 rounded-lg bg-dlsu hover:bg-dlsu-dark text-white text-xs font-semibold"
+      >
         Add
-      \</button>
+      </button>
 
-    \</div>
+    </div>
 
-    \<div
+    <div
       id="notesList"
       class="space-y-2 max-h-56 overflow-y-auto"
-    \>\</div>
+    ></div>
 
-  \</div>
+  </div>
 
-\</section>
+</section>
 
-\<!-- ========================================================= -->
-\<!-- QUICK ACCESS -->
-\<!-- ========================================================= -->
+<!-- ========================================================= -->
+<!-- QUICK ACCESS -->
+<!-- ========================================================= -->
 
-\<section>
+<section>
 
-  \<div
-    class="grid grid-cols-2 sm\:grid-cols-2 gap-3"
-  \>
+  <div
+    class="grid grid-cols-2 sm:grid-cols-2 gap-3"
+  >
 
-    \<!-- Schedule -->
+    <!-- Schedule -->
 
-    \<a
+    <a
       href="#scheduleSection"
-      class="bg-white dark\:bg-slate-900 border border-slate-200 dark\:border-slate-800 rounded-xl p-4 hover\:border-dlsu transition"
-    \>
+      class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-4 hover:border-dlsu transition"
+    >
 
-      \<div
+      <div
         class="w-6 h-6 mb-2 text-dlsu"
-      \>
+      >
 
-        \<svg
+        <svg
           class="w-full h-full"
           fill="none"
           stroke="currentColor"
           stroke-width="1.8"
           viewBox="0 0 24 24"
-        \>
+        >
 
-          \<rect
+          <rect
             x="3"
             y="4"
             width="18"
@@ -1252,49 +1252,49 @@
             rx="2"
           />
 
-          \<path
+          <path
             stroke-linecap="round"
             d="M16 2v4M8 2v4M3 10h18"
           />
 
-        \</svg>
+        </svg>
 
-      \</div>
+      </div>
 
-      \<p
-        class="font-bold text-sm text-slate-900 dark\:text-white"
-      \>
+      <p
+        class="font-bold text-sm text-slate-900 dark:text-white"
+      >
         Schedule
-      \</p>
+      </p>
 
-      \<p
+      <p
         class="text-[10px] text-slate-400 mt-1"
-      \>
+      >
         Weekly classes
-      \</p>
+      </p>
 
-    \</a>
+    </a>
 
-    \<!-- Announcements -->
+    <!-- Announcements -->
 
-    \<a
+    <a
       href="#announcementsSection"
-      class="bg-white dark\:bg-slate-900 border border-slate-200 dark\:border-slate-800 rounded-xl p-4 hover\:border-dlsu transition"
-    \>
+      class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-4 hover:border-dlsu transition"
+    >
 
-      \<div
+      <div
         class="w-6 h-6 mb-2 text-dlsu"
-      \>
+      >
 
-        \<svg
+        <svg
           class="w-full h-full"
           fill="none"
           stroke="currentColor"
           stroke-width="1.8"
           viewBox="0 0 24 24"
-        \>
+        >
 
-          \<path
+          <path
             stroke-linecap="round"
             stroke-linejoin="round"
             d="
@@ -1303,102 +1303,102 @@
             "
           />
 
-          \<path
+          <path
             stroke-linecap="round"
             d="M10 21h4"
           />
 
-        \</svg>
+        </svg>
 
-      \</div>
+      </div>
 
-      \<p
-        class="font-bold text-sm text-slate-900 dark\:text-white"
-      \>
+      <p
+        class="font-bold text-sm text-slate-900 dark:text-white"
+      >
         Announcements
-      \</p>
+      </p>
 
-      \<p
+      <p
         class="text-[10px] text-slate-400 mt-1"
-      \>
+      >
         Block updates
-      \</p>
+      </p>
 
-    \</a>
+    </a>
 
-  \</div>
+  </div>
 
-\</section>
+</section>
 
-\<!-- ========================================================= -->
-\<!-- SCHEDULE -->
-\<!-- ========================================================= -->
+<!-- ========================================================= -->
+<!-- SCHEDULE -->
+<!-- ========================================================= -->
 
-\<section
+<section
   id="scheduleSection"
   class="scroll-mt-24"
-\>
+>
 
-  \<div
-    class="flex flex-col sm\:flex-row sm\:items-center justify-between gap-4 mb-5"
-  \>
+  <div
+    class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-5"
+  >
 
-    \<div>
+    <div>
 
-      \<h2
-        class="text-xl font-bold text-slate-900 dark\:text-white"
-      \>
+      <h2
+        class="text-xl font-bold text-slate-900 dark:text-white"
+      >
         Class Schedule
-      \</h2>
+      </h2>
 
-      \<p
-        class="text-xs text-slate-500 dark\:text-slate-400 mt-1"
-      \>
+      <p
+        class="text-xs text-slate-500 dark:text-slate-400 mt-1"
+      >
         Term 1 • A.Y. 2026–2027
-      \</p>
+      </p>
 
-    \</div>
+    </div>
 
-    \<div
+    <div
       class="flex items-center gap-2 flex-wrap justify-end"
-    \>
+    >
 
-      \<div
-        class="bg-slate-200/70 dark\:bg-slate-800 p-1 rounded-xl flex gap-1 text-xs font-medium"
-      \>
+      <div
+        class="bg-slate-200/70 dark:bg-slate-800 p-1 rounded-xl flex gap-1 text-xs font-medium"
+      >
 
-        \<button
+        <button
           id="btnGrid"
           onclick="toggleScheduleView('grid')"
-          class="px-3 py-1.5 rounded-lg bg-white dark\:bg-slate-700 shadow-sm text-slate-800 dark\:text-white whitespace-nowrap"
-        \>
+          class="px-3 py-1.5 rounded-lg bg-white dark:bg-slate-700 shadow-sm text-slate-800 dark:text-white whitespace-nowrap"
+        >
           Weekly Grid
-        \</button>
+        </button>
 
-        \<button
+        <button
           id="btnList"
           onclick="toggleScheduleView('list')"
-          class="px-3 py-1.5 rounded-lg text-slate-600 dark\:text-slate-300 whitespace-nowrap"
-        \>
+          class="px-3 py-1.5 rounded-lg text-slate-600 dark:text-slate-300 whitespace-nowrap"
+        >
           Course List
-        \</button>
+        </button>
 
-      \</div>
+      </div>
 
-      \<button
+      <button
         onclick="openScheduleImage()"
-        class="px-3 py-2 rounded-xl bg-dlsu hover\:bg-dlsu-dark text-white text-xs font-semibold shadow-sm transition whitespace-nowrap flex items-center gap-1.5"
-      \>
+        class="px-3 py-2 rounded-xl bg-dlsu hover:bg-dlsu-dark text-white text-xs font-semibold shadow-sm transition whitespace-nowrap flex items-center gap-1.5"
+      >
 
-        \<svg
+        <svg
           class="w-4 h-4"
           fill="none"
           stroke="currentColor"
           stroke-width="1.8"
           viewBox="0 0 24 24"
-        \>
+        >
 
-          \<rect
+          <rect
             x="3"
             y="4"
             width="18"
@@ -1406,723 +1406,723 @@
             rx="2"
           />
 
-          \<path
+          <path
             stroke-linecap="round"
             d="M16 2v4M8 2v4M3 10h18"
           />
 
-        \</svg>
+        </svg>
 
         View Schedule
 
-      \</button>
+      </button>
 
-    \</div>
+    </div>
 
-  \</div>
+  </div>
 
-  \<!-- GRID -->
+  <!-- GRID -->
 
-  \<div
+  <div
     id="scheduleGridView"
-    class="bg-white dark\:bg-slate-900 rounded-2xl border border-slate-200 dark\:border-slate-800 p-4 sm\:p-6 shadow-sm overflow-x-auto"
-  \>
+    class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-4 sm:p-6 shadow-sm overflow-x-auto"
+  >
 
-    \<div
+    <div
       class="min-w-[800px]"
-    \>
+    >
 
-      \<div
+      <div
         id="scheduleGrid"
         class="grid grid-cols-6 gap-3"
-      \>\</div>
+      ></div>
 
-    \</div>
+    </div>
 
-  \</div>
+  </div>
 
-  \<!-- LIST -->
+  <!-- LIST -->
 
-  \<div
+  <div
     id="scheduleListView"
-    class="hidden grid grid-cols-1 md\:grid-cols-2 lg\:grid-cols-3 gap-4"
-  \>\</div>
+    class="hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
+  ></div>
 
-\</section>
+</section>
 
-\<!-- ========================================================= -->
-\<!-- ANNOUNCEMENTS -->
-\<!-- ========================================================= -->
+<!-- ========================================================= -->
+<!-- ANNOUNCEMENTS -->
+<!-- ========================================================= -->
 
-\<section
+<section
   id="announcementsSection"
-  class="scroll-mt-24 border-t border-slate-200 dark\:border-slate-800 pt-8"
-\>
+  class="scroll-mt-24 border-t border-slate-200 dark:border-slate-800 pt-8"
+>
 
-  \<div
-    class="flex flex-col lg\:flex-row lg\:items-center justify-between gap-4 mb-5"
-  \>
+  <div
+    class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-5"
+  >
 
-    \<div>
+    <div>
 
-      \<h2
-        class="text-xl font-bold text-slate-900 dark\:text-white"
-      \>
+      <h2
+        class="text-xl font-bold text-slate-900 dark:text-white"
+      >
         Block Announcements
-      \</h2>
+      </h2>
 
-      \<p
-        class="text-xs text-slate-500 dark\:text-slate-400 mt-1"
-      \>
+      <p
+        class="text-xs text-slate-500 dark:text-slate-400 mt-1"
+      >
         Official notices, statements, and updates.
-      \</p>
+      </p>
 
-    \</div>
+    </div>
 
-    \<div
+    <div
       class="relative max-w-sm w-full"
-    \>
+    >
 
-      \<input
+      <input
         id="searchInput"
         type="text"
         placeholder="Search announcements..."
-        class="w-full bg-white dark\:bg-slate-900 text-xs rounded-xl pl-9 pr-4 py-2.5 border border-slate-200 dark\:border-slate-800 focus\:outline-none focus\:border-dlsu"
-      \>
+        class="w-full bg-white dark:bg-slate-900 text-xs rounded-xl pl-9 pr-4 py-2.5 border border-slate-200 dark:border-slate-800 focus:outline-none focus:border-dlsu"
+      >
 
-      \<svg
+      <svg
         class="w-4 h-4 text-slate-400 absolute left-3 top-3"
         fill="none"
         stroke="currentColor"
         stroke-width="1.8"
         viewBox="0 0 24 24"
-      \>
+      >
 
-        \<circle
+        <circle
           cx="11"
           cy="11"
           r="7"
         />
 
-        \<path
+        <path
           stroke-linecap="round"
           d="M20 20l-4-4"
         />
 
-      \</svg>
+      </svg>
 
-    \</div>
+    </div>
 
-  \</div>
+  </div>
 
-  \<!-- Category Filters -->
+  <!-- Category Filters -->
 
-  \<div
+  <div
     class="flex gap-2 overflow-x-auto hide-scrollbar pb-2 mb-5"
-  \>
+  >
 
-    \<button
+    <button
       onclick="filterCategory('All')"
       class="filter-btn active px-4 py-2 rounded-lg bg-dlsu text-white text-xs font-medium whitespace-nowrap"
-    \>
+    >
       All
-    \</button>
+    </button>
 
-    \<button
+    <button
       onclick="filterCategory('Important')"
-      class="filter-btn px-4 py-2 rounded-lg bg-white dark\:bg-slate-900 border border-slate-200 dark\:border-slate-800 text-xs font-medium whitespace-nowrap"
-    \>
+      class="filter-btn px-4 py-2 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs font-medium whitespace-nowrap"
+    >
       Important
-    \</button>
+    </button>
 
-    \<button
+    <button
       onclick="filterCategory('Announcements')"
-      class="filter-btn px-4 py-2 rounded-lg bg-white dark\:bg-slate-900 border border-slate-200 dark\:border-slate-800 text-xs font-medium whitespace-nowrap"
-    \>
+      class="filter-btn px-4 py-2 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs font-medium whitespace-nowrap"
+    >
       Announcements
-    \</button>
+    </button>
 
-    \<button
+    <button
       onclick="filterCategory('Reminders')"
-      class="filter-btn px-4 py-2 rounded-lg bg-white dark\:bg-slate-900 border border-slate-200 dark\:border-slate-800 text-xs font-medium whitespace-nowrap"
-    \>
+      class="filter-btn px-4 py-2 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs font-medium whitespace-nowrap"
+    >
       Reminders
-    \</button>
+    </button>
 
-    \<button
+    <button
       onclick="filterCategory('Statements')"
-      class="filter-btn px-4 py-2 rounded-lg bg-white dark\:bg-slate-900 border border-slate-200 dark\:border-slate-800 text-xs font-medium whitespace-nowrap"
-    \>
+      class="filter-btn px-4 py-2 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs font-medium whitespace-nowrap"
+    >
       Statements
-    \</button>
+    </button>
 
-  \</div>
+  </div>
 
-  \<div
+  <div
     class="flex flex-wrap items-center gap-2 mb-5"
-  \>
+  >
 
-    \<button
+    <button
       id="announcementViewActive"
       onclick="setAnnouncementView('active')"
       class="px-3 py-2 rounded-lg bg-dlsu text-white text-xs font-semibold"
-    \>
+    >
       Current Announcements
-    \</button>
+    </button>
 
-    \<button
+    <button
       id="announcementViewArchive"
       onclick="setAnnouncementView('archive')"
-      class="px-3 py-2 rounded-lg bg-white dark\:bg-slate-900 border border-slate-200 dark\:border-slate-800 text-xs font-semibold text-slate-600 dark\:text-slate-300"
-    \>
+      class="px-3 py-2 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs font-semibold text-slate-600 dark:text-slate-300"
+    >
       Archive
-    \</button>
+    </button>
 
-    \<span
+    <span
       class="text-[10px] text-slate-400 ml-1"
-    \>
+    >
       Older announcements are automatically archived after 30 days.
-    \</span>
+    </span>
 
-  \</div>
+  </div>
 
-  \<div
+  <div
     id="cardGrid"
-    class="grid grid-cols-1 md\:grid-cols-2 lg\:grid-cols-3 gap-5"
-  \>\</div>
+    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"
+  ></div>
 
-  \<div
+  <div
     id="emptyState"
     class="hidden text-center py-12"
-  \>
+  >
 
-    \<div
-      class="w-10 h-10 mx-auto mb-3 text-slate-300 dark\:text-slate-600"
-    \>
+    <div
+      class="w-10 h-10 mx-auto mb-3 text-slate-300 dark:text-slate-600"
+    >
 
-      \<svg
+      <svg
         class="w-full h-full"
         fill="none"
         stroke="currentColor"
         stroke-width="1.6"
         viewBox="0 0 24 24"
-      \>
+      >
 
-        \<circle
+        <circle
           cx="11"
           cy="11"
           r="7"
         />
 
-        \<path
+        <path
           stroke-linecap="round"
           d="M20 20l-4-4"
         />
 
-        \<path
+        <path
           stroke-linecap="round"
           d="M8.5 8.5l5 5M13.5 8.5l-5 5"
         />
 
-      \</svg>
+      </svg>
 
-    \</div>
+    </div>
 
-    \<p
+    <p
       class="text-slate-400 text-sm"
-    \>
+    >
       No announcements found.
-    \</p>
+    </p>
 
-  \</div>
+  </div>
 
-\</section>
+</section>
 
-\<!-- ========================================================= -->
-\<!-- IMPORTANT LINKS -->
-\<!-- ========================================================= -->
+<!-- ========================================================= -->
+<!-- IMPORTANT LINKS -->
+<!-- ========================================================= -->
 
-\<section
+<section
   id="linksSection"
-  class="scroll-mt-24 border-t border-slate-200 dark\:border-slate-800 pt-8"
-\>
+  class="scroll-mt-24 border-t border-slate-200 dark:border-slate-800 pt-8"
+>
 
-  \<div class="mb-5">
+  <div class="mb-5">
 
-    \<h2
-      class="text-xl font-bold text-slate-900 dark\:text-white"
-    \>
+    <h2
+      class="text-xl font-bold text-slate-900 dark:text-white"
+    >
       Important Links
-    \</h2>
+    </h2>
 
-    \<p
-      class="text-xs text-slate-500 dark\:text-slate-400 mt-1"
-    \>
+    <p
+      class="text-xs text-slate-500 dark:text-slate-400 mt-1"
+    >
       Quick access to official C16A and DLSU resources.
-    \</p>
+    </p>
 
-  \</div>
+  </div>
 
-  \<div
-    class="grid grid-cols-1 sm\:grid-cols-2 lg\:grid-cols-4 gap-4"
-  \>
+  <div
+    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"
+  >
 
-    \<a
-      href="[https://www.dlsu.edu.ph/](https://www.dlsu.edu.ph/)"
-      target="\_blank"
+    <a
+      href="https://www.dlsu.edu.ph/"
+      target="_blank"
       rel="noopener noreferrer"
-      class="utility-card bg-white dark\:bg-slate-900 rounded-xl border border-slate-200 dark\:border-slate-800 p-5 block hover\:border-dlsu"
-    \>
+      class="utility-card bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 p-5 block hover:border-dlsu"
+    >
 
-      \<p class="text-[10px] uppercase font-bold text-slate-400">
+      <p class="text-[10px] uppercase font-bold text-slate-400">
         University
-      \</p>
+      </p>
 
-      \<h3 class="font-bold text-slate-900 dark\:text-white mt-1">
+      <h3 class="font-bold text-slate-900 dark:text-white mt-1">
         DLSU Website
-      \</h3>
+      </h3>
 
-      \<p class="text-xs text-slate-400 mt-2">
+      <p class="text-xs text-slate-400 mt-2">
         Official De La Salle University website.
-      \</p>
+      </p>
 
-    \</a>
+    </a>
 
-    \<a
-      href="[https://archershub.dlsu.edu.ph/](https://archershub.dlsu.edu.ph/)"
-      target="\_blank"
+    <a
+      href="https://archershub.dlsu.edu.ph/"
+      target="_blank"
       rel="noopener noreferrer"
-      class="utility-card bg-white dark\:bg-slate-900 rounded-xl border border-slate-200 dark\:border-slate-800 p-5 block hover\:border-dlsu"
-    \>
+      class="utility-card bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 p-5 block hover:border-dlsu"
+    >
 
-      \<p class="text-[10px] uppercase font-bold text-slate-400">
+      <p class="text-[10px] uppercase font-bold text-slate-400">
         Student Platform
-      \</p>
+      </p>
 
-      \<h3 class="font-bold text-slate-900 dark\:text-white mt-1">
+      <h3 class="font-bold text-slate-900 dark:text-white mt-1">
         DLSU Archer's Hub
-      \</h3>
+      </h3>
 
-      \<p class="text-xs text-slate-400 mt-2">
+      <p class="text-xs text-slate-400 mt-2">
         Access the DLSU Archer's Hub.
-      \</p>
+      </p>
 
-    \</a>
+    </a>
 
-    \<a
-      href="[https://dlsu.instructure.com/](https://dlsu.instructure.com/)"
-      target="\_blank"
+    <a
+      href="https://dlsu.instructure.com/"
+      target="_blank"
       rel="noopener noreferrer"
-      class="utility-card bg-white dark\:bg-slate-900 rounded-xl border border-slate-200 dark\:border-slate-800 p-5 block hover\:border-dlsu"
-    \>
+      class="utility-card bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 p-5 block hover:border-dlsu"
+    >
 
-      \<p class="text-[10px] uppercase font-bold text-slate-400">
+      <p class="text-[10px] uppercase font-bold text-slate-400">
         Learning
-      \</p>
+      </p>
 
-      \<h3 class="font-bold text-slate-900 dark\:text-white mt-1">
+      <h3 class="font-bold text-slate-900 dark:text-white mt-1">
         DLSU AnimoSpace
-      \</h3>
+      </h3>
 
-      \<p class="text-xs text-slate-400 mt-2">
+      <p class="text-xs text-slate-400 mt-2">
         Access your courses and learning materials.
-      \</p>
+      </p>
 
-    \</a>
+    </a>
 
-    \<a
-      href="[https://janpatricbalmeo-cmyk.github.io/c16a-hub/](https://janpatricbalmeo-cmyk.github.io/c16a-hub/)"
-      target="\_blank"
+    <a
+      href="https://janpatricbalmeo-cmyk.github.io/c16a-hub/"
+      target="_blank"
       rel="noopener noreferrer"
-      class="utility-card bg-white dark\:bg-slate-900 rounded-xl border border-slate-200 dark\:border-slate-800 p-5 block hover\:border-dlsu"
-    \>
+      class="utility-card bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 p-5 block hover:border-dlsu"
+    >
 
-      \<p class="text-[10px] uppercase font-bold text-slate-400">
+      <p class="text-[10px] uppercase font-bold text-slate-400">
         Block Website
-      \</p>
+      </p>
 
-      \<h3 class="font-bold text-slate-900 dark\:text-white mt-1">
+      <h3 class="font-bold text-slate-900 dark:text-white mt-1">
         C16A Central Hub
-      \</h3>
+      </h3>
 
-      \<p class="text-xs text-slate-400 mt-2">
+      <p class="text-xs text-slate-400 mt-2">
         Open the C16A block website.
-      \</p>
+      </p>
 
-    \</a>
+    </a>
 
-  \</div>
+  </div>
 
-\</section>
+</section>
 
-\<!-- ========================================================= -->
-\<!-- CAMPUS MAP SECTION -->
-\<!-- ========================================================= -->
+<!-- ========================================================= -->
+<!-- CAMPUS MAP SECTION -->
+<!-- ========================================================= -->
 
-\<section
+<section
   id="mapSection"
-  class="scroll-mt-24 border-t border-slate-200 dark\:border-slate-800 pt-8"
-\>
+  class="scroll-mt-24 border-t border-slate-200 dark:border-slate-800 pt-8"
+>
 
-  \<div class="mb-5">
+  <div class="mb-5">
 
-    \<h2
-      class="text-xl font-bold text-slate-900 dark\:text-white"
-    \>
+    <h2
+      class="text-xl font-bold text-slate-900 dark:text-white"
+    >
       DLSU Campus Map
-    \</h2>
+    </h2>
 
-    \<p
-      class="text-xs text-slate-500 dark\:text-slate-400 mt-1"
-    \>
+    <p
+      class="text-xs text-slate-500 dark:text-slate-400 mt-1"
+    >
       Full campus map reference.
-    \</p>
+    </p>
 
-  \</div>
+  </div>
 
-  \<button
+  <button
     onclick="openCampusMap()"
-    class="w-full bg-white dark\:bg-slate-900 rounded-2xl border border-slate-200 dark\:border-slate-800 p-3 sm\:p-5 shadow-sm cursor-zoom-in"
-  \>
+    class="w-full bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-3 sm:p-5 shadow-sm cursor-zoom-in"
+  >
 
-    \<img
+    <img
       src="DLSU-Map.jpg"
       alt="DLSU Campus Map"
       class="w-full max-h-[650px] object-contain mx-auto rounded-xl"
-    \>
+    >
 
-  \</button>
+  </button>
 
-\</section>
+</section>
 
-\</main>
+</main>
 
-\<!-- ========================================================= -->
-\<!-- FOOTER -->
-\<!-- ========================================================= -->
+<!-- ========================================================= -->
+<!-- FOOTER -->
+<!-- ========================================================= -->
 
-\<footer
-  class="bg-white dark\:bg-slate-900 border-t border-slate-200 dark\:border-slate-800 py-6 mt-12"
-\>
+<footer
+  class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 py-6 mt-12"
+>
 
-  \<div
-    class="max-w-7xl mx-auto px-4 flex flex-col sm\:flex-row items-center justify-between gap-4 text-xs text-slate-400"
-  \>
+  <div
+    class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400"
+  >
 
-    \<div
+    <div
       class="flex items-center gap-2"
-    \>
+    >
 
-      \<img
+      <img
         src="dlsu-logo.jpg"
         alt="DLSU"
         class="h-5 w-5 grayscale opacity-60"
-      \>
+      >
 
-      \<p>
+      <p>
         RVRCOB • BS-MGT • Block C16A
-      \</p>
+      </p>
 
-    \</div>
+    </div>
 
-    \<p>
+    <p>
       De La Salle University — Manila
-    \</p>
+    </p>
 
-  \</div>
+  </div>
 
-\</footer>
+</footer>
 
-\<!-- ========================================================= -->
-\<!-- ANNOUNCEMENT MODAL -->
-\<!-- ========================================================= -->
+<!-- ========================================================= -->
+<!-- ANNOUNCEMENT MODAL -->
+<!-- ========================================================= -->
 
-\<div
+<div
   id="announcementModal"
   onclick="closeAnnouncementModal()"
   class="fixed inset-0 z-50 bg-slate-950/70 backdrop-blur-sm flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity"
-\>
+>
 
-  \<div
+  <div
     onclick="event.stopPropagation()"
-    class="bg-white dark\:bg-slate-900 rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto transform scale-95 transition-transform"
-  \>
+    class="bg-white dark:bg-slate-900 rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto transform scale-95 transition-transform"
+  >
 
-    \<div
-      class="p-6 border-b border-slate-100 dark\:border-slate-800 flex justify-between gap-4"
-    \>
+    <div
+      class="p-6 border-b border-slate-100 dark:border-slate-800 flex justify-between gap-4"
+    >
 
-      \<div>
+      <div>
 
-        \<div class="flex flex-wrap gap-2 mb-2">
+        <div class="flex flex-wrap gap-2 mb-2">
 
-          \<span
+          <span
             id="modalCategory"
             class="text-[10px] uppercase font-semibold px-2.5 py-1 rounded-full border"
-          \>\</span>
+          ></span>
 
-          \<span
+          <span
             id="modalCode"
-            class="text-[10px] font-mono text-slate-400 bg-slate-100 dark\:bg-slate-800 px-2 py-1 rounded"
-          \>\</span>
+            class="text-[10px] font-mono text-slate-400 bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded"
+          ></span>
 
-        \</div>
+        </div>
 
-        \<h3
+        <h3
           id="modalTitle"
-          class="text-xl font-bold text-slate-900 dark\:text-white"
-        \>\</h3>
+          class="text-xl font-bold text-slate-900 dark:text-white"
+        ></h3>
 
-        \<p
+        <p
           id="modalDate"
           class="text-xs text-slate-400 mt-2"
-        \>\</p>
+        ></p>
 
-      \</div>
+      </div>
 
-      \<button
+      <button
         onclick="closeAnnouncementModal()"
         aria-label="Close announcement"
-        class="text-slate-400 hover\:text-slate-700 dark\:hover\:text-white text-xl"
-      \>
+        class="text-slate-400 hover:text-slate-700 dark:hover:text-white text-xl"
+      >
         ×
-      \</button>
+      </button>
 
-    \</div>
+    </div>
 
-    \<div class="p-6">
+    <div class="p-6">
 
-      \<div
+      <div
         id="modalImageWrapper"
-        class="hidden rounded-xl overflow-hidden bg-slate-100 dark\:bg-slate-800 mb-6"
-      \>
+        class="hidden rounded-xl overflow-hidden bg-slate-100 dark:bg-slate-800 mb-6"
+      >
 
-        \<img
+        <img
           id="modalImage"
           src=""
           alt="Announcement"
           class="max-h-96 mx-auto object-contain"
-        \>
+        >
 
-      \</div>
+      </div>
 
-      \<div
+      <div
         id="modalBody"
-        class="text-sm leading-relaxed whitespace-pre-line text-slate-700 dark\:text-slate-300"
-      \>\</div>
+        class="text-sm leading-relaxed whitespace-pre-line text-slate-700 dark:text-slate-300"
+      ></div>
 
-    \</div>
+    </div>
 
-    \<div
-      class="px-6 py-4 bg-slate-50 dark\:bg-slate-950 border-t border-slate-100 dark\:border-slate-800 flex justify-between text-xs"
-    \>
+    <div
+      class="px-6 py-4 bg-slate-50 dark:bg-slate-950 border-t border-slate-100 dark:border-slate-800 flex justify-between text-xs"
+    >
 
-      \<span
+      <span
         id="modalSource"
         class="text-slate-400 italic"
-      \>\</span>
+      ></span>
 
-      \<button
+      <button
         onclick="closeAnnouncementModal()"
         class="font-semibold text-dlsu"
-      \>
+      >
         Close
-      \</button>
+      </button>
 
-    \</div>
+    </div>
 
-  \</div>
+  </div>
 
-\</div>
+</div>
 
-\<!-- ========================================================= -->
-\<!-- COURSE MODAL -->
-\<!-- ========================================================= -->
+<!-- ========================================================= -->
+<!-- COURSE MODAL -->
+<!-- ========================================================= -->
 
-\<div
+<div
   id="courseModal"
   onclick="closeCourseModal()"
   class="fixed inset-0 z-50 bg-slate-950/70 backdrop-blur-sm flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity"
-\>
+>
 
-  \<div
+  <div
     onclick="event.stopPropagation()"
-    class="bg-white dark\:bg-slate-900 rounded-2xl shadow-2xl max-w-lg w-full transform scale-95 transition-transform"
-  \>
+    class="bg-white dark:bg-slate-900 rounded-2xl shadow-2xl max-w-lg w-full transform scale-95 transition-transform"
+  >
 
-    \<div class="p-6">
+    <div class="p-6">
 
-      \<div class="flex justify-between gap-4">
+      <div class="flex justify-between gap-4">
 
-        \<div>
+        <div>
 
-          \<span
+          <span
             id="courseModalCode"
             class="font-mono text-xs px-2 py-1 rounded"
-          \>\</span>
+          ></span>
 
-          \<h3
+          <h3
             id="courseModalTitle"
-            class="text-xl font-bold text-slate-900 dark\:text-white mt-3"
-          \>\</h3>
+            class="text-xl font-bold text-slate-900 dark:text-white mt-3"
+          ></h3>
 
-        \</div>
+        </div>
 
-        \<button
+        <button
           onclick="closeCourseModal()"
           aria-label="Close course details"
           class="text-slate-400 text-xl"
-        \>
+        >
           ×
-        \</button>
+        </button>
 
-      \</div>
+      </div>
 
-      \<div
+      <div
         id="courseModalBody"
         class="mt-6 space-y-4 text-sm"
-      \>\</div>
+      ></div>
 
-    \</div>
+    </div>
 
-  \</div>
+  </div>
 
-\</div>
+</div>
 
-\<!-- ========================================================= -->
-\<!-- SCHEDULE IMAGE MODAL -->
-\<!-- ========================================================= -->
+<!-- ========================================================= -->
+<!-- SCHEDULE IMAGE MODAL -->
+<!-- ========================================================= -->
 
-\<div
+<div
   id="scheduleImageModal"
   onclick="closeScheduleImage()"
   class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity"
-\>
+>
 
-  \<div
+  <div
     onclick="event.stopPropagation()"
-    class="bg-white dark\:bg-slate-900 rounded-2xl shadow-2xl max-w-6xl w-full max-h-[95vh] overflow-auto transform scale-95 transition-transform"
-  \>
+    class="bg-white dark:bg-slate-900 rounded-2xl shadow-2xl max-w-6xl w-full max-h-[95vh] overflow-auto transform scale-95 transition-transform"
+  >
 
-    \<div
-      class="sticky top-0 z-10 bg-white/95 dark\:bg-slate-900/95 backdrop-blur border-b border-slate-200 dark\:border-slate-800 px-5 py-4 flex items-center justify-between"
-    \>
+    <div
+      class="sticky top-0 z-10 bg-white/95 dark:bg-slate-900/95 backdrop-blur border-b border-slate-200 dark:border-slate-800 px-5 py-4 flex items-center justify-between"
+    >
 
-      \<div>
+      <div>
 
-        \<h3
-          class="font-bold text-slate-900 dark\:text-white"
-        \>
+        <h3
+          class="font-bold text-slate-900 dark:text-white"
+        >
           C16A Term 1 Class Schedule
-        \</h3>
+        </h3>
 
-        \<p
+        <p
           class="text-[10px] text-slate-400 mt-1"
-        \>
+        >
           Official class schedule
-        \</p>
+        </p>
 
-      \</div>
+      </div>
 
-      \<button
+      <button
         onclick="closeScheduleImage()"
         aria-label="Close schedule"
-        class="text-slate-400 hover\:text-slate-700 dark\:hover\:text-white text-2xl"
-      \>
+        class="text-slate-400 hover:text-slate-700 dark:hover:text-white text-2xl"
+      >
         ×
-      \</button>
+      </button>
 
-    \</div>
+    </div>
 
-    \<div
-      class="p-4 sm\:p-6 bg-slate-100 dark\:bg-slate-950"
-    \>
+    <div
+      class="p-4 sm:p-6 bg-slate-100 dark:bg-slate-950"
+    >
 
-      \<img
+      <img
         id="scheduleImage"
         src="C16A Term 1 - Class Schedule.png"
         alt="C16A Term 1 Class Schedule"
         class="w-full h-auto mx-auto object-contain rounded-xl shadow-sm"
-      \>
+      >
 
-    \</div>
+    </div>
 
-  \</div>
+  </div>
 
-\</div>
+</div>
 
-\<!-- ========================================================= -->
-\<!-- CAMPUS MAP MODAL -->
-\<!-- ========================================================= -->
+<!-- ========================================================= -->
+<!-- CAMPUS MAP MODAL -->
+<!-- ========================================================= -->
 
-\<div
+<div
   id="campusMapModal"
   onclick="closeCampusMap()"
   class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity"
-\>
+>
 
-  \<div
+  <div
     onclick="event.stopPropagation()"
-    class="bg-white dark\:bg-slate-900 rounded-2xl shadow-2xl max-w-7xl w-full max-h-[95vh] overflow-auto transform scale-95 transition-transform"
-  \>
+    class="bg-white dark:bg-slate-900 rounded-2xl shadow-2xl max-w-7xl w-full max-h-[95vh] overflow-auto transform scale-95 transition-transform"
+  >
 
-    \<div
-      class="sticky top-0 z-10 bg-white/95 dark\:bg-slate-900/95 backdrop-blur border-b border-slate-200 dark\:border-slate-800 px-5 py-4 flex items-center justify-between"
-    \>
+    <div
+      class="sticky top-0 z-10 bg-white/95 dark:bg-slate-900/95 backdrop-blur border-b border-slate-200 dark:border-slate-800 px-5 py-4 flex items-center justify-between"
+    >
 
-      \<div>
+      <div>
 
-        \<h3
-          class="font-bold text-slate-900 dark\:text-white"
-        \>
+        <h3
+          class="font-bold text-slate-900 dark:text-white"
+        >
           DLSU Campus Map
-        \</h3>
+        </h3>
 
-        \<p
+        <p
           class="text-[10px] text-slate-400 mt-1"
-        \>
+        >
           De La Salle University — Manila
-        \</p>
+        </p>
 
-      \</div>
+      </div>
 
-      \<button
+      <button
         onclick="closeCampusMap()"
         aria-label="Close campus map"
-        class="text-slate-400 hover\:text-slate-700 dark\:hover\:text-white text-2xl"
-      \>
+        class="text-slate-400 hover:text-slate-700 dark:hover:text-white text-2xl"
+      >
         ×
-      \</button>
+      </button>
 
-    \</div>
+    </div>
 
-    \<div
-      class="p-3 sm\:p-6 bg-slate-100 dark\:bg-slate-950"
-    \>
+    <div
+      class="p-3 sm:p-6 bg-slate-100 dark:bg-slate-950"
+    >
 
-      \<img
+      <img
         src="DLSU-Map.jpg"
         alt="DLSU Campus Map"
         class="w-full h-auto mx-auto object-contain rounded-xl shadow-sm"
-      \>
+      >
 
-    \</div>
+    </div>
 
-  \</div>
+  </div>
 
-\</div>
+</div>
 
-\<!-- ========================================================= -->
-\<!-- JAVASCRIPT -->
-\<!-- ========================================================= -->
+<!-- ========================================================= -->
+<!-- JAVASCRIPT -->
+<!-- ========================================================= -->
 
-\<script>
+<script>
 
-/\* ============================================================
+/* ============================================================
    CENTRAL DATA
-\============================================================ \*/
+============================================================ */
 
-/\* COURSES \*/
+/* COURSES */
 
 const courses = [
 
@@ -2198,7 +2198,7 @@ const courses = [
 
 ];
 
-/\* SCHEDULE \*/
+/* SCHEDULE */
 
 const schedule = [
 
@@ -2336,15 +2336,15 @@ const schedule = [
 
 ];
 
-/\* ============================================================
+/* ============================================================
    TERM SETTINGS
-\============================================================ \*/
+============================================================ */
 
-const TERM\_START = "2026-09-07";
+const TERM_START = "2026-09-07";
 
-/\* ============================================================
+/* ============================================================
    ANNOUNCEMENTS
-\============================================================ \*/
+============================================================ */
 
 const announcements = [
 
@@ -2354,9 +2354,9 @@ const announcements = [
     Category: "Statements",
     Date: "2026-08-21",
     Image: "c16a-126001.jpg",
-    Body: \`Following the recent announcement regarding the cancellation of the LPEP schedule for RVRCOB-MGT and CLT-SOE, block and course representatives have appealed for a new date.
+    Body: `Following the recent announcement regarding the cancellation of the LPEP schedule for RVRCOB-MGT and CLT-SOE, block and course representatives have appealed for a new date.
 
-An appeal letter addressed to the SOE College President is currently awaiting signature from the SOE Associate Dean before being forwarded to LPEP/Frosh Walk organizers for consideration.\`,
+An appeal letter addressed to the SOE College President is currently awaiting signature from the SOE Associate Dean before being forwarded to LPEP/Frosh Walk organizers for consideration.`,
     Source: "BS-MGT Course Representative"
   },
 
@@ -2366,11 +2366,11 @@ An appeal letter addressed to the SOE College President is currently awaiting si
     Category: "Announcements",
     Date: "2026-08-22",
     Image: "c16a-126002.jpg",
-    Body: \`DLSU ID cards are now available for collection after Frosh Walk/LPEP.
+    Body: `DLSU ID cards are now available for collection after Frosh Walk/LPEP.
 
 Before claiming, confirm receipt of the official ESH email and bring a valid ID.
 
-Alternative pickup is available at the Enrollment Services Hub (ESH), 2F Henry Sy Sr. Hall.\`,
+Alternative pickup is available at the Enrollment Services Hub (ESH), 2F Henry Sy Sr. Hall.`,
     Source: "Office of the Block Representative"
   },
 
@@ -2380,7 +2380,7 @@ Alternative pickup is available at the Enrollment Services Hub (ESH), 2F Henry S
     Category: "Announcements",
     Date: "2026-08-23",
     Image: "c16a-126003.jpg",
-    Body: \`Tuition fee payment for 1st Term AY 2026–2027 officially begins August 24, 2026.
+    Body: `Tuition fee payment for 1st Term AY 2026–2027 officially begins August 24, 2026.
 
 1st Installment / Full Payment:
 September 9, 2026
@@ -2389,7 +2389,7 @@ September 9, 2026
 October 21, 2026
 
 3rd Installment:
-November 4, 2026\`,
+November 4, 2026`,
     Source: "Office of the Block Representative"
   },
 
@@ -2399,9 +2399,9 @@ November 4, 2026\`,
     Category: "Statements",
     Date: "2026-08-25",
     Image: "c16a-126004.jpg",
-    Body: \`There is currently no confirmed update on the rescheduling of the BS-MGT LPEP as the appeal remains under review.
+    Body: `There is currently no confirmed update on the rescheduling of the BS-MGT LPEP as the appeal remains under review.
 
-Representatives will immediately share any official update once available.\`,
+Representatives will immediately share any official update once available.`,
     Source: "BS-MGT Course Representative"
   },
 
@@ -2411,13 +2411,13 @@ Representatives will immediately share any official update once available.\`,
     Category: "Announcements",
     Date: "2026-08-26",
     Image: "c16a-126005.jpg",
-    Body: \`A brief survey conducted by the Office of the President to gather insights on enrollment motivation, program choice, and decision-making.
+    Body: `A brief survey conducted by the Office of the President to gather insights on enrollment motivation, program choice, and decision-making.
 
 Deadline:
 September 3, 2026 at 11:59 PM.
 
 Target Audience:
-All RVRCOB students.\`,
+All RVRCOB students.`,
     Source: "Office of the President"
   },
 
@@ -2427,7 +2427,7 @@ All RVRCOB students.\`,
     Category: "Important",
     Date: "2026-08-26",
     Image: "c16a-126006.jpg",
-    Body: \`The official start of Term 1, AY 2026–2027 will be SEPTEMBER 7, 2026 (MONDAY) instead of SEPTEMBER 3, 2026 (THURSDAY).\`,
+    Body: `The official start of Term 1, AY 2026–2027 will be SEPTEMBER 7, 2026 (MONDAY) instead of SEPTEMBER 3, 2026 (THURSDAY).`,
     Source: "DLSU University Student Government"
   },
 
@@ -2437,31 +2437,31 @@ All RVRCOB students.\`,
     Category: "Statements",
     Date: "2026-08-26",
     Image: "c16a-126007.jpg",
-    Body: \`The BS-MGT LPEP Day 1 is tentatively expected to be rescheduled to September 2, 2026.
+    Body: `The BS-MGT LPEP Day 1 is tentatively expected to be rescheduled to September 2, 2026.
 
-Please note that the schedule is tentative and may still change depending on further announcements.\`,
+Please note that the schedule is tentative and may still change depending on further announcements.`,
     Source: "College President of CLT-SOE"
   }
 
 ];
 
-/\* ============================================================
+/* ============================================================
    GLOBAL STATE
-\============================================================ \*/
+============================================================ */
 
 let activeCategory = "All";
 let searchQuery = "";
 let announcementView = "active";
 
-const ARCHIVE\_DAYS = 30;
+const ARCHIVE_DAYS = 30;
 
-const TASKS\_KEY = "c16a-quick-tasks";
-const NOTES\_KEY = "c16a-personal-notes";
-const INFO\_KEY = "c16a-personal-info";
+const TASKS_KEY = "c16a-quick-tasks";
+const NOTES_KEY = "c16a-personal-notes";
+const INFO_KEY = "c16a-personal-info";
 
-/\* ============================================================
+/* ============================================================
    PHILIPPINE TIME
-\============================================================ \*/
+============================================================ */
 
 function getPhilippineNow() {
 
@@ -2480,15 +2480,15 @@ function getPhilippineDateString() {
 
   const now = getPhilippineNow();
 
-  const year = now\.getFullYear();
+  const year = now.getFullYear();
 
   const month =
-    String(now\.getMonth() + 1).padStart(2, "0");
+    String(now.getMonth() + 1).padStart(2, "0");
 
   const day =
-    String(now\.getDate()).padStart(2, "0");
+    String(now.getDate()).padStart(2, "0");
 
-  return \`${year}-${month}-${day}\`;
+  return `${year}-${month}-${day}`;
 
 }
 
@@ -2506,13 +2506,13 @@ function getPhilippineDay() {
     "SAT"
   ];
 
-  return days[now\.getDay()];
+  return days[now.getDay()];
 
 }
 
-/\* ============================================================
+/* ============================================================
    DARK MODE
-\============================================================ \*/
+============================================================ */
 
 function initializeTheme() {
 
@@ -2538,9 +2538,9 @@ function toggleDarkMode() {
 
 }
 
-/\* ============================================================
+/* ============================================================
    DATE FORMAT
-\============================================================ \*/
+============================================================ */
 
 function formatDate(dateString) {
 
@@ -2558,9 +2558,9 @@ function formatDate(dateString) {
 
 }
 
-/\* ============================================================
+/* ============================================================
    NEW ANNOUNCEMENT CHECK
-\============================================================ \*/
+============================================================ */
 
 function isNewAnnouncement(dateString) {
 
@@ -2576,16 +2576,16 @@ function isNewAnnouncement(dateString) {
   const difference =
     Math.floor(
       (today - createdDate) /
-      (1000 \* 60 \* 60 \* 24)
+      (1000 * 60 * 60 * 24)
     );
 
   return difference >= 0 && difference <= 2;
 
 }
 
-/\* ============================================================
+/* ============================================================
    CLOCK
-\============================================================ \*/
+============================================================ */
 
 function updateDigitalClock() {
 
@@ -2593,7 +2593,7 @@ function updateDigitalClock() {
     getPhilippineNow();
 
   const time =
-    now\.toLocaleTimeString(
+    now.toLocaleTimeString(
       "en-US",
       {
         hour: "2-digit",
@@ -2614,9 +2614,9 @@ function updateDigitalClock() {
 
 }
 
-/\* ============================================================
+/* ============================================================
    DASHBOARD
-\============================================================ \*/
+============================================================ */
 
 function renderDashboard() {
 
@@ -2626,7 +2626,7 @@ function renderDashboard() {
   document.getElementById(
     "currentDate"
   ).innerText =
-    now\.toLocaleDateString(
+    now.toLocaleDateString(
       "en-US",
       {
         weekday: "long",
@@ -2648,7 +2648,7 @@ function renderDashboard() {
   ];
 
   const today =
-    dayNames[now\.getDay()];
+    dayNames[now.getDay()];
 
   const todayTitle =
     document.getElementById("todayTitle");
@@ -2659,60 +2659,60 @@ function renderDashboard() {
   const todayDate =
     getPhilippineDateString();
 
-  if (todayDate < TERM\_START) {
+  if (todayDate < TERM_START) {
 
     todayTitle.innerText =
-      \`${today} • Before Term 1\`;
+      `${today} • Before Term 1`;
 
-    todayContainer.innerHTML = \`
+    todayContainer.innerHTML = `
 
-      \<div
-        class="bg-slate-50 dark\:bg-slate-800 rounded-xl p-4 text-center"
-      \>
+      <div
+        class="bg-slate-50 dark:bg-slate-800 rounded-xl p-4 text-center"
+      >
 
-        \<div
+        <div
           class="w-6 h-6 mx-auto mb-2 text-emerald-600"
-        \>
+        >
 
-          \<svg
+          <svg
             class="w-full h-full"
             fill="none"
             stroke="currentColor"
             stroke-width="1.8"
             viewBox="0 0 24 24"
-          \>
+          >
 
-            \<path
+            <path
               stroke-linecap="round"
               stroke-linejoin="round"
               d="M12 3v18M3 12h18"
             />
 
-            \<path
+            <path
               stroke-linecap="round"
               d="M5 5l14 14M19 5L5 19"
               opacity=".35"
             />
 
-          \</svg>
+          </svg>
 
-        \</div>
+        </div>
 
-        \<p
-          class="text-sm font-semibold text-slate-600 dark\:text-slate-300"
-        \>
+        <p
+          class="text-sm font-semibold text-slate-600 dark:text-slate-300"
+        >
           Term 1 has not started yet
-        \</p>
+        </p>
 
-        \<p
+        <p
           class="text-xs text-slate-400 mt-1"
-        \>
+        >
           Classes begin September 7, 2026.
-        \</p>
+        </p>
 
-      \</div>
+      </div>
 
-    \`;
+    `;
 
     renderNextClass();
 
@@ -2722,7 +2722,7 @@ function renderDashboard() {
 
   todayTitle.innerText =
     today === "SUN" || today === "WED"
-      ? \`${today} • No Classes\`
+      ? `${today} • No Classes`
       : today;
 
   const todayClasses =
@@ -2732,55 +2732,55 @@ function renderDashboard() {
 
   if (!todayClasses.length) {
 
-    todayContainer.innerHTML = \`
+    todayContainer.innerHTML = `
 
-      \<div
-        class="bg-slate-50 dark\:bg-slate-800 rounded-xl p-4 text-center"
-      \>
+      <div
+        class="bg-slate-50 dark:bg-slate-800 rounded-xl p-4 text-center"
+      >
 
-        \<div
+        <div
           class="w-6 h-6 mx-auto mb-2 text-emerald-600"
-        \>
+        >
 
-          \<svg
+          <svg
             class="w-full h-full"
             fill="none"
             stroke="currentColor"
             stroke-width="1.8"
             viewBox="0 0 24 24"
-          \>
+          >
 
-            \<path
+            <path
               stroke-linecap="round"
               stroke-linejoin="round"
               d="M12 3v18M3 12h18"
             />
 
-            \<path
+            <path
               stroke-linecap="round"
               d="M5 5l14 14M19 5L5 19"
               opacity=".35"
             />
 
-          \</svg>
+          </svg>
 
-        \</div>
+        </div>
 
-        \<p
-          class="text-sm font-semibold text-slate-600 dark\:text-slate-300"
-        \>
+        <p
+          class="text-sm font-semibold text-slate-600 dark:text-slate-300"
+        >
           No classes today
-        \</p>
+        </p>
 
-        \<p
+        <p
           class="text-xs text-slate-400 mt-1"
-        \>
+        >
           Enjoy your free time.
-        \</p>
+        </p>
 
-      \</div>
+      </div>
 
-    \`;
+    `;
 
   } else {
 
@@ -2795,56 +2795,56 @@ function renderDashboard() {
 
 }
 
-/\* ============================================================
+/* ============================================================
    DASHBOARD CLASS CARD
-\============================================================ \*/
+============================================================ */
 
 function dashboardClassCard(item) {
 
-  return \`
+  return `
 
-    \<div
+    <div
       onclick="openCourseModal('${item.code}')"
-      class="flex items-center justify-between gap-3 rounded-xl p-3 cursor-pointer hover\:shadow-sm transition subject-${item.color}"
-    \>
+      class="flex items-center justify-between gap-3 rounded-xl p-3 cursor-pointer hover:shadow-sm transition subject-${item.color}"
+    >
 
-      \<div class="min-w-0">
+      <div class="min-w-0">
 
-        \<p
+        <p
           class="font-bold text-xs truncate"
-        \>
+        >
           ${item.code}
-        \</p>
+        </p>
 
-        \<p
+        <p
           class="text-[10px] mt-1 opacity-80"
-        \>
+        >
           ${item.time}
-        \</p>
+        </p>
 
-        \<p
+        <p
           class="text-[9px] mt-1 opacity-70 truncate"
-        \>
+        >
           ${item.name}
-        \</p>
+        </p>
 
-      \</div>
+      </div>
 
-      \<span
-        class="text-[10px] font-semibold bg-white/70 dark\:bg-slate-700/70 px-2 py-1 rounded-lg shrink-0"
-      \>
+      <span
+        class="text-[10px] font-semibold bg-white/70 dark:bg-slate-700/70 px-2 py-1 rounded-lg shrink-0"
+      >
         ${item.room}
-      \</span>
+      </span>
 
-    \</div>
+    </div>
 
-  \`;
+  `;
 
 }
 
-/\* ============================================================
+/* ============================================================
    TIME CONVERSION
-\============================================================ \*/
+============================================================ */
 
 function timeToMinutes(timeString) {
 
@@ -2853,7 +2853,7 @@ function timeToMinutes(timeString) {
       .split(":")
       .map(Number);
 
-  return hours \* 60 + minutes;
+  return hours * 60 + minutes;
 
 }
 
@@ -2863,15 +2863,15 @@ function currentTimeMinutes() {
     getPhilippineNow();
 
   return (
-    now\.getHours() \* 60 +
-    now\.getMinutes()
+    now.getHours() * 60 +
+    now.getMinutes()
   );
 
 }
 
-/\* ============================================================
+/* ============================================================
    NEXT CLASS
-\============================================================ \*/
+============================================================ */
 
 function renderNextClass() {
 
@@ -2881,18 +2881,18 @@ function renderNextClass() {
   const todayDate =
     getPhilippineDateString();
 
-  if (todayDate < TERM\_START) {
+  if (todayDate < TERM_START) {
 
     const firstDay =
       findNextScheduledClassFromTermStart();
 
     if (!firstDay) {
 
-      container.innerHTML = \`
-        \<p class="text-sm text-slate-400">
+      container.innerHTML = `
+        <p class="text-sm text-slate-400">
           No upcoming classes.
-        \</p>
-      \`;
+        </p>
+      `;
 
       return;
 
@@ -2994,23 +2994,23 @@ function renderNextClass() {
 
   }
 
-  container.innerHTML = \`
-    \<p class="text-sm text-slate-400">
+  container.innerHTML = `
+    <p class="text-sm text-slate-400">
       No upcoming classes.
-    \</p>
-  \`;
+    </p>
+  `;
 
 }
 
-/\* ============================================================
+/* ============================================================
    FIRST CLASS AFTER TERM START
-\============================================================ \*/
+============================================================ */
 
 function findNextScheduledClassFromTermStart() {
 
   const startDate =
     new Date(
-      TERM\_START + "T00:00:00"
+      TERM_START + "T00:00:00"
     );
 
   const days = [
@@ -3062,9 +3062,9 @@ function findNextScheduledClassFromTermStart() {
 
 }
 
-/\* ============================================================
+/* ============================================================
    NEXT CLASS CARD
-\============================================================ \*/
+============================================================ */
 
 function renderNextClassCard(
   container,
@@ -3078,57 +3078,57 @@ function renderNextClassCard(
         course.code === item.code
     );
 
-  container.innerHTML = \`
+  container.innerHTML = `
 
-    \<div>
+    <div>
 
-      \<div
+      <div
         class="flex items-center gap-2 flex-wrap"
-      \>
+      >
 
-        \<span
+        <span
           class="subject-${item.color} text-[10px] font-bold px-2 py-1 rounded-lg"
-        \>
+        >
           ${label}
-        \</span>
+        </span>
 
-        \<span
+        <span
           class="text-xs text-slate-400"
-        \>
+        >
           ${item.time}
-        \</span>
+        </span>
 
-      \</div>
+      </div>
 
-      \<h4
-        class="font-bold text-slate-900 dark\:text-white mt-3"
-      \>
+      <h4
+        class="font-bold text-slate-900 dark:text-white mt-3"
+      >
         ${item.name}
-      \</h4>
+      </h4>
 
-      \<div
+      <div
         class="flex items-center justify-between gap-3 mt-3"
-      \>
+      >
 
-        \<span
+        <span
           class="subject-${item.color} text-[10px] font-mono font-bold px-2 py-1 rounded-lg"
-        \>
+        >
           ${item.code}
-        \</span>
+        </span>
 
-        \<span
+        <span
           class="text-xs font-semibold text-dlsu flex items-center gap-1"
-        \>
+        >
 
-          \<svg
+          <svg
             class="w-3.5 h-3.5"
             fill="none"
             stroke="currentColor"
             stroke-width="1.8"
             viewBox="0 0 24 24"
-          \>
+          >
 
-            \<path
+            <path
               stroke-linecap="round"
               stroke-linejoin="round"
               d="
@@ -3138,64 +3138,64 @@ function renderNextClassCard(
               "
             />
 
-            \<circle
+            <circle
               cx="12"
               cy="9"
               r="2.2"
             />
 
-          \</svg>
+          </svg>
 
           ${item.room}
 
-        \</span>
+        </span>
 
-      \</div>
+      </div>
 
       ${
         course
-          ? \`
-            \<p
+          ? `
+            <p
               class="text-xs text-slate-400 mt-3 flex items-center gap-1"
-            \>
+            >
 
-              \<svg
+              <svg
                 class="w-3.5 h-3.5"
                 fill="none"
                 stroke="currentColor"
                 stroke-width="1.8"
                 viewBox="0 0 24 24"
-              \>
+              >
 
-                \<circle
+                <circle
                   cx="12"
                   cy="8"
                   r="3"
-                \>\</circle>
+                ></circle>
 
-                \<path
+                <path
                   stroke-linecap="round"
                   d="M5 21a7 7 0 0114 0"
                 />
 
-              \</svg>
+              </svg>
 
               ${course.instructor}
 
-            \</p>
-          \`
+            </p>
+          `
           : ""
       }
 
-    \</div>
+    </div>
 
-  \`;
+  `;
 
 }
 
-/\* ============================================================
+/* ============================================================
    SCHEDULE
-\============================================================ \*/
+============================================================ */
 
 function renderSchedule() {
 
@@ -3219,23 +3219,23 @@ function renderSchedule() {
           item => item.day === day
         );
 
-      return \`
+      return `
 
-        \<div>
+        <div>
 
-          \<div
-            class="text-center pb-3 mb-3 border-b border-slate-100 dark\:border-slate-800"
-          \>
+          <div
+            class="text-center pb-3 mb-3 border-b border-slate-100 dark:border-slate-800"
+          >
 
-            \<span
+            <span
               class="text-xs font-bold text-slate-500"
-            \>
+            >
               ${day}
-            \</span>
+            </span>
 
-          \</div>
+          </div>
 
-          \<div class="space-y-3">
+          <div class="space-y-3">
 
             ${
               classes.length
@@ -3244,26 +3244,26 @@ function renderSchedule() {
                       scheduleCard(item)
                     )
                     .join("")
-                : \`
-                  \<div
-                    class="h-40 flex items-center justify-center border border-dashed border-slate-200 dark\:border-slate-800 rounded-xl"
-                  \>
+                : `
+                  <div
+                    class="h-40 flex items-center justify-center border border-dashed border-slate-200 dark:border-slate-800 rounded-xl"
+                  >
 
-                    \<span
+                    <span
                       class="text-xs text-slate-400"
-                    \>
+                    >
                       No Classes
-                    \</span>
+                    </span>
 
-                  \</div>
-                \`
+                  </div>
+                `
             }
 
-          \</div>
+          </div>
 
-        \</div>
+        </div>
 
-      \`;
+      `;
 
     }).join("");
 
@@ -3271,34 +3271,34 @@ function renderSchedule() {
 
 }
 
-/\* ============================================================
+/* ============================================================
    SCHEDULE CARD
-\============================================================ \*/
+============================================================ */
 
 function scheduleCard(item) {
 
   const colors = {
 
     rose:
-      "bg-rose-50 border-rose-500 dark\:bg-rose-950/30",
+      "bg-rose-50 border-rose-500 dark:bg-rose-950/30",
 
     sky:
-      "bg-sky-50 border-sky-500 dark\:bg-sky-950/30",
+      "bg-sky-50 border-sky-500 dark:bg-sky-950/30",
 
     purple:
-      "bg-purple-50 border-purple-500 dark\:bg-purple-950/30",
+      "bg-purple-50 border-purple-500 dark:bg-purple-950/30",
 
     emerald:
-      "bg-emerald-50 border-emerald-500 dark\:bg-emerald-950/30",
+      "bg-emerald-50 border-emerald-500 dark:bg-emerald-950/30",
 
     indigo:
-      "bg-indigo-50 border-indigo-500 dark\:bg-indigo-950/30",
+      "bg-indigo-50 border-indigo-500 dark:bg-indigo-950/30",
 
     pink:
-      "bg-pink-50 border-pink-500 dark\:bg-pink-950/30",
+      "bg-pink-50 border-pink-500 dark:bg-pink-950/30",
 
     slate:
-      "bg-slate-100 border-slate-500 dark\:bg-slate-800"
+      "bg-slate-100 border-slate-500 dark:bg-slate-800"
 
   };
 
@@ -3308,88 +3308,88 @@ function scheduleCard(item) {
         item2.code === item.code
     );
 
-  return \`
+  return `
 
-    \<div
+    <div
       onclick="openCourseModal('${item.code}')"
       class="p-3 rounded-xl border-l-4 ${colors[item.color]}
-      cursor-pointer hover\:shadow-md transition"
-    \>
+      cursor-pointer hover:shadow-md transition"
+    >
 
-      \<div
+      <div
         class="flex items-center justify-between gap-2"
-      \>
+      >
 
-        \<span
+        <span
           class="text-[10px] font-bold uppercase"
-        \>
+        >
           ${item.code}
-        \</span>
+        </span>
 
-        \<span
-          class="text-[9px] bg-white/70 dark\:bg-slate-700 px-1.5 py-0.5 rounded font-medium"
-        \>
+        <span
+          class="text-[9px] bg-white/70 dark:bg-slate-700 px-1.5 py-0.5 rounded font-medium"
+        >
           ${item.room}
-        \</span>
+        </span>
 
-      \</div>
+      </div>
 
-      \<h4
+      <h4
         class="text-xs font-semibold mt-2 leading-snug"
-      \>
+      >
         ${item.name}
-      \</h4>
+      </h4>
 
-      \<p
-        class="text-[10px] text-slate-500 dark\:text-slate-400 mt-2 font-medium"
-      \>
+      <p
+        class="text-[10px] text-slate-500 dark:text-slate-400 mt-2 font-medium"
+      >
         ${item.time}
-      \</p>
+      </p>
 
       ${
         course
-          ? \`
-            \<p
+          ? `
+            <p
               class="text-[9px] text-slate-400 mt-2 flex items-center gap-1"
-            \>
+            >
 
-              \<svg
+              <svg
                 class="w-3 h-3"
                 fill="none"
                 stroke="currentColor"
                 stroke-width="1.8"
                 viewBox="0 0 24 24"
-              \>
+              >
 
-                \<circle
+                <circle
                   cx="12"
                   cy="8"
                   r="3"
-                \>\</circle>
+                ></circle>
 
-                \<path
+                <path
                   stroke-linecap="round"
                   d="M5 21a7 7 0 0114 0"
                 />
 
-              \</svg>
+              </svg>
 
               ${course.instructor}
 
-            \</p>
-          \`
+            </p>
+          `
           : ""
       }
 
-    \</div>
+    </div>
 
-  \`;
+  `;
 
 }
 
-/\* ============================================================
+/* ============================================================
    COURSE LIST
-\============================================================ \*/
+============================================================ */
 
 function renderScheduleList() {
 
@@ -3399,56 +3399,56 @@ function renderScheduleList() {
     );
 
   container.innerHTML =
-    courses.map(course => \`
+    courses.map(course => `
 
-      \<div
+      <div
         onclick="openCourseModal('${course.code}')"
-        class="bg-white dark\:bg-slate-900 rounded-xl border border-slate-200 dark\:border-slate-800 p-5 cursor-pointer hover\:border-dlsu transition"
-      \>
+        class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 p-5 cursor-pointer hover:border-dlsu transition"
+      >
 
-        \<div
+        <div
           class="flex justify-between items-start gap-3"
-        \>
+        >
 
-          \<span
+          <span
             class="subject-${course.color} font-mono text-xs font-bold px-2.5 py-1 rounded-lg"
-          \>
+          >
             ${course.code}
-          \</span>
+          </span>
 
-          \<span
+          <span
             class="text-xs text-slate-400"
-          \>
+          >
             ${course.type}
-          \</span>
+          </span>
 
-        \</div>
+        </div>
 
-        \<h3
-          class="font-bold text-slate-900 dark\:text-white mt-3"
-        \>
+        <h3
+          class="font-bold text-slate-900 dark:text-white mt-3"
+        >
           ${course.name}
-        \</h3>
+        </h3>
 
-        \<p
+        <p
           class="text-xs text-slate-500 mt-3"
-        \>
+        >
           ${course.schedule}
-        \</p>
+        </p>
 
-        \<p
+        <p
           class="text-xs text-slate-500 mt-1 flex items-center gap-1"
-        \>
+        >
 
-          \<svg
+          <svg
             class="w-3.5 h-3.5"
             fill="none"
             stroke="currentColor"
             stroke-width="1.8"
             viewBox="0 0 24 24"
-          \>
+          >
 
-            \<path
+            <path
               stroke-linecap="round"
               stroke-linejoin="round"
               d="
@@ -3458,56 +3458,56 @@ function renderScheduleList() {
               "
             />
 
-            \<circle
+            <circle
               cx="12"
               cy="9"
               r="2.2"
             />
 
-          \</svg>
+          </svg>
 
           ${course.room}
 
-        \</p>
+        </p>
 
-        \<p
-          class="text-xs text-slate-500 dark\:text-slate-400 mt-1 flex items-center gap-1"
-        \>
+        <p
+          class="text-xs text-slate-500 dark:text-slate-400 mt-1 flex items-center gap-1"
+        >
 
-          \<svg
+          <svg
             class="w-3.5 h-3.5"
             fill="none"
             stroke="currentColor"
             stroke-width="1.8"
             viewBox="0 0 24 24"
-          \>
+          >
 
-            \<circle
+            <circle
               cx="12"
               cy="8"
               r="3"
-            \>\</circle>
+            ></circle>
 
-            \<path
+            <path
               stroke-linecap="round"
               d="M5 21a7 7 0 0114 0"
             />
 
-          \</svg>
+          </svg>
 
           ${course.instructor}
 
-        \</p>
+        </p>
 
-      \</div>
+      </div>
 
-    \`).join("");
+    `).join("");
 
 }
 
-/\* ============================================================
+/* ============================================================
    TOGGLE SCHEDULE VIEW
-\============================================================ \*/
+============================================================ */
 
 function toggleScheduleView(view) {
 
@@ -3537,10 +3537,10 @@ function toggleScheduleView(view) {
     list.classList.add("hidden");
 
     btnGrid.className =
-      "px-3 py-1.5 rounded-lg bg-white dark\:bg-slate-700 shadow-sm text-slate-800 dark\:text-white whitespace-nowrap";
+      "px-3 py-1.5 rounded-lg bg-white dark:bg-slate-700 shadow-sm text-slate-800 dark:text-white whitespace-nowrap";
 
     btnList.className =
-      "px-3 py-1.5 rounded-lg text-slate-600 dark\:text-slate-300 whitespace-nowrap";
+      "px-3 py-1.5 rounded-lg text-slate-600 dark:text-slate-300 whitespace-nowrap";
 
   } else {
 
@@ -3548,18 +3548,18 @@ function toggleScheduleView(view) {
     list.classList.remove("hidden");
 
     btnList.className =
-      "px-3 py-1.5 rounded-lg bg-white dark\:bg-slate-700 shadow-sm text-slate-800 dark\:text-white whitespace-nowrap";
+      "px-3 py-1.5 rounded-lg bg-white dark:bg-slate-700 shadow-sm text-slate-800 dark:text-white whitespace-nowrap";
 
     btnGrid.className =
-      "px-3 py-1.5 rounded-lg text-slate-600 dark\:text-slate-300 whitespace-nowrap";
+      "px-3 py-1.5 rounded-lg text-slate-600 dark:text-slate-300 whitespace-nowrap";
 
   }
 
 }
 
-/\* ============================================================
+/* ============================================================
    COURSE MODAL
-\============================================================ \*/
+============================================================ */
 
 function openCourseModal(code) {
 
@@ -3579,7 +3579,7 @@ function openCourseModal(code) {
     course.code;
 
   codeElement.className =
-    \`subject-${course.color} font-mono text-xs font-bold px-2.5 py-1 rounded-lg\`;
+    `subject-${course.color} font-mono text-xs font-bold px-2.5 py-1 rounded-lg`;
 
   document.getElementById(
     "courseModalTitle"
@@ -3588,67 +3588,67 @@ function openCourseModal(code) {
 
   document.getElementById(
     "courseModalBody"
-  ).innerHTML = \`
+  ).innerHTML = `
 
-    \<div
-      class="bg-slate-50 dark\:bg-slate-800 rounded-xl p-4"
-    \>
+    <div
+      class="bg-slate-50 dark:bg-slate-800 rounded-xl p-4"
+    >
 
-      \<p
+      <p
         class="text-[10px] uppercase font-bold text-slate-400"
-      \>
+      >
         Professor
-      \</p>
+      </p>
 
-      \<p
+      <p
         class="font-semibold mt-1"
-      \>
+      >
         ${course.instructor}
-      \</p>
+      </p>
 
-    \</div>
+    </div>
 
-    \<div
-      class="bg-slate-50 dark\:bg-slate-800 rounded-xl p-4"
-    \>
+    <div
+      class="bg-slate-50 dark:bg-slate-800 rounded-xl p-4"
+    >
 
-      \<p
+      <p
         class="text-[10px] uppercase font-bold text-slate-400"
-      \>
+      >
         Schedule
-      \</p>
+      </p>
 
-      \<p
+      <p
         class="font-semibold mt-1"
-      \>
+      >
         ${course.schedule}
-      \</p>
+      </p>
 
-    \</div>
+    </div>
 
-    \<div
-      class="bg-slate-50 dark\:bg-slate-800 rounded-xl p-4"
-    \>
+    <div
+      class="bg-slate-50 dark:bg-slate-800 rounded-xl p-4"
+    >
 
-      \<p
+      <p
         class="text-[10px] uppercase font-bold text-slate-400"
-      \>
+      >
         Room
-      \</p>
+      </p>
 
-      \<p
+      <p
         class="font-semibold mt-1 flex items-center gap-1"
-      \>
+      >
 
-        \<svg
+        <svg
           class="w-4 h-4"
           fill="none"
           stroke="currentColor"
           stroke-width="1.8"
           viewBox="0 0 24 24"
-        \>
+        >
 
-          \<path
+          <path
             stroke-linecap="round"
             stroke-linejoin="round"
             d="
@@ -3658,47 +3658,47 @@ function openCourseModal(code) {
             "
           />
 
-          \<circle
+          <circle
             cx="12"
             cy="9"
             r="2.2"
           />
 
-        \</svg>
+        </svg>
 
         ${course.room}
 
-      \</p>
+      </p>
 
-    \</div>
+    </div>
 
-    \<div
-      class="bg-slate-50 dark\:bg-slate-800 rounded-xl p-4"
-    \>
+    <div
+      class="bg-slate-50 dark:bg-slate-800 rounded-xl p-4"
+    >
 
-      \<p
+      <p
         class="text-[10px] uppercase font-bold text-slate-400"
-      \>
+      >
         Course Type
-      \</p>
+      </p>
 
-      \<p
+      <p
         class="font-semibold mt-1"
-      \>
+      >
         ${course.type}
-      \</p>
+      </p>
 
-    \</div>
+    </div>
 
-  \`;
+  `;
 
   openModal("courseModal");
 
 }
 
-/\* ============================================================
+/* ============================================================
    GENERIC MODAL
-\============================================================ \*/
+============================================================ */
 
 function openModal(id) {
 
@@ -3715,9 +3715,9 @@ function openModal(id) {
 
 }
 
-/\* ============================================================
+/* ============================================================
    COURSE MODAL CLOSE
-\============================================================ \*/
+============================================================ */
 
 function closeCourseModal() {
 
@@ -3736,9 +3736,9 @@ function closeCourseModal() {
 
 }
 
-/\* ============================================================
+/* ============================================================
    SCHEDULE IMAGE MODAL
-\============================================================ \*/
+============================================================ */
 
 function openScheduleImage() {
 
@@ -3774,9 +3774,9 @@ function closeScheduleImage() {
 
 }
 
-/\* ============================================================
+/* ============================================================
    CAMPUS MAP MODAL
-\============================================================ \*/
+============================================================ */
 
 function openCampusMap() {
 
@@ -3812,9 +3812,9 @@ function closeCampusMap() {
 
 }
 
-/\* ============================================================
+/* ============================================================
    ANNOUNCEMENTS
-\============================================================ \*/
+============================================================ */
 
 function getAnnouncementAgeDays(dateString) {
 
@@ -3832,14 +3832,14 @@ function getAnnouncementAgeDays(dateString) {
 
   return Math.floor(
     (today - created) /
-    (1000 \* 60 \* 60 \* 24)
+    (1000 * 60 * 60 * 24)
   );
 
 }
 
 function isArchivedAnnouncement(dateString) {
 
-  return getAnnouncementAgeDays(dateString) >= ARCHIVE\_DAYS;
+  return getAnnouncementAgeDays(dateString) >= ARCHIVE_DAYS;
 
 }
 
@@ -3861,7 +3861,7 @@ function setAnnouncementView(view) {
     "px-3 py-2 rounded-lg bg-dlsu text-white text-xs font-semibold";
 
   const inactiveClasses =
-    "px-3 py-2 rounded-lg bg-white dark\:bg-slate-900 border border-slate-200 dark\:border-slate-800 text-xs font-semibold text-slate-600 dark\:text-slate-300";
+    "px-3 py-2 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs font-semibold text-slate-600 dark:text-slate-300";
 
   activeButton.className =
     view === "active"
@@ -3903,7 +3903,7 @@ function renderAnnouncements() {
             : !isArchivedAnnouncement(item.Date);
 
         const searchable =
-          \`${item.Code} ${item.Title} ${item.Body} ${item.Source} ${item.Category}\`
+          `${item.Code} ${item.Title} ${item.Body} ${item.Source} ${item.Category}`
             .toLowerCase();
 
         return (
@@ -3960,102 +3960,102 @@ function announcementCard(item) {
   const tagColors = {
 
     Important:
-      "bg-rose-100 text-rose-800 border-rose-200 dark\:bg-rose-950 dark\:text-rose-300",
+      "bg-rose-100 text-rose-800 border-rose-200 dark:bg-rose-950 dark:text-rose-300",
 
     Announcements:
-      "bg-emerald-100 text-emerald-800 border-emerald-200 dark\:bg-emerald-950 dark\:text-emerald-300",
+      "bg-emerald-100 text-emerald-800 border-emerald-200 dark:bg-emerald-950 dark:text-emerald-300",
 
     Reminders:
-      "bg-sky-100 text-sky-800 border-sky-200 dark\:bg-sky-950 dark\:text-sky-300",
+      "bg-sky-100 text-sky-800 border-sky-200 dark:bg-sky-950 dark:text-sky-300",
 
     Statements:
-      "bg-amber-100 text-amber-800 border-amber-200 dark\:bg-amber-950 dark\:text-amber-300"
+      "bg-amber-100 text-amber-800 border-amber-200 dark:bg-amber-950 dark:text-amber-300"
 
   };
 
-  return \`
+  return `
 
-    \<article
-      class="bg-white dark\:bg-slate-900 rounded-xl border border-slate-200 dark\:border-slate-800 p-5 shadow-sm hover\:shadow-md transition"
-    \>
+    <article
+      class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 p-5 shadow-sm hover:shadow-md transition"
+    >
 
-      \<div
+      <div
         class="announcement-header mb-4 w-full"
-      \>
+      >
 
         ${
           isNew
-            ? \`
-              \<span
-                class="text-[9px] bg-rose-100 text-rose-600 dark\:bg-rose-950 dark\:text-rose-300 px-1.5 py-0.5 rounded font-bold whitespace-nowrap shrink-0"
-              \>
+            ? `
+              <span
+                class="text-[9px] bg-rose-100 text-rose-600 dark:bg-rose-950 dark:text-rose-300 px-1.5 py-0.5 rounded font-bold whitespace-nowrap shrink-0"
+              >
                 NEW
-              \</span>
-            \`
+              </span>
+            `
             : ""
         }
 
-        \<span
-          class="text-[9px] sm\:text-[10px] uppercase font-semibold px-2 py-1 rounded-full border ${tagColors[item.Category]} whitespace-nowrap shrink-0"
-        \>
+        <span
+          class="text-[9px] sm:text-[10px] uppercase font-semibold px-2 py-1 rounded-full border ${tagColors[item.Category]} whitespace-nowrap shrink-0"
+        >
           ${item.Category}
-        \</span>
+        </span>
 
-        \<span
-          class="text-[9px] sm\:text-[10px] font-mono text-slate-400 bg-slate-100 dark\:bg-slate-800 px-2 py-1 rounded whitespace-nowrap shrink-0"
-        \>
+        <span
+          class="text-[9px] sm:text-[10px] font-mono text-slate-400 bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded whitespace-nowrap shrink-0"
+        >
           ${item.Code}
-        \</span>
+        </span>
 
-        \<span
-          class="announcement-date text-[9px] sm\:text-[10px] text-slate-400"
-        \>
+        <span
+          class="announcement-date text-[9px] sm:text-[10px] text-slate-400"
+        >
           ${formatDate(item.Date)}
-        \</span>
+        </span>
 
-      \</div>
+      </div>
 
-      \<h3
+      <h3
         onclick="openAnnouncement('${item.Code}')"
-        class="font-bold text-slate-900 dark\:text-white text-base cursor-pointer hover\:text-dlsu transition"
-      \>
+        class="font-bold text-slate-900 dark:text-white text-base cursor-pointer hover:text-dlsu transition"
+      >
         ${item.Title}
-      \</h3>
+      </h3>
 
-      \<p
-        class="text-xs text-slate-600 dark\:text-slate-400 leading-relaxed line-clamp-4 mt-2 whitespace-pre-line"
-      \>
+      <p
+        class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed line-clamp-4 mt-2 whitespace-pre-line"
+      >
         ${item.Body}
-      \</p>
+      </p>
 
-      \<div
-        class="mt-4 pt-3 border-t border-slate-100 dark\:border-slate-800 flex items-center justify-between gap-3"
-      \>
+      <div
+        class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between gap-3"
+      >
 
-        \<span
+        <span
           class="text-[10px] text-slate-400 italic truncate"
-        \>
+        >
           Via: ${item.Source}
-        \</span>
+        </span>
 
-        \<button
+        <button
           onclick="openAnnouncement('${item.Code}')"
           class="text-xs font-semibold text-dlsu whitespace-nowrap"
-        \>
+        >
           Read Details →
-        \</button>
+        </button>
 
-      \</div>
+      </div>
 
-    \</article>
+    </article>
 
-  \`;
+  `;
 
 }
 
-/\* ============================================================
+/* ============================================================
    CATEGORY FILTER
-\============================================================ \*/
+============================================================ */
 
 function filterCategory(category) {
 
@@ -4077,7 +4077,7 @@ function filterCategory(category) {
       } else {
 
         button.className =
-          "filter-btn px-4 py-2 rounded-lg bg-white dark\:bg-slate-900 border border-slate-200 dark\:border-slate-800 text-xs font-medium whitespace-nowrap";
+          "filter-btn px-4 py-2 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs font-medium whitespace-nowrap";
 
       }
 
@@ -4087,9 +4087,9 @@ function filterCategory(category) {
 
 }
 
-/\* ============================================================
+/* ============================================================
    OPEN ANNOUNCEMENT
-\============================================================ \*/
+============================================================ */
 
 function openAnnouncement(code) {
 
@@ -4129,7 +4129,7 @@ function openAnnouncement(code) {
   document.getElementById(
     "modalSource"
   ).innerText =
-    \`Via: ${item.Source}\`;
+    `Via: ${item.Source}`;
 
   const image =
     document.getElementById(
@@ -4180,9 +4180,9 @@ function openAnnouncement(code) {
 
 }
 
-/\* ============================================================
+/* ============================================================
    CLOSE ANNOUNCEMENT
-\============================================================ \*/
+============================================================ */
 
 function closeAnnouncementModal() {
 
@@ -4200,9 +4200,9 @@ function closeAnnouncementModal() {
 
 }
 
-/\* ============================================================
+/* ============================================================
    NEW COUNTER
-\============================================================ \*/
+============================================================ */
 
 function updateUnreadCount() {
 
@@ -4222,7 +4222,7 @@ function updateUnreadCount() {
   if (newCount > 0) {
 
     badge.innerText =
-      \`${newCount} NEW\`;
+      `${newCount} NEW`;
 
     badge.classList.remove(
       "hidden"
@@ -4238,9 +4238,9 @@ function updateUnreadCount() {
 
 }
 
-/\* ============================================================
+/* ============================================================
    QUICK TASKS
-\============================================================ \*/
+============================================================ */
 
 function getTasks() {
 
@@ -4248,7 +4248,7 @@ function getTasks() {
 
     return JSON.parse(
       localStorage.getItem(
-        TASKS\_KEY
+        TASKS_KEY
       ) || "[]"
     );
 
@@ -4263,7 +4263,7 @@ function getTasks() {
 function saveTasks(tasks) {
 
   localStorage.setItem(
-    TASKS\_KEY,
+    TASKS_KEY,
     JSON.stringify(tasks)
   );
 
@@ -4356,33 +4356,33 @@ function renderTasks() {
     ).length;
 
   count.innerText =
-    \`${incomplete} ${
+    `${incomplete} ${
       incomplete === 1
         ? "task"
         : "tasks"
-    }\`;
+    }`;
 
   if (!tasks.length) {
 
-    container.innerHTML = \`
+    container.innerHTML = `
 
-      \<div
-        class="text-center py-7 bg-slate-50 dark\:bg-slate-800 rounded-xl"
-      \>
+      <div
+        class="text-center py-7 bg-slate-50 dark:bg-slate-800 rounded-xl"
+      >
 
-        \<div
-          class="w-8 h-8 mx-auto mb-2 text-slate-300 dark\:text-slate-600"
-        \>
+        <div
+          class="w-8 h-8 mx-auto mb-2 text-slate-300 dark:text-slate-600"
+        >
 
-          \<svg
+          <svg
             class="w-full h-full"
             fill="none"
             stroke="currentColor"
             stroke-width="1.6"
             viewBox="0 0 24 24"
-          \>
+          >
 
-            \<path
+            <path
               stroke-linecap="round"
               stroke-linejoin="round"
               d="
@@ -4390,7 +4390,7 @@ function renderTasks() {
               "
             />
 
-            \<path
+            <path
               stroke-linecap="round"
               stroke-linejoin="round"
               d="
@@ -4401,19 +4401,19 @@ function renderTasks() {
               "
             />
 
-          \</svg>
+          </svg>
 
-        \</div>
+        </div>
 
-        \<p
+        <p
           class="text-xs text-slate-400"
-        \>
+        >
           No quick tasks yet.
-        \</p>
+        </p>
 
-      \</div>
+      </div>
 
-    \`;
+    `;
 
     return;
 
@@ -4421,17 +4421,17 @@ function renderTasks() {
 
   container.innerHTML =
     tasks
-      .map(task => \`
+      .map(task => `
 
-        \<div
+        <div
           class="task-item ${
             task.completed
               ? "completed"
               : ""
-          } flex items-center gap-3 bg-slate-50 dark\:bg-slate-800 rounded-xl p-3"
-        \>
+          } flex items-center gap-3 bg-slate-50 dark:bg-slate-800 rounded-xl p-3"
+        >
 
-          \<button
+          <button
             onclick="toggleTask(${task.id})"
             aria-label="${
               task.completed
@@ -4441,56 +4441,56 @@ function renderTasks() {
             class="w-5 h-5 rounded-md border-2 ${
               task.completed
                 ? "bg-dlsu border-dlsu text-white"
-                : "border-slate-300 dark\:border-slate-600"
+                : "border-slate-300 dark:border-slate-600"
             } flex items-center justify-center shrink-0 transition"
-          \>
+          >
 
             ${
               task.completed
-                ? \`
-                  \<svg
+                ? `
+                  <svg
                     class="w-3 h-3"
                     fill="none"
                     stroke="currentColor"
                     stroke-width="2.5"
                     viewBox="0 0 24 24"
-                  \>
-                    \<path
+                  >
+                    <path
                       stroke-linecap="round"
                       stroke-linejoin="round"
                       d="M5 12l4 4L19 6"
                     />
-                  \</svg>
-                \`
+                  </svg>
+                `
                 : ""
             }
 
-          \</button>
+          </button>
 
-          \<p
-            class="task-text flex-1 min-w-0 text-xs text-slate-700 dark\:text-slate-300 break-words"
-          \>
+          <p
+            class="task-text flex-1 min-w-0 text-xs text-slate-700 dark:text-slate-300 break-words"
+          >
             ${escapeHtml(task.text)}
-          \</p>
+          </p>
 
-          \<button
+          <button
             onclick="deleteTask(${task.id})"
-            class="text-slate-400 hover\:text-rose-500 shrink-0 text-lg"
+            class="text-slate-400 hover:text-rose-500 shrink-0 text-lg"
             aria-label="Delete task"
-          \>
+          >
             ×
-          \</button>
+          </button>
 
-        \</div>
+        </div>
 
-      \`)
+      `)
       .join("");
 
 }
 
-/\* ============================================================
+/* ============================================================
    PERSONAL INFO
-\============================================================ \*/
+============================================================ */
 
 function getPersonalInfo() {
 
@@ -4506,7 +4506,7 @@ function getPersonalInfo() {
       ...defaultInfo,
       ...JSON.parse(
         localStorage.getItem(
-          INFO\_KEY
+          INFO_KEY
         ) || "{}"
       )
     };
@@ -4572,7 +4572,7 @@ function savePersonalInfo() {
   };
 
   localStorage.setItem(
-    INFO\_KEY,
+    INFO_KEY,
     JSON.stringify(info)
   );
 
@@ -4609,7 +4609,7 @@ function savePersonalInfo() {
 
 }
 
-/\* Automatically save personal info when typing \*/
+/* Automatically save personal info when typing */
 
 function initializePersonalInfoAutoSave() {
 
@@ -4633,9 +4633,9 @@ function initializePersonalInfoAutoSave() {
 
 }
 
-/\* ============================================================
+/* ============================================================
    PERSONAL REMINDERS
-\============================================================ \*/
+============================================================ */
 
 function getNotes() {
 
@@ -4643,7 +4643,7 @@ function getNotes() {
 
     return JSON.parse(
       localStorage.getItem(
-        NOTES\_KEY
+        NOTES_KEY
       ) || "[]"
     );
 
@@ -4658,7 +4658,7 @@ function getNotes() {
 function saveNotes(notes) {
 
   localStorage.setItem(
-    NOTES\_KEY,
+    NOTES_KEY,
     JSON.stringify(notes)
   );
 
@@ -4729,7 +4729,7 @@ function renderNotes() {
   if (!notes.length) {
 
     container.innerHTML =
-      \`\<p class="text-xs text-slate-400 py-3">No personal reminders yet.\</p>\`;
+      `<p class="text-xs text-slate-400 py-3">No personal reminders yet.</p>`;
 
     return;
 
@@ -4737,36 +4737,36 @@ function renderNotes() {
 
   container.innerHTML =
     notes
-      .map(note => \`
+      .map(note => `
 
-        \<div
-          class="note-item flex items-start justify-between gap-2 bg-slate-50 dark\:bg-slate-800 rounded-lg p-3"
-        \>
+        <div
+          class="note-item flex items-start justify-between gap-2 bg-slate-50 dark:bg-slate-800 rounded-lg p-3"
+        >
 
-          \<p
-            class="text-xs text-slate-700 dark\:text-slate-300"
-          \>
+          <p
+            class="text-xs text-slate-700 dark:text-slate-300"
+          >
             ${escapeHtml(note.text)}
-          \</p>
+          </p>
 
-          \<button
+          <button
             onclick="deleteNote(${note.id})"
-            class="text-slate-400 hover\:text-rose-500 shrink-0"
+            class="text-slate-400 hover:text-rose-500 shrink-0"
             aria-label="Delete reminder"
-          \>
+          >
             ×
-          \</button>
+          </button>
 
-        \</div>
+        </div>
 
-      \`)
+      `)
       .join("");
 
 }
 
-/\* ============================================================
+/* ============================================================
    RESET PERSONAL DASHBOARD
-\============================================================ \*/
+============================================================ */
 
 function resetPersonalDashboard() {
 
@@ -4778,15 +4778,15 @@ function resetPersonalDashboard() {
   if (!confirmed) return;
 
   localStorage.removeItem(
-    TASKS\_KEY
+    TASKS_KEY
   );
 
   localStorage.removeItem(
-    NOTES\_KEY
+    NOTES_KEY
   );
 
   localStorage.removeItem(
-    INFO\_KEY
+    INFO_KEY
   );
 
   renderTasks();
@@ -4797,9 +4797,9 @@ function resetPersonalDashboard() {
 
 }
 
-/\* ============================================================
+/* ============================================================
    HTML ESCAPE
-\============================================================ \*/
+============================================================ */
 
 function escapeHtml(value) {
 
@@ -4816,9 +4816,9 @@ function escapeHtml(value) {
 
 }
 
-/\* ============================================================
+/* ============================================================
    SEARCH
-\============================================================ \*/
+============================================================ */
 
 document
   .getElementById(
@@ -4838,9 +4838,9 @@ document
     }
   );
 
-/\* ============================================================
+/* ============================================================
    KEYBOARD
-\============================================================ \*/
+============================================================ */
 
 document.addEventListener(
   "keydown",
@@ -4861,9 +4861,9 @@ document.addEventListener(
   }
 );
 
-/\* ============================================================
+/* ============================================================
    ENTER KEY HANDLERS
-\============================================================ \*/
+============================================================ */
 
 const taskInputElement =
   document.getElementById(
@@ -4905,9 +4905,9 @@ if (noteInputElement) {
 
 }
 
-/\* ============================================================
+/* ============================================================
    INITIALIZE
-\============================================================ \*/
+============================================================ */
 
 initializeTheme();
 
@@ -4929,18 +4929,18 @@ renderAnnouncements();
 
 updateUnreadCount();
 
-/\* ============================================================
+/* ============================================================
    REAL-TIME CLOCK
-\============================================================ \*/
+============================================================ */
 
 setInterval(
   updateDigitalClock,
   1000
 );
 
-/\* ============================================================
+/* ============================================================
    REAL-TIME DASHBOARD
-\============================================================ \*/
+============================================================ */
 
 setInterval(
   () => {
@@ -4955,7 +4955,7 @@ setInterval(
   1000
 );
 
-\</script>
+</script>
 
-\</body>
-\</html>
+</body>
+</html>
