@@ -370,6 +370,13 @@
         </a>
 
         <a
+          href="#classroomGuideSection"
+          class="px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:text-dlsu hover:bg-slate-100 dark:hover:bg-slate-800"
+        >
+          Classroom Guide
+        </a>
+
+        <a
           href="#announcementsSection"
           class="px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:text-dlsu hover:bg-slate-100 dark:hover:bg-slate-800"
         >
@@ -482,6 +489,13 @@
       class="whitespace-nowrap px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-[10px] font-semibold"
     >
       Schedule
+    </a>
+
+    <a
+      href="#classroomGuideSection"
+      class="whitespace-nowrap px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-[10px] font-semibold"
+    >
+      Classroom Guide
     </a>
 
     <a
@@ -1277,6 +1291,28 @@
     </a>
 
     <a
+      href="#classroomGuideSection"
+      class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-4 hover:border-dlsu transition"
+    >
+
+      <div class="w-6 h-6 mb-2 text-dlsu">
+        <svg class="w-full h-full" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 21s7-5.2 7-11a7 7 0 10-14 0c0 5.8 7 11 7 11z" />
+          <circle cx="12" cy="10" r="2.5" />
+        </svg>
+      </div>
+
+      <p class="font-bold text-sm text-slate-900 dark:text-white">
+        Classroom Guide
+      </p>
+
+      <p class="text-[10px] text-slate-400 mt-1">
+        Find your room
+      </p>
+
+    </a>
+
+    <a
       href="#announcementsSection"
       class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-4 hover:border-dlsu transition"
     >
@@ -1442,6 +1478,136 @@
     id="scheduleListView"
     class="hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
   ></div>
+
+</section>
+
+<!-- ========================================================= -->
+<!-- CLASSROOM GUIDE -->
+<!-- ========================================================= -->
+
+<section
+  id="classroomGuideSection"
+  class="scroll-mt-24 border-t border-slate-200 dark:border-slate-800 pt-8"
+>
+
+  <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-4 mb-5">
+
+    <div>
+
+      <div class="flex items-center gap-3">
+
+        <div class="w-10 h-10 rounded-xl bg-dlsu-light dark:bg-emerald-950 text-dlsu flex items-center justify-center shrink-0">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 21s7-5.2 7-11a7 7 0 10-14 0c0 5.8 7 11 7 11z" />
+            <circle cx="12" cy="10" r="2.5" />
+          </svg>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-bold text-slate-900 dark:text-white">
+            Classroom Guide
+          </h2>
+          <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">
+            Find your classroom before your next class.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+    <button
+      onclick="openClassroomGuide()"
+      class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-dlsu hover:bg-dlsu-dark text-white text-xs font-semibold shadow-sm transition"
+    >
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+      Open Full Guide
+    </button>
+
+  </div>
+
+  <div class="relative overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm">
+
+    <div class="absolute inset-0 bg-gradient-to-br from-dlsu-light/60 via-transparent to-emerald-50/50 dark:from-emerald-950/30 dark:to-slate-900 pointer-events-none"></div>
+
+    <div class="relative grid grid-cols-1 lg:grid-cols-2 gap-0">
+
+      <div class="p-6 sm:p-8 flex flex-col justify-center">
+
+        <span class="inline-flex w-fit items-center gap-1.5 text-[10px] uppercase tracking-wider font-bold text-dlsu bg-dlsu-light dark:bg-emerald-950 px-3 py-1.5 rounded-full">
+          Campus Navigation
+        </span>
+
+        <h3 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mt-4">
+          Never Get Lost on the Way to Class
+        </h3>
+
+        <p class="text-sm leading-relaxed text-slate-500 dark:text-slate-400 mt-3 max-w-xl">
+          Use the C16A Classroom Guide to quickly check your assigned building,
+          floor, and room before heading to class.
+        </p>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mt-6">
+
+          <div class="bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700 rounded-xl p-3">
+            <p class="text-[9px] uppercase tracking-wider font-bold text-slate-400">Miguel</p>
+            <p class="font-bold text-sm text-slate-900 dark:text-white mt-1">M313</p>
+          </div>
+
+          <div class="bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700 rounded-xl p-3">
+            <p class="text-[9px] uppercase tracking-wider font-bold text-slate-400">La Salle</p>
+            <p class="font-bold text-sm text-slate-900 dark:text-white mt-1">L310</p>
+          </div>
+
+          <div class="bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700 rounded-xl p-3">
+            <p class="text-[9px] uppercase tracking-wider font-bold text-slate-400">Velasco</p>
+            <p class="font-bold text-sm text-slate-900 dark:text-white mt-1">V201C</p>
+          </div>
+
+        </div>
+
+        <button
+          onclick="openClassroomGuide()"
+          class="mt-6 inline-flex w-fit items-center gap-2 text-sm font-semibold text-dlsu hover:text-dlsu-dark transition"
+        >
+          Explore the classroom guide
+          <span class="text-lg" aria-hidden="true">→</span>
+        </button>
+
+      </div>
+
+      <button
+        onclick="openClassroomGuide()"
+        class="relative min-h-[300px] lg:min-h-full bg-slate-100 dark:bg-slate-800 overflow-hidden group cursor-zoom-in"
+        aria-label="Open Classroom Guide"
+      >
+
+        <img
+          src="Classroom Guide.png"
+          alt="C16A Classroom Guide"
+          class="w-full h-full min-h-[300px] object-cover object-center transition duration-500 group-hover:scale-105"
+        >
+
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/55 via-transparent to-transparent"></div>
+
+        <div class="absolute bottom-5 left-5 right-5 flex items-center justify-between gap-4">
+          <div class="text-left">
+            <p class="text-white text-sm font-bold">C16A Classroom Guide</p>
+            <p class="text-slate-200 text-[10px] mt-1">Tap to view the complete guide</p>
+          </div>
+
+          <div class="w-10 h-10 rounded-full bg-white/90 text-dlsu flex items-center justify-center shadow-lg group-hover:scale-110 transition shrink-0" aria-hidden="true">
+            ↗
+          </div>
+        </div>
+
+      </button>
+
+    </div>
+
+  </div>
 
 </section>
 
@@ -2004,6 +2170,67 @@
         class="w-full h-auto mx-auto object-contain rounded-xl shadow-sm"
       >
 
+    </div>
+
+  </div>
+
+</div>
+
+<!-- ========================================================= -->
+<!-- CLASSROOM GUIDE MODAL -->
+<!-- ========================================================= -->
+
+<div
+  id="classroomGuideModal"
+  onclick="closeClassroomGuide()"
+  class="fixed inset-0 z-[100] flex items-center justify-center p-4 opacity-0 invisible pointer-events-none transition-opacity"
+>
+
+  <div class="modal-backdrop"></div>
+
+  <div
+    onclick="event.stopPropagation()"
+    class="modal-content bg-white dark:bg-slate-900 rounded-2xl shadow-2xl max-w-7xl w-full max-h-[95vh] overflow-auto"
+  >
+
+    <div class="sticky top-0 z-10 bg-white/95 dark:bg-slate-900/95 backdrop-blur border-b border-slate-200 dark:border-slate-800 px-5 py-4 flex items-center justify-between">
+
+      <div class="flex items-center gap-3">
+
+        <div class="w-9 h-9 rounded-xl bg-dlsu-light dark:bg-emerald-950 text-dlsu flex items-center justify-center shrink-0">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 21s7-5.2 7-11a7 7 0 10-14 0c0 5.8 7 11 7 11z" />
+            <circle cx="12" cy="10" r="2.5" />
+          </svg>
+        </div>
+
+        <div>
+          <h3 class="font-bold text-slate-900 dark:text-white">
+            C16A Classroom Guide
+          </h3>
+          <p class="text-[10px] text-slate-400 mt-0.5">
+            Find your building, floor, and classroom
+          </p>
+        </div>
+
+      </div>
+
+      <button
+        onclick="closeClassroomGuide()"
+        aria-label="Close Classroom Guide"
+        class="text-slate-400 hover:text-slate-700 dark:hover:text-white text-2xl transition"
+      >
+        ×
+      </button>
+
+    </div>
+
+    <div class="p-3 sm:p-6 bg-slate-100 dark:bg-slate-950">
+      <img
+        src="Classroom Guide.png"
+        alt="C16A Classroom Guide"
+        class="w-full h-auto mx-auto object-contain rounded-xl shadow-sm"
+      >
     </div>
 
   </div>
@@ -3880,6 +4107,48 @@ function closeScheduleImage() {
   const modal =
     document.getElementById(
       "scheduleImageModal"
+    );
+
+  if (!modal) return;
+
+  modal.classList.remove(
+    "modal-active"
+  );
+
+  document.body.classList.remove(
+    "overflow-hidden"
+  );
+
+}
+
+/* ============================================================
+   CLASSROOM GUIDE MODAL
+============================================================ */
+
+function openClassroomGuide() {
+
+  const modal =
+    document.getElementById(
+      "classroomGuideModal"
+    );
+
+  if (!modal) return;
+
+  modal.classList.add(
+    "modal-active"
+  );
+
+  document.body.classList.add(
+    "overflow-hidden"
+  );
+
+}
+
+function closeClassroomGuide() {
+
+  const modal =
+    document.getElementById(
+      "classroomGuideModal"
     );
 
   if (!modal) return;
