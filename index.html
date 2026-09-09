@@ -1418,7 +1418,7 @@
       <p
         class="text-xs text-slate-500 dark:text-slate-400 mt-1"
       >
-        Term 1 • A.Y. 2026–2027 
+        Term 1 • A.Y. 2026–2027 • Face-to-Face: Monday & Tuesday
       </p>
 
     </div>
@@ -1448,6 +1448,18 @@
         </button>
 
       </div>
+
+      <button
+        onclick="openOfficialSchedule()"
+        class="px-3 py-2 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-dlsu dark:text-emerald-300 text-xs font-semibold shadow-sm transition whitespace-nowrap flex items-center gap-1.5"
+        aria-label="Open official C16A schedule"
+      >
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+          <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+          <path stroke-linecap="round" d="M7 8h10M7 12h10M7 16h6"></path>
+        </svg>
+        Official Schedule
+      </button>
 
       <button
         onclick="openScheduleImage()"
@@ -2218,6 +2230,63 @@
 </div>
 
 <!-- ========================================================= -->
+<!-- OFFICIAL C16A SCHEDULE MODAL -->
+<!-- ========================================================= -->
+
+<div
+  id="officialScheduleModal"
+  onclick="closeOfficialSchedule()"
+  class="fixed inset-0 z-[105] flex items-center justify-center p-4 opacity-0 invisible pointer-events-none transition-opacity"
+>
+  <div class="modal-backdrop"></div>
+
+  <div
+    onclick="event.stopPropagation()"
+    class="modal-content bg-white dark:bg-slate-900 rounded-2xl shadow-2xl max-w-7xl w-full max-h-[95vh] overflow-auto"
+  >
+    <div class="sticky top-0 z-10 bg-white/95 dark:bg-slate-900/95 backdrop-blur border-b border-slate-200 dark:border-slate-800 px-5 py-4 flex items-center justify-between">
+      <div>
+        <h3 class="font-bold text-slate-900 dark:text-white">
+          Official C16A Term 1 Schedule
+        </h3>
+        <p class="text-[10px] text-slate-400 mt-1">
+          Official schedule reference • C16A • Term 1 • A.Y. 2026–2027
+        </p>
+      </div>
+
+      <button
+        onclick="closeOfficialSchedule()"
+        aria-label="Close official schedule"
+        class="text-slate-400 hover:text-slate-700 dark:hover:text-white text-2xl"
+      >
+        ×
+      </button>
+    </div>
+
+    <div class="p-3 sm:p-5 bg-slate-100 dark:bg-slate-950">
+      <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden shadow-sm">
+        <img
+          id="officialScheduleImage"
+          src="C16A Term 1 - Class Schedule.png"
+          alt="Official C16A Term 1 Class Schedule"
+          class="w-full h-auto max-h-[78vh] object-contain mx-auto"
+        >
+
+        <div id="officialScheduleImageFallback" class="hidden p-10 text-center">
+          <p class="text-sm font-semibold text-slate-700 dark:text-slate-200">
+            Official schedule image not found.
+          </p>
+          <p class="text-xs text-slate-400 mt-2">
+            Place <span class="font-mono">C16A Term 1 - Class Schedule.png</span>
+            in the same folder as this HTML file.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========================================================= -->
 <!-- CLASSROOM GUIDE MODAL -->
 <!-- ========================================================= -->
 
@@ -2485,18 +2554,6 @@ const schedule = [
     room: "V201C",
     mode: "Face-to-Face",
     color: "indigo"
-  },
-
-  {
-    day: "TUE",
-    code: "LASARE1",
-    name: "Lasallian Recollection 1",
-    time: "8:00 AM – 5:00 PM",
-    start: "08:00",
-    end: "17:00",
-    room: "A1201",
-    mode: "Face-to-Face",
-    color: "pink"
   },
 
   {
@@ -4208,6 +4265,20 @@ function openCourseModal(code) {
             `)
             .join("")
         }
+        ${
+          !schedule.some(item => item.code === course.code)
+            ? `
+              <div class="rounded-lg bg-slate-100 dark:bg-slate-700/60 px-3 py-2.5">
+                <p class="text-xs font-semibold text-slate-700 dark:text-slate-200">
+                  ${course.schedule}
+                </p>
+                <p class="text-[9px] text-slate-400 mt-1">
+                  Course List information
+                </p>
+              </div>
+            `
+            : ""
+        }
       </div>
 
     </div>
@@ -4427,6 +4498,44 @@ function closeScheduleImage() {
     "overflow-hidden"
   );
 
+}
+
+/* ============================================================
+   OFFICIAL C16A SCHEDULE MODAL
+============================================================ */
+
+function openOfficialSchedule() {
+
+  const modal = document.getElementById("officialScheduleModal");
+  const image = document.getElementById("officialScheduleImage");
+  const fallback = document.getElementById("officialScheduleImageFallback");
+
+  if (!modal) return;
+
+  if (image && fallback) {
+    image.onerror = () => {
+      image.classList.add("hidden");
+      fallback.classList.remove("hidden");
+    };
+
+    if (image.complete && image.naturalWidth === 0) {
+      image.classList.add("hidden");
+      fallback.classList.remove("hidden");
+    }
+  }
+
+  modal.classList.add("modal-active");
+  document.body.classList.add("overflow-hidden");
+}
+
+function closeOfficialSchedule() {
+
+  const modal = document.getElementById("officialScheduleModal");
+
+  if (!modal) return;
+
+  modal.classList.remove("modal-active");
+  document.body.classList.remove("overflow-hidden");
 }
 
 /* ============================================================
@@ -5580,6 +5689,8 @@ document.addEventListener(
       closeCourseModal();
 
       closeScheduleImage();
+
+      closeOfficialSchedule();
 
       closeClassroomGuide();
 
