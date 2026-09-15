@@ -289,6 +289,21 @@
 
     }
 
+
+    /* Help Desk carousel */
+    .helpdesk-slide {
+      display: none;
+    }
+
+    .helpdesk-slide.active {
+      display: block;
+      animation: helpdeskFade .25s ease;
+    }
+
+    @keyframes helpdeskFade {
+      from { opacity: .45; transform: translateX(8px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
   </style>
 
 </head>
@@ -381,6 +396,13 @@
           class="px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:text-dlsu hover:bg-slate-100 dark:hover:bg-slate-800"
         >
           Announcements
+        </a>
+
+        <a
+          href="#helpDeskSection"
+          class="px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:text-dlsu hover:bg-slate-100 dark:hover:bg-slate-800"
+        >
+          Help Desk
         </a>
 
         <a
@@ -511,6 +533,13 @@
       class="whitespace-nowrap px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-[10px] font-semibold"
     >
       Announcements
+    </a>
+
+    <a
+      href="#helpDeskSection"
+      class="whitespace-nowrap px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-[10px] font-semibold"
+    >
+      Help Desk
     </a>
 
     <a
@@ -1667,6 +1696,91 @@
 </section>
 
 <!-- ========================================================= -->
+<!-- HELP DESK -->
+<!-- ========================================================= -->
+
+<section
+  id="helpDeskSection"
+  class="scroll-mt-24 border-t border-slate-200 dark:border-slate-800 pt-8"
+>
+  <div class="mb-5">
+    <div class="flex items-center gap-3">
+      <div class="w-10 h-10 rounded-xl bg-dlsu-light dark:bg-emerald-950 text-dlsu flex items-center justify-center shrink-0">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M18 10c0 4.418-2.686 8-6 8s-6-3.582-6-8 2.686-8 6-8 6 3.582 6 8z" />
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3 12v1a3 3 0 003 3h1M21 12v1a3 3 0 01-3 3h-1M9 21h6" />
+        </svg>
+      </div>
+      <div>
+        <h2 class="text-xl font-bold text-slate-900 dark:text-white">
+          Help Desk
+        </h2>
+        <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">
+          Contact information for your block representative and professors.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="relative overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm">
+    <div class="relative bg-slate-50 dark:bg-slate-950 min-h-[500px] md:min-h-[700px] flex items-center justify-center">
+      <!-- Replace these three filenames with the pictures you provide. -->
+      <div class="helpdesk-slide active" data-helpdesk-slide="0">
+        <img
+          src="help-desk-1.jpg"
+          alt="Help Desk contact information 1"
+          class="h-[520px] md:h-[700px] w-auto max-w-full object-contain mx-auto"
+        >
+      </div>
+
+      <div class="helpdesk-slide" data-helpdesk-slide="1">
+        <img
+          src="help-desk-2.jpg"
+          alt="Help Desk contact information 2"
+          class="h-[520px] md:h-[700px] w-auto max-w-full object-contain mx-auto"
+        >
+      </div>
+
+      <div class="helpdesk-slide" data-helpdesk-slide="2">
+        <img
+          src="help-desk-3.jpg"
+          alt="Help Desk contact information 3"
+          class="h-[520px] md:h-[700px] w-auto max-w-full object-contain mx-auto"
+        >
+      </div>
+
+      <button
+        type="button"
+        onclick="changeHelpDeskSlide(-1)"
+        aria-label="Previous Help Desk picture"
+        class="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/90 dark:bg-slate-900/90 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 shadow-md hover:text-dlsu transition flex items-center justify-center"
+      >
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 18l-6-6 6-6" />
+        </svg>
+      </button>
+
+      <button
+        type="button"
+        onclick="changeHelpDeskSlide(1)"
+        aria-label="Next Help Desk picture"
+        class="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/90 dark:bg-slate-900/90 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 shadow-md hover:text-dlsu transition flex items-center justify-center"
+      >
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 18l6-6-6-6" />
+        </svg>
+      </button>
+    </div>
+
+    <div class="flex items-center justify-center gap-2 px-4 py-4 border-t border-slate-200 dark:border-slate-800">
+      <button type="button" onclick="goToHelpDeskSlide(0)" aria-label="Show Help Desk picture 1" class="helpdesk-dot w-2.5 h-2.5 rounded-full bg-dlsu transition" data-helpdesk-dot="0"></button>
+      <button type="button" onclick="goToHelpDeskSlide(1)" aria-label="Show Help Desk picture 2" class="helpdesk-dot w-2.5 h-2.5 rounded-full bg-slate-300 dark:bg-slate-700 transition" data-helpdesk-dot="1"></button>
+      <button type="button" onclick="goToHelpDeskSlide(2)" aria-label="Show Help Desk picture 3" class="helpdesk-dot w-2.5 h-2.5 rounded-full bg-slate-300 dark:bg-slate-700 transition" data-helpdesk-dot="2"></button>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================================= -->
 <!-- ANNOUNCEMENTS -->
 <!-- ========================================================= -->
 
@@ -1851,6 +1965,8 @@
   </div>
 
 </section>
+
+
 
 <!-- ========================================================= -->
 <!-- IMPORTANT LINKS -->
@@ -5828,6 +5944,36 @@ if (noteInputElement) {
     }
   );
 
+}
+
+
+/* ============================================================
+   HELP DESK CAROUSEL
+============================================================ */
+
+let helpDeskSlideIndex = 0;
+
+function goToHelpDeskSlide(index) {
+  const slides = document.querySelectorAll(".helpdesk-slide");
+  const dots = document.querySelectorAll(".helpdesk-dot");
+
+  if (!slides.length) return;
+
+  helpDeskSlideIndex = (index + slides.length) % slides.length;
+
+  slides.forEach((slide, i) => {
+    slide.classList.toggle("active", i === helpDeskSlideIndex);
+  });
+
+  dots.forEach((dot, i) => {
+    dot.classList.toggle("bg-dlsu", i === helpDeskSlideIndex);
+    dot.classList.toggle("bg-slate-300", i !== helpDeskSlideIndex);
+    dot.classList.toggle("dark:bg-slate-700", i !== helpDeskSlideIndex);
+  });
+}
+
+function changeHelpDeskSlide(direction) {
+  goToHelpDeskSlide(helpDeskSlideIndex + direction);
 }
 
 /* ============================================================
