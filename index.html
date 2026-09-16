@@ -522,6 +522,13 @@
     </a>
 
     <a
+      href="#academicCalendarSection"
+      class="whitespace-nowrap px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-[10px] font-semibold"
+    >
+      Academic Calendar
+    </a>
+
+    <a
       href="#classroomGuideSection"
       class="whitespace-nowrap px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-[10px] font-semibold"
     >
@@ -1552,6 +1559,107 @@
 </section>
 
 <!-- ========================================================= -->
+<!-- ACADEMIC CALENDAR -->
+<!-- ========================================================= -->
+
+<section
+  id="academicCalendarSection"
+  class="scroll-mt-24 border-t border-slate-200 dark:border-slate-800 pt-8"
+>
+
+  <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-5">
+    <div>
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-dlsu-light dark:bg-emerald-950 text-dlsu flex items-center justify-center shrink-0">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="3" y="4" width="18" height="17" rx="2"></rect>
+            <path stroke-linecap="round" d="M16 2v4M8 2v4M3 10h18M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01M16 18h.01"></path>
+          </svg>
+        </div>
+        <div>
+          <h2 class="text-xl font-bold text-slate-900 dark:text-white">Academic Calendar</h2>
+          <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">C16A • A.Y. 2026–2027 • Key academic dates and holidays</p>
+        </div>
+      </div>
+    </div>
+
+    <button
+      onclick="openAcademicCalendar()"
+      class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-dlsu hover:bg-dlsu-dark text-white text-xs font-semibold shadow-sm transition"
+      aria-label="View original academic calendar pictures"
+    >
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true">
+        <rect x="3" y="4" width="18" height="17" rx="2"></rect>
+        <path stroke-linecap="round" d="M16 2v4M8 2v4M3 10h18"></path>
+      </svg>
+      View Original Calendar
+    </button>
+  </div>
+
+  <div class="relative overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm">
+    <div class="absolute inset-0 bg-gradient-to-br from-dlsu-light/70 via-transparent to-emerald-50/60 dark:from-emerald-950/30 dark:to-slate-900 pointer-events-none"></div>
+
+    <div class="relative p-5 sm:p-7">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
+
+        <button
+          onclick="openAcademicCalendar()"
+          class="group text-left rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/80 shadow-sm hover:shadow-md transition cursor-zoom-in"
+          aria-label="Open first academic calendar picture"
+        >
+          <div class="relative aspect-[16/10] overflow-hidden bg-white dark:bg-slate-900">
+            <img src="academic-calendar-term1.jpg" alt="C16A Academic Calendar 2026–2027 page 1" class="w-full h-full object-cover object-top transition duration-500 group-hover:scale-[1.025]">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/55 via-transparent to-transparent"></div>
+            <div class="absolute bottom-4 left-4 right-4 flex items-end justify-between gap-3">
+              <div>
+                <p class="text-white text-sm font-bold">Academic Calendar</p>
+                <p class="text-slate-200 text-[10px] mt-1">Term dates & academic deadlines</p>
+              </div>
+              <span class="w-9 h-9 rounded-full bg-white/90 text-dlsu flex items-center justify-center shadow-lg group-hover:scale-110 transition shrink-0" aria-hidden="true">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"/></svg>
+              </span>
+            </div>
+          </div>
+          <div class="p-4">
+            <p class="text-[9px] uppercase tracking-wider font-bold text-dlsu">Page 1</p>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Undergraduate and Graduate Studies • A.Y. 2026–2027</p>
+          </div>
+        </button>
+
+        <button
+          onclick="openAcademicCalendar()"
+          class="group text-left rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/80 shadow-sm hover:shadow-md transition cursor-zoom-in"
+          aria-label="Open second academic calendar picture"
+        >
+          <div class="relative aspect-[16/10] overflow-hidden bg-white dark:bg-slate-900">
+            <img src="academic-calendar-holidays.jpg" alt="C16A Academic Calendar 2026–2027 page 2" class="w-full h-full object-cover object-top transition duration-500 group-hover:scale-[1.025]">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/55 via-transparent to-transparent"></div>
+            <div class="absolute bottom-4 left-4 right-4 flex items-end justify-between gap-3">
+              <div>
+                <p class="text-white text-sm font-bold">Holidays & Observances</p>
+                <p class="text-slate-200 text-[10px] mt-1">Official calendar reference</p>
+              </div>
+              <span class="w-9 h-9 rounded-full bg-white/90 text-dlsu flex items-center justify-center shadow-lg group-hover:scale-110 transition shrink-0" aria-hidden="true">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"/></svg>
+              </span>
+            </div>
+          </div>
+          <div class="p-4">
+            <p class="text-[9px] uppercase tracking-wider font-bold text-dlsu">Page 2</p>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Holidays, special observances, and campus-specific dates</p>
+          </div>
+        </button>
+      </div>
+
+      <div class="mt-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3 rounded-xl bg-dlsu-light/70 dark:bg-emerald-950/40 border border-emerald-100 dark:border-emerald-900/50 px-4 py-3">
+        <p class="text-xs text-slate-600 dark:text-slate-300">Need the exact source? Open the original two-page calendar in one view.</p>
+        <button onclick="openAcademicCalendar()" class="text-xs font-bold text-dlsu hover:text-dlsu-dark whitespace-nowrap">Open full calendar →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================================= -->
 <!-- CLASSROOM GUIDE -->
 <!-- ========================================================= -->
 
@@ -2396,6 +2504,54 @@
             Place <span class="font-mono">C16A Term 1 - Class Schedule.png</span>
             in the same folder as this HTML file.
           </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========================================================= -->
+<!-- ACADEMIC CALENDAR MODAL -->
+<!-- ========================================================= -->
+
+<div
+  id="academicCalendarModal"
+  onclick="closeAcademicCalendar()"
+  class="fixed inset-0 z-[105] flex items-center justify-center p-4 opacity-0 invisible pointer-events-none transition-opacity"
+>
+  <div class="modal-backdrop"></div>
+
+  <div onclick="event.stopPropagation()" class="modal-content bg-white dark:bg-slate-900 rounded-2xl shadow-2xl max-w-7xl w-full max-h-[95vh] overflow-auto">
+    <div class="sticky top-0 z-10 bg-white/95 dark:bg-slate-900/95 backdrop-blur border-b border-slate-200 dark:border-slate-800 px-5 py-4 flex items-center justify-between">
+      <div>
+        <div class="flex items-center gap-2">
+          <span class="text-[9px] uppercase tracking-wider font-bold bg-dlsu-light dark:bg-emerald-950 text-dlsu px-2.5 py-1 rounded-full">Original Reference</span>
+          <span class="text-[9px] uppercase tracking-wider font-bold text-slate-400">2 pages</span>
+        </div>
+        <h3 class="font-bold text-slate-900 dark:text-white mt-2">C16A Academic Calendar • A.Y. 2026–2027</h3>
+        <p class="text-[10px] text-slate-400 mt-1">Original calendar pictures provided by the block</p>
+      </div>
+      <button onclick="closeAcademicCalendar()" aria-label="Close academic calendar" class="text-slate-400 hover:text-slate-700 dark:hover:text-white text-2xl transition">×</button>
+    </div>
+
+    <div class="p-3 sm:p-5 bg-slate-100 dark:bg-slate-950 space-y-5">
+      <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden shadow-sm">
+        <div class="px-4 py-3 border-b border-slate-200 dark:border-slate-800">
+          <p class="text-[9px] uppercase tracking-wider font-bold text-dlsu">Page 1</p>
+          <p class="text-xs font-semibold text-slate-900 dark:text-white mt-0.5">Term schedule & academic deadlines</p>
+        </div>
+        <div class="p-2 sm:p-4 bg-slate-50 dark:bg-slate-950">
+          <img src="academic-calendar-term1.jpg" alt="Original C16A Academic Calendar page 1" class="w-full h-auto mx-auto object-contain rounded-xl shadow-sm">
+        </div>
+      </div>
+
+      <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden shadow-sm">
+        <div class="px-4 py-3 border-b border-slate-200 dark:border-slate-800">
+          <p class="text-[9px] uppercase tracking-wider font-bold text-dlsu">Page 2</p>
+          <p class="text-xs font-semibold text-slate-900 dark:text-white mt-0.5">Holidays & special observances</p>
+        </div>
+        <div class="p-2 sm:p-4 bg-slate-50 dark:bg-slate-950">
+          <img src="academic-calendar-holidays.jpg" alt="Original C16A Academic Calendar page 2" class="w-full h-auto mx-auto object-contain rounded-xl shadow-sm">
         </div>
       </div>
     </div>
@@ -4738,6 +4894,32 @@ function closeOfficialSchedule() {
 }
 
 /* ============================================================
+   ACADEMIC CALENDAR MODAL
+============================================================ */
+
+function openAcademicCalendar() {
+
+  const modal = document.getElementById("academicCalendarModal");
+
+  if (!modal) return;
+
+  modal.classList.add("modal-active");
+  document.body.classList.add("overflow-hidden");
+
+}
+
+function closeAcademicCalendar() {
+
+  const modal = document.getElementById("academicCalendarModal");
+
+  if (!modal) return;
+
+  modal.classList.remove("modal-active");
+  document.body.classList.remove("overflow-hidden");
+
+}
+
+/* ============================================================
    CLASSROOM GUIDE MODAL
 ============================================================ */
 
@@ -5890,6 +6072,8 @@ document.addEventListener(
       closeScheduleImage();
 
       closeOfficialSchedule();
+
+      closeAcademicCalendar();
 
       closeClassroomGuide();
 
